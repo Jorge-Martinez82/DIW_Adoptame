@@ -5,9 +5,17 @@ module.exports = {
     extend: {
       colors: {
         customPurple: '#CBABD4',
+        customWhite: '#FFFFFF',
+        customBlue: '#4F42E1',
+        customBlack: '#303030',
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
     },
   },
   plugins: [],
 };
+
 
