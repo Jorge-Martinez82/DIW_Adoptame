@@ -16,19 +16,45 @@
             <img src="img/logo.png" alt="logo de adoptame" class="h-10">
             <p class="font-montserrat font-bold">Adoptame</p>
         </a>
-        <ul class="flex gap-6 font-roboto">
-            <li><a href="">Sobre nosotros</a></li>
-            <li><a href="">Protectoras</a></li>
-            <li><a href="">Mascotas</a></li>
+        <ul class="flex gap-6 font-roboto ">
+            <li><a class="hover:underline underline-offset-1" href="">Sobre nosotros</a></li>
+            <li><a class="hover:underline underline-offset-1" href="">Protectoras</a></li>
+            <li><a class="hover:underline underline-offset-1" href="">Mascotas</a></li>
         </ul>
         <a href="index.html"
-           class="font-roboto font-bold border-2 border-black text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customPurple">
+           class="font-roboto font-bold border-2 border-customBlue text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customBlue hover:text-white">
             Iniciar sesión
         </a>
     </nav>
 </header>
 
 <section class="bg-[url('/img/portada.jpg')] h-[600px] bg-cover bg-center">
+    <div class="container flex flex-col items-center justify-center h-screen">
+        <h1 class="font-montserrat text-4xl font-bold mb-4">Adopta y transforma vidas</h1>
+        <form class="flex flex-col items-center justify-around h-64 w-96 mx-auto p-10 bg-black rounded-xl bg-opacity-75 text-white font-roboto">
+            <label for="tipo-mascota">Tipo de mascota</label>
+            <select class="w-full p-2 rounded text-black" id="tipo-mascota" name="tipo-mascota">
+                <option value="" disabled selected>Perros, gatos, aves...</option>
+                <option value="perro">Perros</option>
+                <option value="gato">Gatos</option>
+            </select>
+
+            <label for="localizacion">Localización</label>
+            <input type="text" class="w-full p-2 rounded text-black" id="localizacion" name="localizacion" placeholder="Provincia">
+
+            <button class="w-32 p-2 bg-customBlue rounded-full text-white mt-5" type="submit">Buscar</button>
+        </form>
+    </div>
+</section>
+
+<section class="h-[400px]">
+    <div class="container flex flex-col justify-center pt-32 pl-64 pr-64">
+        <h2 class="text-2xl font-bold font-roboto text-cyan-700">Nuestro propósito</h2>
+        <h2 class="text-2xl font-bold font-roboto">"Creemos que cada animal merece un hogar lleno de cariño. Nuestra misión es ser el puente que une corazones y patas, asegurando que cada adopción sea el inicio de una historia feliz."</h2>
+    </div>
+</section>
+
+<section class="bg-customPurple h-[600px]">
 
 </section>
 </body>
