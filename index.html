@@ -1,61 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index</title>
-    <link href="src/output.css" rel="stylesheet">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="img/logo.png">
-</head>
-<body>
-<header class="m-2">
-    <nav class="flex items-center justify-between">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Inicio</title>
+    <link href="src/output.css" rel="stylesheet" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/logo.png" />
+  </head>
+  <body>
+    <header class="m-2">
+      <nav class="flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-3">
-            <img src="img/logo.png" alt="logo de adoptame" class="h-10">
-            <p class="font-montserrat font-bold">Adoptame</p>
+          <img src="img/logo.png" alt="logo de adoptame" class="h-10" />
+          <p class="font-montserrat font-bold">Adoptame</p>
         </a>
-        <ul class="flex gap-6 font-roboto ">
-            <li><a class="hover:underline underline-offset-1" href="">Sobre nosotros</a></li>
-            <li><a class="hover:underline underline-offset-1" href="">Protectoras</a></li>
-            <li><a class="hover:underline underline-offset-1" href="">Mascotas</a></li>
+        <ul class="flex gap-6 font-roboto">
+          <li>
+            <a class="hover:underline underline-offset-1" href=""
+              >Sobre nosotros</a
+            >
+          </li>
+          <li>
+            <a class="hover:underline underline-offset-1" href=""
+              >Protectoras</a
+            >
+          </li>
+          <li>
+            <a class="hover:underline underline-offset-1" href="">Mascotas</a>
+          </li>
         </ul>
-        <a href="index.html"
-           class="font-roboto font-bold border-2 border-customBlue text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customBlue hover:text-white">
-            Iniciar sesión
+        <a
+          href="index.html"
+          class="font-roboto font-bold border-2 border-customBlue text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customBlue hover:text-white"
+        >
+          Iniciar sesión
         </a>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<section class="bg-[url('/img/portada.jpg')] h-[600px] bg-cover bg-center">
-    <div class="container flex flex-col items-center justify-center h-screen">
-        <h1 class="font-montserrat text-4xl font-bold mb-4">Adopta y transforma vidas</h1>
-        <form class="flex flex-col items-center justify-around h-64 w-96 mx-auto p-10 py-3 bg-black rounded-3xl bg-opacity-75 text-white font-roboto">
-            <label for="tipo-mascota">Tipo de mascota</label>
-            <select class="w-full p-2 rounded-xl text-black" id="tipo-mascota" name="tipo-mascota">
-                <option value="" disabled selected>Perros, gatos, aves...</option>
-                <option value="perro">Perros</option>
-                <option value="gato">Gatos</option>
-            </select>
+    <section class="bg-[url('/img/portada.jpg')] h-[600px] bg-cover bg-center">
+      <div class="container flex flex-col items-center justify-center h-screen">
+        <h1 class="font-montserrat text-4xl font-bold mb-4">
+          Adopta y transforma vidas
+        </h1>
+        <form
+          class="flex flex-col items-center justify-around h-64 w-96 mx-auto p-10 py-3 bg-black rounded-3xl bg-opacity-75 text-white font-roboto"
+        >
+          <label for="tipo-mascota">Tipo de mascota</label>
+          <select
+            class="w-full p-2 rounded-xl text-black"
+            id="tipo-mascota"
+            name="tipo-mascota"
+          >
+            <option value="" disabled selected>Perros, gatos, aves...</option>
+            <option value="perro">Perros</option>
+            <option value="gato">Gatos</option>
+          </select>
 
-            <label for="localizacion">Localización</label>
-            <input type="text" class="w-full p-2 rounded-xl text-black" id="localizacion" name="localizacion" placeholder="Provincia">
+          <label for="localizacion">Localización</label>
+          <input
+            type="text"
+            class="w-full p-2 rounded-xl text-black"
+            id="localizacion"
+            name="localizacion"
+            placeholder="Provincia"
+          />
 
-            <button class="w-32 p-2 bg-customBlue rounded-full text-white mt-5" type="submit">Buscar</button>
+          <button
+            class="w-32 p-2 bg-customBlue rounded-full text-white mt-5"
+            type="submit"
+          >
+            Buscar
+          </button>
         </form>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section class="h-[400px]">
-    <div class="container flex flex-col justify-center pt-32 px-64">
-        <h2 class="text-2xl font-bold font-roboto text-cyan-700">Nuestro propósito</h2>
-        <h2 class="text-2xl font-bold font-roboto">"Creemos que cada animal merece un hogar lleno de cariño. Nuestra misión es ser el puente que une corazones y patas, asegurando que cada adopción sea el inicio de una historia feliz."</h2>
-    </div>
-</section>
+    <section class="h-[400px]">
+      <div class="container flex flex-col justify-center pt-32 px-64">
+        <h2 class="text-2xl font-bold font-roboto text-cyan-700">
+          Nuestro propósito
+        </h2>
+        <h2 class="text-2xl font-bold font-roboto">
+          "Creemos que cada animal merece un hogar lleno de cariño. Nuestra
+          misión es ser el puente que une corazones y patas, asegurando que cada
+          adopción sea el inicio de una historia feliz."
+        </h2>
+      </div>
+    </section>
 
-<section class="bg-customPurple h-[600px]">
-<h1 class="font-roboto text-2xl font-bold">Como funciona Adóptame?</h1>
-</section>
-</body>
+    <section class="bg-customPurple h-[600px]">
+      <h1 class="font-roboto text-2xl font-bold">Como funciona Adóptame?</h1>
+    </section>
+  </body>
 </html>
