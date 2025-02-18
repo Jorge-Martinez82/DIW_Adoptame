@@ -1,12 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Mascotas</title>
+	<link href="../dist/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-	<main id="mascotas"></main>
+	<header class="m-2">
+		<nav class="flex items-center justify-between">
+			<a href="../index.html" class="flex items-center gap-3">
+				<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
+				<p class="font-montserrat font-bold">Adoptame</p>
+			</a>
+			<ul class="flex gap-6 font-roboto">
+				<li>
+					<a class="hover:underline underline-offset-1" href="">
+						Sobre nosotros
+						</a>
+				</li>
+				<li>
+					<a class="hover:underline underline-offset-1" href=""
+						>Protectoras
+						</a>
+				</li>
+				<li>
+					<a class="hover:underline underline-offset-1" href="./mascotas.html">Mascotas</a>
+				</li>
+			</ul>
+			<a
+				href="./index.html"
+				class="font-roboto font-bold border-2 border-customBlue text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customBlue hover:text-white">
+				Iniciar sesión
+			</a>
+		</nav>
+	</header>
+
+	<main id="mascotas">
+
+	</main>
+
+	<footer class="bg-customBlack flex justify-evenly p-4 text-white">
+		<div class="flex flex-col gap-3 font-roboto">
+			<a href="../index.html" class="flex items-center gap-5">
+				<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
+				<p class="font-montserrat font-bold text-2xl">Adóptame, plataforma de adopción</p>
+			</a>
+			<div class="flex justify-around items-center">
+				<p>Siguenos en nuestras redes sociales: </p>
+				<img class="w-8 h-8" src="../assets/img/facebook.png" alt="">
+				<img class="w-8 h-8" src="../assets/img/instagram.png" alt="">
+				<img class="w-8 h-8" src="../assets/img/twiter.png" alt="">
+				<img class="w-8 h-8" src="../assets/img/linkedin.png" alt="">
+				<img class="w-8 h-8" src="../assets/img/youtube.png" alt="">
+			</div>
+			<span>2024 ©Adóptame - Todos los derechos reservados</span>
+		</div>
+		<div class="flex justify-between gap-3 font-roboto">
+			<div class="flex flex-col gap-3">
+				<p class="font-bold">Horario de atención</p>
+				<p>De Lunes a Sábado de 9 a 18 horas</p>
+			</div>
+			<div class="flex flex-col gap-3">
+				<p class="font-bold">Contacto</p>
+				<p>948000000</p>
+				<p>info@adoptame.es</p>
+			</div>
+		</div>
+	</footer>
 
 	<script>
 		const mascotasDiv = document.querySelector('#mascotas')
