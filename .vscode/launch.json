@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Iniciar Servidores",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm start",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Iniciar HTTP Server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "http-server -p 8080",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Iniciar JSON Server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "json-server --watch ./backend/backend.json",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
