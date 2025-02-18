@@ -36,8 +36,44 @@
 		</nav>
 	</header>
 
-	<main id="mascotas">
+	<main>
+		<section class="w-full h-64 bg-[url('http://127.0.0.1:5500/assets/img/mascota_1.png')] bg-cover bg-center flex items-center justify-center">
+			<div class="bg-black/80 backdrop-blur-md p-6 rounded-lg flex items-end gap-4 w-[90%] max-w-2xl">
 
+				<div class="flex w-full gap-4">
+					<div class="w-full">
+						<label for="tipo" class="block text-white text-sm font-semibold">Tipo de mascota</label>
+						<select id="tipo" class="w-full p-2 rounded bg-white text-gray-800">
+							<option value="todos">Perros, gatos, aves...</option>
+							<option value="perros">Perros</option>
+							<option value="gatos">Gatos</option>
+						</select>
+					</div>
+
+					<div class="w-full">
+						<label for="provincia" class="block text-white text-sm font-semibold">Localización</label>
+						<select id="provincia" class="w-full p-2 rounded bg-white text-gray-800">
+							<option disabled selected>Provincia</option>
+							<option value="navarra">Navarra</option>
+							<option value="álava">Álava</option>
+							<option value="guipúzcoa">Guipúzcoa</option>
+							<option value="vizcaya">Vizcaya</option>
+						</select>
+					</div>
+
+					<div class="self-end">
+						<button class="bg-customBlue hover:bg-customBlueHover text-white font-semibold py-2 px-6 rounded" id="buscar">
+							Buscar
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="mt-10 bg-purple-100 p-10 rounded-lg">
+			<h2 class="text-2xl font-bold text-gray-800 mb-6" id="cantidad_resultados">Sin resultados</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="resultados_mascotas"></div>
+		</section>
 	</main>
 
 	<footer class="bg-customBlack flex justify-evenly p-4 text-white">
@@ -70,11 +106,47 @@
 	</footer>
 
 	<script>
-		const mascotasDiv = document.querySelector('#mascotas')
+		const mascotasDiv = document.querySelector('#resultados_mascotas')
+		const cantidadResultadosH1 = document.querySelector('#cantidad_resultados')
+		const buscarDiv = document.querySelector('#buscar')
 
-		fetch('http://localhost:3000/mascotas')
+		const tipoSelector = document.querySelector('#tipo')
+		const provinciaSelector = document.querySelector('#provincia')
+
+		const buscar = () => {
+			if (tipoSelector.value == 'todos')
+			{
+				fetch(`http://localhost:3000/mascotas`)
+				.then(response => response.json())
+				.then(generarMascotas)
+			}
+			else {
+				fetch(`http://localhost:3000/mascotas?categoria=${tipoSelector.value}`)
+				.then(response => response.json())
+				.then(generarMascotas)
+			}
+		}
+		buscarDiv.addEventListener('click', buscar)
+
+		const generarMascotas = (mascotas) => {
+			cantidadResultadosH1.textContent = `${mascotas.length} resultados`;
+
+			mascotasDiv.innerHTML = mascotas.map(x => `
+			<div class="bg-white shadow-lg rounded-lg p-3">
+				<img src="../assets/img/${x.imagen}" alt="${x.nombre}" class="w-full h-48 object-cover rounded-md">
+				<div class="p-4">
+					<h2 class="text-lg font-semibold text-gray-900">${x.nombre}</h2>
+					<h3 class="text-md text-gray-700">${x.categoria}</h3>
+					<p class="mt-2 text-sm text-gray-500">Edad: ${x.edad} • Prioridad: ${x.prioridad}</p>
+					<p class="mt-2 text-gray-900 font-medium">${x.protectora}</p>
+				</div>
+			</div>
+		`).join('')
+		}
+
+		fetch('http://localhost:3000/mascotas?tipo=gato')
 		.then(response => response.json())
-		.then(mascotas => mascotasDiv.innerHTML = mascotas.map(x => `<p>${x.nombre}</p>`).join(''))
+		.then(generarMascotas)
 	</script>
 </body>
 </html>

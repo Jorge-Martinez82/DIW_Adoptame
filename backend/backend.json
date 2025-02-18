@@ -28,17 +28,57 @@
   ],
 	"mascotas": [
 		{
-			"tipo": "Gato",
+			"imagen": "mascota_1.png",
+			"provincia": "navarra",
+			"categoria": "gatos",
 			"nombre": "Gatito",
-			"entidad": "Protectora Estella",
-			"edad": 3,
+			"protectora": "Protectora Estella",
+			"edad": 2,
 			"prioridad": 3
 		},
 		{
-			"tipo": "Perro",
+			"imagen": "mascota_1.png",
+			"provincia": "álava",
+			"categoria": "perros",
 			"nombre": "Perrico",
-			"entidad": "Protectora Estella",
+			"protectora": "Protectora Estella",
+			"edad": 4,
+			"prioridad": 2
+		},
+		{
+			"imagen": "mascota_1.png",
+			"provincia": "navarra",
+			"categoria": "gatos",
+			"nombre": "Gatito",
+			"protectora": "Protectora Estella",
 			"edad": 2,
+			"prioridad": 3
+		},
+		{
+			"imagen": "mascota_1.png",
+			"provincia": "álava",
+			"categoria": "perros",
+			"nombre": "Perrico",
+			"protectora": "Protectora Estella",
+			"edad": 4,
+			"prioridad": 2
+		},
+		{
+			"imagen": "mascota_1.png",
+			"provincia": "navarra",
+			"categoria": "gatos",
+			"nombre": "Gatito",
+			"protectora": "Protectora Estella",
+			"edad": 2,
+			"prioridad": 3
+		},
+		{
+			"imagen": "mascota_1.png",
+			"provincia": "álava",
+			"categoria": "perros",
+			"nombre": "Perrico",
+			"protectora": "Protectora Estella",
+			"edad": 4,
 			"prioridad": 2
 		}
 	]
