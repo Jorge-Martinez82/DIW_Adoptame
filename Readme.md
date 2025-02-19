@@ -9,7 +9,7 @@
     - [ ] Diseñar el listado en formato tarjetas, utilizando al menos 9 imágenes diferentes de animales.
     - [ ] Cada tarjeta debe incluir:
       - [ ] Imagen del animal (libre de derechos).
-      - [ ] Nombre del animal.
+      - [X] Nombre del animal.
       - [ ] Breve descripción (raza, edad, etc.).
       - [ ] Icono de acción (favorito, compartir).
     - [ ] Asegurar que las tarjetas estén bien alineadas y sean coherentes visualmente en móvil y escritorio.
