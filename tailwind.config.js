@@ -7,6 +7,7 @@ module.exports = {
         customPurple: '#CBABD4',
         customWhite: '#FFFFFF',
         customBlue: '#4F42E1',
+				customBlueHover: '#2f21cf',
         customBlack: '#303030',
       },
       fontFamily: {
