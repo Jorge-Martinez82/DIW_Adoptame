@@ -37,7 +37,7 @@
 	</header>
 
 	<main>
-		<section class="w-full h-64 bg-[url('http://127.0.0.1:5500/assets/img/mascota_1.png')] bg-cover bg-center flex items-center justify-center">
+		<section class="w-full h-64 bg-[url('http://127.0.0.1:5500/assets/img/huellas.png')] bg-cover bg-center flex items-center justify-center">
 			<div class="bg-black/80 backdrop-blur-md p-6 rounded-lg flex items-end gap-4 w-[90%] max-w-2xl">
 
 				<div class="flex w-full gap-4">
@@ -53,7 +53,7 @@
 					<div class="w-full">
 						<label for="provincia" class="block text-white text-sm font-semibold">Localización</label>
 						<select id="provincia" class="w-full p-2 rounded bg-white text-gray-800">
-							<option disabled selected>Provincia</option>
+							<option value="todos">Todas</option>
 							<option value="navarra">Navarra</option>
 							<option value="álava">Álava</option>
 							<option value="guipúzcoa">Guipúzcoa</option>
@@ -72,7 +72,7 @@
 
 		<section class="mt-10 bg-purple-100 p-10 rounded-lg">
 			<h2 class="text-2xl font-bold text-gray-800 mb-6" id="cantidad_resultados">Sin resultados</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6" id="resultados_mascotas"></div>
+			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6" id="resultados_mascotas"></div>
 		</section>
 	</main>
 
@@ -114,18 +114,23 @@
 		const provinciaSelector = document.querySelector('#provincia')
 
 		const buscar = () => {
-			if (tipoSelector.value == 'todos')
-			{
-				fetch(`http://localhost:3000/mascotas`)
-				.then(response => response.json())
-				.then(generarMascotas)
+			const params = new URLSearchParams();
+
+			if (tipoSelector.value !== 'todos') {
+					params.append('categoria', tipoSelector.value);
 			}
-			else {
-				fetch(`http://localhost:3000/mascotas?categoria=${tipoSelector.value}`)
-				.then(response => response.json())
-				.then(generarMascotas)
+			if (provinciaSelector.value !== 'todos') {
+					params.append('provincia', provinciaSelector.value);
 			}
+
+			const url = `http://localhost:3000/mascotas${params.toString() ? `?${params.toString()}` : ''}`;
+
+			fetch(url)
+					.then(response => response.json())
+					.then(generarMascotas)
+					.catch(error => console.error('Error al obtener mascotas:', error));
 		}
+
 		buscarDiv.addEventListener('click', buscar)
 
 		const generarMascotas = (mascotas) => {
@@ -133,18 +138,21 @@
 
 			mascotasDiv.innerHTML = mascotas.map(x => `
 			<div class="bg-white shadow-lg rounded-lg p-3">
-				<img src="../assets/img/${x.imagen}" alt="${x.nombre}" class="w-full h-48 object-cover rounded-md">
+				<img src="../assets/img/mascotas/${x.imagen}" alt="${x.nombre}" class="w-full h-48 object-cover rounded-md">
 				<div class="p-4">
-					<h2 class="text-lg font-semibold text-gray-900">${x.nombre}</h2>
-					<h3 class="text-md text-gray-700">${x.categoria}</h3>
-					<p class="mt-2 text-sm text-gray-500">Edad: ${x.edad} • Prioridad: ${x.prioridad}</p>
+					<h3 class="text-lg font-semibold text-gray-900">${x.nombre}</h3>
+					<ul class="mt-2 text-sm text-gray-500">
+						<li><strong>Categoría:</strong> <span class="capitalize">${x.categoria}</span></li>
+						<li><strong>Edad:</strong> ${x.edad} años</li>
+						<li><strong>Prioridad:</strong> ${x.prioridad}</li>
+					</ul>
 					<p class="mt-2 text-gray-900 font-medium">${x.protectora}</p>
 				</div>
 			</div>
 		`).join('')
 		}
 
-		fetch('http://localhost:3000/mascotas?tipo=gato')
+		fetch('http://localhost:3000/mascotas')
 		.then(response => response.json())
 		.then(generarMascotas)
 	</script>

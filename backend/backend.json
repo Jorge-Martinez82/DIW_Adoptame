@@ -28,58 +28,81 @@
   ],
 	"mascotas": [
 		{
-			"imagen": "mascota_1.png",
+			"imagen": "mascota_1.webp",
 			"provincia": "navarra",
-			"categoria": "gatos",
-			"nombre": "Gatito",
+			"categoria": "perros",
+			"nombre": "Feliz",
 			"protectora": "Protectora Estella",
 			"edad": 2,
-			"prioridad": 3
+			"prioridad": "Alta",
+			"freepik": "https://www.freepik.es/imagen-ia-gratis/aislado-feliz-sonriente-perro-fondo-blanco-retrato-4_39994000.htm",
+			"autor": "Vaynakh en Freepik"
 		},
 		{
-			"imagen": "mascota_1.png",
+			"imagen": "mascota_2.webp",
 			"provincia": "álava",
 			"categoria": "perros",
-			"nombre": "Perrico",
-			"protectora": "Protectora Estella",
+			"nombre": "Abrigado",
+			"protectora": "Protectora Vitoria",
 			"edad": 4,
-			"prioridad": 2
+			"prioridad": "Media",
+			"freepik": "https://www.freepik.com/free-photo/fancy-looking-red-white-basenji-dog-black-cotton-hoodie-with-hood-up-looks-left-isolated-white_11277995.htm",
+			"autor": "bublikhaus en Freepik"
 		},
 		{
-			"imagen": "mascota_1.png",
+			"imagen": "mascota_3.webp",
+			"provincia": "guipúzcoa",
+			"categoria": "tortugas",
+			"nombre": "Tortogi",
+			"protectora": "Protectora Guipúzcoa",
+			"edad": 4,
+			"prioridad": "Baja",
+			"freepik": "https://www.freepik.com/free-ai-image/turtle-beach-wallpaper_122401128.htm",
+			"autor": "vector_corp en Freepik"
+		},
+		{
+			"imagen": "mascota_4.webp",
+			"provincia": "navarra",
+			"categoria": "conejos",
+			"nombre": "Rabbit",
+			"protectora": "Protectora Pamplona",
+			"edad": 4,
+			"prioridad": "Alta",
+			"freepik": "https://www.freepik.com/free-photo/furry-cute-rabbit-isolated_10450874.htm",
+			"autor": "pereslavtseva en Freepik"
+		},
+		{
+			"imagen": "mascota_5.webp",
 			"provincia": "navarra",
 			"categoria": "gatos",
-			"nombre": "Gatito",
-			"protectora": "Protectora Estella",
-			"edad": 2,
-			"prioridad": 3
-		},
-		{
-			"imagen": "mascota_1.png",
-			"provincia": "álava",
-			"categoria": "perros",
-			"nombre": "Perrico",
-			"protectora": "Protectora Estella",
+			"nombre": "Miau",
+			"protectora": "Protectora Tudela",
 			"edad": 4,
-			"prioridad": 2
+			"prioridad": "Baja",
+			"freepik": "https://www.freepik.com/free-photo/nature-animals_1007159.htm",
+			"autor": "freestockcenter en Freepik"
 		},
 		{
-			"imagen": "mascota_1.png",
+			"imagen": "mascota_6.webp",
 			"provincia": "navarra",
 			"categoria": "gatos",
-			"nombre": "Gatito",
-			"protectora": "Protectora Estella",
-			"edad": 2,
-			"prioridad": 3
+			"nombre": "Colores",
+			"protectora": "Protectora Alsasua",
+			"edad": 4,
+			"prioridad": "Media",
+			"freepik": "https://www.freepik.com/free-photo/selective-focus-closeup-cat-with-beautiful-heterochromatic-eyes_17343284.htm",
+			"autor": "wirestock en Freepik"
 		},
 		{
-			"imagen": "mascota_1.png",
-			"provincia": "álava",
-			"categoria": "perros",
-			"nombre": "Perrico",
-			"protectora": "Protectora Estella",
+			"imagen": "mascota_7.webp",
+			"provincia": "vizcaya",
+			"categoria": "peces",
+			"nombre": "Fish",
+			"protectora": "Protectora Bilbao",
 			"edad": 4,
-			"prioridad": 2
+			"prioridad": "Alta",
+			"freepik": "https://www.freepik.com/free-photo/funny-face-beautiful-betta-fish-isolated-black-background_6084334.htm",
+			"autor": "freepik en Freepik"
 		}
 	]
 }
