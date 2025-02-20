@@ -28,10 +28,102 @@
   ],
 	"mascotas": [
 		{
+			"id": 1,
+			"imagen": "mascota1_1.jpg",
+			"imagen_sm": "mascota1.jpg",
+			"provincia": "",
+			"categoria": "perros",
+			"nombre": "Moky y Mako",
+			"protectora": "Protectora",
+			"edad": 2,
+			"prioridad": "",
+			"freepik": "",
+			"autor": ""
+		},
+		{
+			"id": 2,
+			"imagen": "mascota2_1.jpg",
+			"imagen_sm": "mascota2.jpg",
+			"provincia": "",
+			"categoria": "tortugas",
+			"nombre": "Tortugi",
+			"protectora": "Protectora",
+			"edad": 2,
+			"prioridad": "",
+			"freepik": "",
+			"autor": ""
+		},
+		{
+			"id": 3,
+			"imagen": "mascota3_1.jpg",
+			"imagen_sm": "mascota3.jpg",
+			"provincia": "",
+			"categoria": "perros",
+			"nombre": "Doge",
+			"protectora": "Protectora",
+			"edad": 2,
+			"prioridad": "",
+			"freepik": "",
+			"autor": ""
+		},
+		{
+			"id": 4,
+			"imagen": "mascota4_1.jpg",
+			"imagen_sm": "mascota4.jpg",
+			"provincia": "",
+			"categoria": "perros",
+			"nombre": "Nieve",
+			"protectora": "Protectora",
+			"edad": 2,
+			"prioridad": "",
+			"freepik": "",
+			"autor": ""
+		},
+		{
+			"id": 5,
+			"imagen": "mascota5_1.jpg",
+			"imagen_sm": "mascota5.jpg",
+			"provincia": "",
+			"categoria": "gatos",
+			"nombre": "Gray",
+			"protectora": "Protectora",
+			"edad": 2,
+			"prioridad": "",
+			"freepik": "",
+			"autor": ""
+		},
+		{
+			"id": 6,
+			"imagen": "mascota6_1.jpg",
+			"imagen_sm": "mascota6.jpg",
+			"provincia": "",
+			"categoria": "conejos",
+			"nombre": "Bunny",
+			"protectora": "Protectora",
+			"edad": 2,
+			"prioridad": "",
+			"freepik": "",
+			"autor": ""
+		},
+		{
+			"id": 7,
+			"imagen": "mascota7_1.jpg",
+			"imagen_sm": "mascota7.jpg",
+			"provincia": "",
+			"categoria": "gatos",
+			"nombre": "Cato",
+			"protectora": "Protectora",
+			"edad": 2,
+			"prioridad": "",
+			"freepik": "",
+			"autor": ""
+		},
+		{
+			"id": 8,
 			"imagen": "mascota_1.webp",
 			"provincia": "navarra",
 			"categoria": "perros",
-			"nombre": "Feliz",
+			"nombre": "Tambor",
 			"protectora": "Protectora Estella",
 			"edad": 2,
 			"prioridad": "Alta",
@@ -39,6 +131,7 @@
 			"autor": "Vaynakh en Freepik"
 		},
 		{
+			"id": 9,
 			"imagen": "mascota_2.webp",
 			"provincia": "álava",
 			"categoria": "perros",
@@ -50,6 +143,7 @@
 			"autor": "bublikhaus en Freepik"
 		},
 		{
+			"id": 10,
 			"imagen": "mascota_3.webp",
 			"provincia": "guipúzcoa",
 			"categoria": "tortugas",
@@ -61,6 +155,7 @@
 			"autor": "vector_corp en Freepik"
 		},
 		{
+			"id": 11,
 			"imagen": "mascota_4.webp",
 			"provincia": "navarra",
 			"categoria": "conejos",
@@ -72,6 +167,7 @@
 			"autor": "pereslavtseva en Freepik"
 		},
 		{
+			"id": 12,
 			"imagen": "mascota_5.webp",
 			"provincia": "navarra",
 			"categoria": "gatos",
@@ -83,6 +179,7 @@
 			"autor": "freestockcenter en Freepik"
 		},
 		{
+			"id": 13,
 			"imagen": "mascota_6.webp",
 			"provincia": "navarra",
 			"categoria": "gatos",
@@ -94,10 +191,11 @@
 			"autor": "wirestock en Freepik"
 		},
 		{
+			"id": 14,
 			"imagen": "mascota_7.webp",
 			"provincia": "vizcaya",
 			"categoria": "peces",
-			"nombre": "Fish",
+			"nombre": "Nemo",
 			"protectora": "Protectora Bilbao",
 			"edad": 4,
 			"prioridad": "Alta",

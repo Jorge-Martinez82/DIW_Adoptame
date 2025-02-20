@@ -31,18 +31,18 @@
   - [ ] Implementar todos los iconos con Google Fonts Icons.
   - [ ] Asegurar que los iconos sean relevantes y estén bien integrados en el diseño.
 
-- [ ] **Técnica de Art Direction para las imágenes**  
-  - Implementa la técnica de Art Direction para adaptar las imágenes a diferentes resoluciones de pantalla.  
-  - Utiliza el elemento `<picture>` para cargar la imagen adecuada según la resolución del dispositivo.  
+- [ ] **Técnica de Art Direction para las imágenes**
+  - Implementa la técnica de Art Direction para adaptar las imágenes a diferentes resoluciones de pantalla.
+  - Utiliza el elemento `<picture>` para cargar la imagen adecuada según la resolución del dispositivo.
 
-- [ ] **Maquetación con TailwindCSS**  
-  - Utiliza TailwindCSS para realizar la maquetación.  
-  - Recuerda que el diseño debe estar optimizado para la versión móvil (máximo 768px) y para escritorio (pantallas más grandes).  
+- [ ] **Maquetación con TailwindCSS**
+  - Utiliza TailwindCSS para realizar la maquetación.
+  - Recuerda que el diseño debe estar optimizado para la versión móvil (máximo 768px) y para escritorio (pantallas más grandes).
 
-- [ ] **Repositorio GitHub**  
-  - Crea un repositorio en GitHub llamado `adoptame-html-css`.  
-  - Subir el código al repositorio, organizando las carpetas correctamente (por ejemplo: `index.html`, `css/`, `images/`).  
-  - Realiza commits frecuentes con mensajes claros sobre lo que se está implementando (ej.: "Añadida pantalla de inicio", "Diseñadas las tarjetas de animales", etc.).  
+- [ ] **Repositorio GitHub**
+  - Crea un repositorio en GitHub llamado `adoptame-html-css`.
+  - Subir el código al repositorio, organizando las carpetas correctamente (por ejemplo: `index.html`, `css/`, `images/`).
+  - Realiza commits frecuentes con mensajes claros sobre lo que se está implementando (ej.: "Añadida pantalla de inicio", "Diseñadas las tarjetas de animales", etc.).
 
 
 
