@@ -12,150 +12,196 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="./assets/img/logo.png" />
   </head>
   <body>
-    <header class="m-2">
-      <nav class="flex items-center justify-between">
-        <a href="./index.html" class="flex items-center gap-3">
-          <img src="./assets/img/logo.png" alt="logo de adoptame" class="h-10" />
-          <p class="font-montserrat font-bold">Adoptame</p>
-        </a>
-        <ul class="flex gap-6 font-roboto">
-          <li>
-            <a class="hover:underline underline-offset-1" href=""
-              >Sobre nosotros</a
-            >
-          </li>
-          <li>
-            <a class="hover:underline underline-offset-1" href=""
-              >Protectoras</a
-            >
-          </li>
-          <li>
-            <a class="hover:underline underline-offset-1" href="./src/mascotas.html">Mascotas</a>
-          </li>
-        </ul>
-        <a
-          href="./index.html"
-          class="font-roboto font-bold border-2 border-customBlue text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customBlue hover:text-white"
-        >
-          Iniciar sesión
-        </a>
-      </nav>
-    </header>
+	<header class="m-2">
+		<nav class="flex items-center justify-between">
+			<a href="index.html" class="flex items-center gap-3">
+				<img src="assets/img/logo.png" alt="logo de adoptame" class="h-10" />
+				<p class="font-montserrat font-bold">Adoptame</p>
+			</a>
+			<ul class="flex flex-col sm:flex-row gap-2 sm:gap-2 font-roboto">
+				<li>
+					<a class="hover:underline underline-offset-1" href="">
+						Sobre nosotros
+					</a>
+				</li>
+				<li>
+					<a class="hover:underline underline-offset-1" href=""
+					>Protectoras
+					</a>
+				</li>
+				<li>
+					<a class="hover:underline underline-offset-1" href="src/mascotas.html">Mascotas</a>
+				</li>
+			</ul>
+			<a
+				href="./index.html"
+				class="font-roboto font-bold border-2 border-customBlue text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customBlue hover:text-white">
+				Iniciar sesión
+			</a>
+		</nav>
+	</header>
 
-    <section class="bg-[url('./assets/img/portada.jpg')] h-[600px] bg-cover bg-center">
-      <div class="container flex flex-col items-center justify-center h-screen">
-        <h1 class="font-montserrat text-4xl font-bold mb-4">
-          Adopta y transforma vidas
-        </h1>
-        <form
-          class="flex flex-col items-center justify-around h-64 w-96 mx-auto p-10 py-3 bg-black rounded-3xl bg-opacity-75 text-white font-roboto"
-        >
-          <label for="tipo-mascota">Tipo de mascota</label>
-          <select
-            class="w-full p-2 rounded-xl text-black"
-            id="tipo-mascota"
-            name="tipo-mascota"
-          >
-            <option value="" disabled selected>Perros, gatos, aves...</option>
-            <option value="perro">Perros</option>
-            <option value="gato">Gatos</option>
-          </select>
+		<section class="bg-customPurple/70 bg-[url('/assets/img/portada.jpg')] h-[600px] bg-cover bg-center flex flex-col justify-center items-center">
+			<div class="flex flex-col items-center justify-center">
+				<h1 class="font-montserrat text-4xl font-bold mb-4">
+					Adopta y transforma vidas
+				</h1>
+				<form
+					class="flex flex-col items-center justify-around h-64 w-96 mx-auto p-10 py-3 bg-black rounded-3xl bg-opacity-75 text-white font-roboto">
+					<label for="tipo-mascota">Tipo de mascota</label>
+					<select
+						class="w-full p-2 rounded-xl text-black"
+						id="tipo-mascota"
+						name="tipo-mascota">
+						<option value="" disabled selected>Perros, gatos, aves...</option>
+						<option value="perro">Perros</option>
+						<option value="gato">Gatos</option>
+					</select>
+					<label for="localizacion">Localización</label>
+					<input
+						type="text"
+						class="w-full p-2 rounded-xl text-black"
+						id="localizacion"
+						name="localizacion"
+						placeholder="Provincia"/>
 
-          <label for="localizacion">Localización</label>
-          <input
-            type="text"
-            class="w-full p-2 rounded-xl text-black"
-            id="localizacion"
-            name="localizacion"
-            placeholder="Provincia"
-          />
+					<button
+						class="w-32 p-2 bg-customBlue rounded-full text-white mt-5"
+						type="submit">
+						Buscar
+					</button>
+				</form>
+			</div>
+		</section>
 
-          <button
-            class="w-32 p-2 bg-customBlue rounded-full text-white mt-5"
-            type="submit"
-          >
-            Buscar
-          </button>
-        </form>
-      </div>
-    </section>
+	<section class="h-auto py-24 px-6 ">
+		<div class="flex flex-col justify-center items-center text-center md:text-left md:px-32 lg:px-64">
+			<h2 class="text-xl md:text-2xl font-bold font-roboto text-cyan-700">
+				Nuestro propósito
+			</h2>
+			<h2 class="text-lg md:text-2xl font-bold font-roboto mt-4">
+				"Creemos que cada animal merece un hogar lleno de cariño. Nuestra
+				misión es ser el puente que une corazones y patas, asegurando que cada
+				adopción sea el inicio de una historia feliz."
+			</h2>
+		</div>
+	</section>
 
-    <section class="h-[400px]">
-      <div class="container flex flex-col justify-center pt-32 px-64">
-        <h2 class="text-2xl font-bold font-roboto text-cyan-700">
-          Nuestro propósito
-        </h2>
-        <h2 class="text-2xl font-bold font-roboto">
-          "Creemos que cada animal merece un hogar lleno de cariño. Nuestra
-          misión es ser el puente que une corazones y patas, asegurando que cada
-          adopción sea el inicio de una historia feliz."
-        </h2>
-      </div>
-    </section>
 
-		<section class="bg-customPurple bg-cover bg-center bg-[url('./assets/img/huellas.png')] flex flex-col justify-center h-[400px]">
-			<header class="flex justify-center items-center h-full">
+	<section class="bg-customPurple bg-cover bg-center bg-[url('/assets/img/huellas.png')] flex flex-col justify-center h-auto py-24 px-6 md:px-16">
+		<header class="flex justify-center items-center pb-6 text-center">
 				<h2 class="font-roboto text-2xl font-bold">Como funciona Adóptame?</h2>
 			</header>
 
-			<div class="flex justify-between px-64">
+		<div class="flex flex-col md:flex-row md:justify-evenly gap-8 px-6 md:px-16">
 				<article class="flex flex-col items-center">
-					<img class="w-66 h-64 object-cover" src="./assets/img/3.png" alt="Imagen de buscar mascota">
+					<img class="w-48 h-48 md:w-72 md:h-64 object-contain" src="assets/img/3.png" alt="Imagen de buscar mascota">
 					<h3 class="font-roboto text-2xl">Descubre a tu mascota</h3>
 				</article>
 
 				<article class="flex flex-col items-center">
-					<img class="w-66 h-64 object-cover" src="./assets/img/2.png" alt="Imagen de refugio">
+					<img class="w-48 h-48 md:w-72 md:h-64 object-contain" src="assets/img/2.png" alt="Imagen de refugio">
 					<h3 class="font-roboto text-2xl">Contacta con el refugio</h3>
 				</article>
 
 				<article class="flex flex-col items-center">
-					<img class="w-64 h-64 object-cover" src="./assets/img/1.png" alt="Imagen de persona y mascota">
+					<img class="w-48 h-48 md:w-72 md:h-64 object-contain" src="assets/img/1.png" alt="Imagen de persona y mascota">
 					<h3 class="font-roboto text-2xl">Comienza vuestra aventura</h3>
 				</article>
 			</div>
 		</section>
 
-		<section class="flex flex-col justify-center h-[400px]">
-			<header class="flex justify-center items-center h-full">
+		<section class="flex flex-col justify-center h-auto py-24 px-6 ">
+			<header class="flex justify-center items-center pb-5 text-center">
 				<h2 class="font-roboto text-2xl font-bold">Feedback de nuestra comunidad</h2>
-
 			</header>
-		</section>
-
-		<section class="bg-customPurple bg-cover bg-center bg-[url('./assets/img/huellas.png')] flex flex-col justify-center h-[600px]">
-			<header class="flex justify-center items-center h-full">
-				<h2 class="font-roboto text-2xl font-bold">Sobre nosotros</h2>
-				<h2 class="font-roboto text-2xl font-bold">Contáctanos</h2>
-			</header>
-		</section>
-
-	<footer class="bg-customBlack flex justify-evenly p-4 text-white">
-		<div class="flex flex-col gap-3 font-roboto">
-			<a href="./index.html" class="flex items-center gap-5">
-				<img src="./assets/img/logo.png" alt="logo de adoptame" class="h-10" />
-				<p class="font-montserrat font-bold text-2xl">Adóptame, plataforma de adopción</p>
-			</a>
-			<div class="flex justify-around items-center">
-				<p>Siguenos en nuestras redes sociales: </p>
-				<img class="w-8 h-8" src="./assets/img/facebook.png" alt="">
-				<img class="w-8 h-8" src="./assets/img/instagram.png" alt="">
-				<img class="w-8 h-8" src="./assets/img/twiter.png" alt="">
-				<img class="w-8 h-8" src="./assets/img/linkedin.png" alt="">
-				<img class="w-8 h-8" src="./assets/img/youtube.png" alt="">
+			<div class="flex flex-wrap justify-center gap-6 md:justify-evenly">
+				<article class="flex flex-col items-center w-full md:w-1/5 bg-customBlack rounded-2xl text-white font-roboto p-4 gap-3">
+					<figure>
+						<img class="w-24 h-24 md:w-32 md:h-32 rounded-full" src="assets/img/feedback2.jpg" alt="">
+					</figure>
+					<div>
+						<h2>Ana M.</h2>
+						<p>"Muy contenta con la experiencia con Adóptame, el trámite para adoptar a mi mascota fué muy sencillo y me ayudaron mucho."</p>
+					</div>
+				</article>
+				<article class="flex flex-col items-center w-full md:w-1/5 bg-customBlack rounded-2xl text-white font-roboto p-4 gap-3">
+					<figure>
+						<img class="w-24 h-24 md:w-32 md:h-32 rounded-full" src="assets/img/feedback1.jpg" alt="">
+					</figure>
+					<div>
+						<h2>Javier M.</h2>
+						<p>"Gracias a Adóptame he encontrado al amigo fiel que tanto he buscado."</p>
+					</div>
+				</article>
+				<article class="flex flex-col items-center w-full md:w-1/5 bg-customBlack rounded-2xl text-white font-roboto p-4 gap-3">
+					<figure>
+						<img class="w-24 h-24 md:w-32 md:h-32 rounded-full" src="assets/img/feedback3.jpg" alt="">
+					</figure>
+					<div>
+						<h2>Sara L.</h2>
+						<p>"Gracias a esta plataforma, encontré a mi compañero ideal. El proceso fue rápido y sencillo, y ahora mi mascota tiene un hogar lleno de amor."</p>
+					</div>
+				</article>
 			</div>
-			<span>2024 ©Adóptame - Todos los derechos reservados</span>
-		</div>
-		<div class="flex justify-between gap-3 font-roboto">
-			<div class="flex flex-col gap-3">
+		</section>
+
+	<section id="about" class="bg-customPurple bg-cover bg-center bg-[url('/assets/img/huellas.png')] flex flex-col md:flex-row justify-center items-center h-auto py-24 px-6">
+		<article class="flex flex-col items-center p-6 w-full md:w-1/2">
+			<h2 class="font-roboto text-2xl font-bold text-center">Sobre nosotros</h2>
+			<ul class="font-bold font-roboto list-disc space-y-6 pt-6 pl-10">
+				<li>Promovemos la adopcion como un acto de responsabilidad y empatía.</li>
+				<li>Nuestra plataforma existe para dar voz a los animales que esperan una oportunidad de ser parte de una familia.</li>
+				<li>Colaboramos con refugios y protectoras para maximizar las oportunidades de adopción y asegurar que cada animal encuentre un hogar responsable.</li>
+				<li>Juntos, trabajamos por un futuro donde ningún animal se quede sin amor.</li>
+			</ul>
+		</article>
+
+		<article class="flex flex-col items-center p-6 w-full md:w-1/2">
+			<h2 class="font-roboto text-2xl font-bold text-center">Contáctanos</h2>
+			<form class="flex flex-col justify-around h-64 w-full md:w-96 mx-auto rounded-3xl font-roboto">
+				<label class="font-bold" for="nombre">Nombre</label>
+				<input type="text" class="w-full p-2 rounded-xl text-black" id="nombre" name="nombre" placeholder="Introduce tu nombre"/>
+				<label class="font-bold" for="mensaje">Mensaje</label>
+				<input type="text" class="w-full p-2 rounded-xl text-black" id="mensaje" name="mensaje" placeholder="Escribe tu mensaje"/>
+				<button class="w-32 p-2 bg-customBlue rounded-full text-white mt-5" type="submit">Enviar</button>
+			</form>
+		</article>
+	</section>
+
+
+
+
+	<footer class="bg-customBlack p-4 text-white pl-4">
+		<div class="flex flex-col sm:flex-row justify-evenly gap-4 mb-4">
+			<div class="font-roboto">
+				<a href="index.html" class="flex items-center mb-4">
+					<img src="assets/img/logo.png" alt="logo de adoptame" class="h-10" />
+					<p class="font-montserrat font-bold text-2xl ml-4">Adóptame, plataforma de adopción</p>
+				</a>
+				<div class="flex flex-col sm:flex-row justify-between sm:items-center w-full">
+					<p class="font-bold">Siguenos en nuestras redes sociales: </p>
+					<div class="flex gap-2">
+						<img class="w-8 h-8" src="assets/img/facebook.png" alt="">
+						<img class="w-8 h-8" src="assets/img/instagram.png" alt="">
+						<img class="w-8 h-8" src="assets/img/twiter.png" alt="">
+						<img class="w-8 h-8" src="assets/img/linkedin.png" alt="">
+						<img class="w-8 h-8" src="assets/img/youtube.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div>
 				<p class="font-bold">Horario de atención</p>
 				<p>De Lunes a Sábado de 9 a 18 horas</p>
 			</div>
-			<div class="flex flex-col gap-3">
+			<div>
 				<p class="font-bold">Contacto</p>
 				<p>948000000</p>
 				<p>info@adoptame.es</p>
 			</div>
+		</div>
+		<div class="sm:text-center">
+			<span>2024 ©Adóptame - Todos los derechos reservados</span>
 		</div>
 	</footer>
   </body>
