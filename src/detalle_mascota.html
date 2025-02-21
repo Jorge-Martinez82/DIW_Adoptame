@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Detalle mascota</title>
+    <link href="../dist/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="../assets/img/logo.png" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="m-2">
+      <nav class="flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
+          <p class="font-montserrat font-bold">Adoptame</p>
+        </a>
+        <ul class="flex gap-6 font-roboto">
+          <li><a class="hover:underline underline-offset-1" href="">Sobre nosotros</a></li>
+          <li><a class="hover:underline underline-offset-1" href="protectoras.html">Protectoras</a></li>
+          <li><a class="hover:underline underline-offset-1" href="mascotas.html">Mascotas</a></li>
+        </ul>
+        <a href="../index.html" class="font-roboto font-bold border-2 border-customBlue text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customBlue hover:text-white">Iniciar sesión</a>
+      </nav>
+    </header>
+    <section class="flex-grow flex justify-center items-center bg-customPurple">
+      <div class="container bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl flex">    
+          <div class="w-2/5 flex items-center justify-center p-4">
+            <img src="../assets/img/dobby.jpg" alt="Foto del animal" class="h-auto w-[100%] shadow-lg rounded-lg object-cover">
+          </div>    
+          <div class="w-3/5 flex flex-col justify-between my-4 p-4">
+            <div class="w-full mb-5">
+              <h2 class="text-4xl font-bold text-gray-800">Dobby</h2>
+            </div>
+            <div class="grid grid-cols-2 gap-2 items-center">
+              <p class="text-gray-600 text-lg"><span class="font-semibold">Edad:</span> 1 año</p>
+              <p class="text-gray-600 text-lg"><span class="font-semibold">Género:</span> Macho</p>
+              <p class="text-gray-600 text-lg"><span class="font-semibold">Protectora:</span> Patitas Felices</p>
+              <p class="text-gray-600 text-lg"><span class="font-semibold">Ubicación:</span> Madrid</p>
+              <p class="col-span-2 text-gray-600 text-lg"><span class="font-semibold">Descripción:</span> Dobby es un perro cariñoso y juguetón en busca de un hogar.</p>
+            </div>
+            <div class="flex justify-center items-center mt-4">
+              <button class="bg-customBlue text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition">Adóptame</button>
+            </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-customBlack flex justify-evenly p-4 text-white w-full">
+      <div class="flex flex-col gap-3 font-roboto">
+        <a href="../index.html" class="flex items-center gap-5">
+          <img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
+          <p class="font-montserrat font-bold text-2xl">Adóptame, plataforma de adopción</p>
+        </a>
+        <div class="flex justify-around items-center">
+          <p>Siguenos en nuestras redes sociales: </p>
+          <img class="w-8 h-8" src="../assets/img/facebook.png" alt="">
+          <img class="w-8 h-8" src="../assets/img/instagram.png" alt="">
+          <img class="w-8 h-8" src="../assets/img/twitter.png" alt="">
+          <img class="w-8 h-8" src="../assets/img/linkedin.png" alt="">
+          <img class="w-8 h-8" src="../assets/img/youtube.png" alt="">
+        </div>
+        <span>2024 ©Adóptame - Todos los derechos reservados</span>
+      </div>
+      <div class="flex justify-between gap-3 font-roboto">
+        <div class="flex flex-col gap-3">
+          <p class="font-bold">Horario de atención</p>
+          <p>De Lunes a Sábado de 9 a 18 horas</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <p class="font-bold">Contacto</p>
+          <p>948000000</p>
+          <p>info@adoptame.es</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
