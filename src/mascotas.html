@@ -199,19 +199,19 @@
 				mascotasDiv.innerHTML = mascotas
 					.map(
 						(x) => `
-			<div class="bg-white shadow-lg rounded-lg p-3">
-				<img src="../assets/img/mascotas/${x.imagen}" alt="${x.nombre}" class="w-full h-48 object-cover rounded-md">
-				<div class="p-4">
-					<h3 class="text-lg font-semibold text-gray-900">${x.nombre}</h3>
-					<ul class="mt-2 text-sm text-gray-500">
-						<li><strong>Categoría:</strong> <span class="capitalize">${x.categoria}</span></li>
-						<li><strong>Edad:</strong> ${x.edad} años</li>
-						<li><strong>Prioridad:</strong> ${x.prioridad}</li>
-					</ul>
-					<p class="mt-2 text-gray-900 font-medium">${x.protectora}</p>
-				</div>
-			</div>
-		`
+							<div class="bg-white shadow-lg rounded-lg p-3">
+								<img src="../assets/img/mascotas/${x.imagen}" alt="${x.nombre}" class="w-full h-48 object-cover rounded-md">
+								<div class="p-4">
+									<h3 class="text-lg font-semibold text-gray-900">${x.nombre}</h3>
+									<ul class="mt-2 text-sm text-gray-500">
+										<li><strong>Categoría:</strong> <span class="capitalize">${x.categoria}</span></li>
+										<li><strong>Edad:</strong> ${x.edad} años</li>
+										<li><strong>Prioridad:</strong> ${x.prioridad}</li>
+									</ul>
+									<p class="mt-2 text-gray-900 font-medium">${x.protectora}</p>
+								</div>
+							</div>
+						`
 					)
 					.join('')
 			}
