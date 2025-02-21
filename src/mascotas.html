@@ -4,7 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Mascotas</title>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
 		<link href="../dist/css/styles.css" rel="stylesheet" />
+		<script src="../assets/js/index.js"></script>
 	</head>
 	<body>
 		<header class="m-2">
@@ -47,37 +52,27 @@
 		</header>
 
 		<main>
-			<section
-				class="flex h-64 w-full items-center justify-center bg-[url('http://127.0.0.1:5500/assets/img/huellas.png')] bg-cover bg-center"
-			>
-				<div
-					class="flex w-[90%] max-w-2xl items-end gap-4 rounded-lg bg-black/80 p-6 backdrop-blur-md"
-				>
+			<section class="relative flex h-80 w-full items-center justify-center bg-gray-300">
+				<!-- Imagen de fondo con opacidad -->
+				<div class="absolute inset-0 bg-[url('../../assets/img/gato-mascotas.webp')] bg-cover bg-center opacity-30"></div>
+
+				<!-- Contenido sobre el fondo -->
+				<div class="relative flex w-[90%] max-w-2xl items-end gap-4 rounded-lg bg-black/80 p-6 backdrop-blur-md">
 					<div class="flex w-full flex-col gap-4 md:flex-row">
 						<div class="w-full">
-							<label for="tipo" class="block text-sm font-semibold text-white"
-								>Tipo de mascota</label
-							>
-							<select
-								id="tipo"
-								class="w-full rounded bg-white p-2 text-gray-800"
-							>
+							<label for="tipo" class="block text-sm font-semibold text-white">Tipo de mascota</label>
+							<select id="tipo" class="w-full rounded bg-white p-2 text-gray-800">
 								<option value="todos">Perros, gatos, aves...</option>
-								<option value="perros">Perros</option>
-								<option value="gatos">Gatos</option>
+								<option value="conejos">🐰 Conejos</option>
+								<option value="gatos">🐱 Gatos</option>
+								<option value="perros">🐶 Perros</option>
+								<option value="tortugas">🐢 Tortugas</option>
 							</select>
 						</div>
 
 						<div class="w-full">
-							<label
-								for="provincia"
-								class="block text-sm font-semibold text-white"
-								>Localización</label
-							>
-							<select
-								id="provincia"
-								class="w-full rounded bg-white p-2 text-gray-800"
-							>
+							<label for="provincia" class="block text-sm font-semibold text-white">Localización</label>
+							<select id="provincia" class="w-full rounded bg-white p-2 text-gray-800">
 								<option value="todos">Todas</option>
 								<option value="navarra">Navarra</option>
 								<option value="álava">Álava</option>
@@ -87,10 +82,7 @@
 						</div>
 
 						<div class="self-end">
-							<button
-								class="rounded bg-customBlue px-6 py-2 font-semibold text-white hover:bg-customBlueHover"
-								id="buscar"
-							>
+							<button class="rounded bg-customBlue px-6 py-2 font-semibold text-white hover:customBlueHover-700" id="buscar">
 								Buscar
 							</button>
 						</div>
@@ -98,17 +90,15 @@
 				</div>
 			</section>
 
-			<section class="mt-10 rounded-lg bg-purple-100 p-10">
-				<h2
-					class="mb-6 text-2xl font-bold text-gray-800"
-					id="cantidad_resultados"
-				>
-					Sin resultados
-				</h2>
-				<div
-					class="xs:grid-cols-1 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
-					id="resultados_mascotas"
-				></div>
+			<section class="relative rounded-lg p-10 bg-customPurple">
+				<div class="absolute inset-0 bg-[url('../../assets/img/huellas.png')] bg-cover bg-center opacity-10 rounded-lg"></div>
+
+				<div class="relative">
+					<h2 class="mb-6 text-2xl font-bold text-gray-800" id="cantidad_resultados">
+						Sin resultados
+					</h2>
+					<div class="xs:grid-cols-1 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6" id="resultados_mascotas"></div>
+				</div>
 			</section>
 		</main>
 
@@ -154,16 +144,6 @@
 		</footer>
 
 		<script>
-			const obtenerValoresURLYRefrescarSelectores = () => {
-				const params = new URLSearchParams(window.location.search)
-
-				const idProtectora = params.get('idProtectora')
-				const provincia = params.get('provincia')
-				const categoria = params.get('categoria')
-			}
-
-			obtenerValoresURLYRefrescarSelectores()
-
 			const mascotasDiv = document.querySelector('#resultados_mascotas')
 			const cantidadResultadosH1 = document.querySelector(
 				'#cantidad_resultados'
@@ -174,8 +154,15 @@
 			const provinciaSelector = document.querySelector('#provincia')
 
 			const buscar = () => {
+				const idProtectora = new URLSearchParams(window.location.search).get(
+					'idProtectora'
+				)
+
 				const params = new URLSearchParams()
 
+				if (idProtectora) {
+					params.append('idProtectora', idProtectora)
+				}
 				if (tipoSelector.value !== 'todos') {
 					params.append('categoria', tipoSelector.value)
 				}
@@ -183,7 +170,7 @@
 					params.append('provincia', provinciaSelector.value)
 				}
 
-				const url = `http://localhost:3000/mascotas${params.toString() ? `?${params.toString()}` : ''}`
+				const url = `${URL_BACKEND}/mascotas${params.toString() ? `?${params.toString()}` : ''}`
 
 				fetch(url)
 					.then((response) => response.json())
@@ -199,26 +186,82 @@
 				mascotasDiv.innerHTML = mascotas
 					.map(
 						(x) => `
-							<div class="bg-white shadow-lg rounded-lg p-3">
-								<img src="../assets/img/mascotas/${x.imagen}" alt="${x.nombre}" class="w-full h-48 object-cover rounded-md">
-								<div class="p-4">
-									<h3 class="text-lg font-semibold text-gray-900">${x.nombre}</h3>
-									<ul class="mt-2 text-sm text-gray-500">
-										<li><strong>Categoría:</strong> <span class="capitalize">${x.categoria}</span></li>
-										<li><strong>Edad:</strong> ${x.edad} años</li>
-										<li><strong>Prioridad:</strong> ${x.prioridad}</li>
-									</ul>
-									<p class="mt-2 text-gray-900 font-medium">${x.protectora}</p>
+							<a href="./detalle_mascota.html?id=${x.id}" class="block h-full" alt="Ver detalle de ${x.nombre}" title="Ver detalle de ${x.nombre}">
+								<div class="bg-white shadow-lg rounded-lg p-3 hover:shadow-xl transition">
+									<div class="relative">
+										<picture>
+											${x.imagenSmall ? `	<source
+												srcset="../assets/img/mascotas/${x.imagenSmall}"
+												media="(max-width: 767px)"
+											/>` : ''}
+											<source
+												srcset="../assets/img/mascotas/${x.imagen}"
+												media="(min-width: 768px)"
+											/>
+											<img
+												src="../assets/img/mascotas/${x.imagen}"
+												alt="Imagen de ${x.nombre}"
+												title="Imagen de ${x.nombre}"
+												class="w-full h-48 object-cover rounded-md"
+												loading="lazy"
+											/>
+										</picture>
+										<div class="absolute top-2 right-2 flex flex-col gap-2">
+											<button class="px-1 pt-1 rounded-full bg-red-500 hover:bg-red-700 text-white" onclick="favoritos(event)" title="Añadir a favoritos" alt="Añadir a favoritos">
+											<span class="material-icons">favorite</span>
+										</button>
+
+										<button class="px-1 pt-1 rounded-full bg-customBlue hover:bg-customBlueHover text-white" onclick="compartir(event)" title="Compartir" alt="Compartir">
+											<span class="material-icons">share</span>
+										</button>
+										</div>
+									</div>
+									<div class="p-4">
+										<h3 class="text-lg font-semibold text-gray-900">${x.nombre}</h3>
+										<p class="capitalize">${x.categoria}</p>
+										<ul class="mt-2 text-sm text-gray-500">
+											<li class="inline"><strong>Edad:</strong> ${x.edad} años</li>
+											<li class="inline"><strong>Prioridad:</strong> ${x.prioridad}</li>
+										</ul>
+										<p class="mt-2 text-gray-900 font-medium">${x.protectora}</p>
+									</div>
 								</div>
-							</div>
+							</a>
 						`
 					)
 					.join('')
 			}
 
-			fetch('http://localhost:3000/mascotas')
-				.then((response) => response.json())
-				.then(generarMascotas)
+			const actualizarSelectores = ({ provincia, categoria }) => {
+				tipoSelector.value = categoria
+				provinciaSelector.value = provincia
+			}
+
+			const obtenerValoresURLYRefrescarSelectores = () => {
+				const params = new URLSearchParams(window.location.search)
+
+				const provincia = params.get('provincia')
+				const categoria = params.get('categoria')
+
+				actualizarSelectores({
+					provincia: provincia || 'todos',
+					categoria: categoria || 'todos',
+				})
+
+				buscar()
+			}
+
+			obtenerValoresURLYRefrescarSelectores()
+
+			function favoritos(event) {
+				event.preventDefault()
+				alert('Añadido a favoritos')
+			}
+
+			function compartir(event) {
+				event.preventDefault()
+				alert('Compartido')
+			}
 		</script>
 	</body>
 </html>
