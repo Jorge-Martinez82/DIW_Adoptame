@@ -47,9 +47,9 @@
   - Recuerda que el diseño debe estar optimizado para la versión móvil (máximo 768px) y para escritorio (pantallas más grandes).
 
 - [ ] **Repositorio GitHub**
-  - Crea un repositorio en GitHub llamado `adoptame-html-css`.
-  - Subir el código al repositorio, organizando las carpetas correctamente (por ejemplo: `index.html`, `css/`, `images/`).
-  - Realiza commits frecuentes con mensajes claros sobre lo que se está implementando (ej.: "Añadida pantalla de inicio", "Diseñadas las tarjetas de animales", etc.).
+    - Crea un repositorio en GitHub llamado `adoptame-html-css`.
+    - Subir el código al repositorio, organizando las carpetas correctamente (por ejemplo: `index.html`, `css/`, `images/`).
+    - Realiza commits frecuentes con mensajes claros sobre lo que se está implementando (ej.: "Añadida pantalla de inicio", "Diseñadas las tarjetas de animales", etc.).
 
 "dev": "npx tailwindcss -i ./assets/css/input.css -o ./dist/css/styles.css --watch",
 "build": "npx tailwindcss -m ./assets/css/input.css -o ./dist/css/styles.css",
