@@ -16,94 +16,59 @@
 		/>
 	</head>
 	<body class="flex min-h-screen flex-col">
-		<header class="m-2">
+		<header class="m-2 relative z-10">
 			<nav class="flex items-center justify-between">
-				<a href="../index.html" class="flex items-center gap-3">
-					<img
-						src="../assets/img/logo.png"
-						alt="logo de adoptame"
-						class="h-10"
-					/>
-					<p class="font-montserrat font-bold">Adoptame</p>
-				</a>
+			  <a href="../index.html" class="flex items-center gap-3">
+				<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10"/>
+				<p class="font-montserrat font-bold">Adoptame</p>
+			  </a>
+			  <!-- Version escritorio -->
+			  <div class="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
 				<ul class="flex gap-6 font-roboto">
-					<li>
-						<a class="underline-offset-1 hover:underline" href=""
-							>Sobre nosotros</a
-						>
-					</li>
-					<li>
-						<a
-							class="underline-offset-1 hover:underline"
-							href="protectoras.html"
-							>Protectoras</a
-						>
-					</li>
-					<li>
-						<a class="underline-offset-1 hover:underline" href="mascotas.html"
-							>Mascotas</a
-						>
-					</li>
+				  <li><a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a></li>
+				  <li><a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a></li>
+				  <li><a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a></li>
 				</ul>
-				<a
-					href="../index.html"
-					class="rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white"
-					>Iniciar sesión</a
-				>
+			  </div>
+			  <a href="login.html"
+				 class="hidden sm:block rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+				Iniciar sesión
+			  </a>
+		  
+			  <!-- Version movil -->
+			  <button id="menu-btn" class="block sm:hidden">
+				<img src="../assets/img/menu_movil.svg" alt="Abrir menú" class="w-8 h-8"/>
+			  </button>
 			</nav>
-		</header>
+		  
+			<!-- menu movil desplegado -->
+			<ul id="menu"
+				class="hidden flex-col items-center gap-4 absolute top-16 left-0 w-full bg-white p-4 shadow-lg sm:hidden">
+			  <li><a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a></li>
+			  <li><a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a></li>
+			  <li><a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a></li>
+			  <li class="w-full text-center">
+				<a href="login.html"
+				   class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+				  Iniciar sesión
+				</a>
+			  </li>
+			</ul>
+		  </header>
+		  
+		  <script>
+			const menuBtn = document.getElementById("menu-btn");
+			const menu = document.getElementById("menu");
+			// Mostrar el menu al hacer click en el desplegable
+			menuBtn.addEventListener("click", () => {
+			  menu.classList.toggle("hidden");
+			});
+		  </script>
+
 		<main class="flex flex-grow items-center justify-center bg-customPurple">
 			<section
 				id="seccion-principal"
-				class="flex flex-grow items-center justify-center bg-customPurple"
-			>
-				<div
-					class="container flex w-full max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg"
-				>
-					<div class="flex w-2/5 items-center justify-center p-4">
-						<img
-							src="../assets/img/dobby.jpg"
-							id="imagenMascota"
-							alt="Foto del animal"
-							class="h-auto w-[100%] rounded-lg object-cover shadow-lg"
-						/>
-					</div>
-					<div class="my-4 flex w-3/5 flex-col justify-between p-4">
-						<div class="mb-5 w-full">
-							<h2 id="nombreMascota" class="text-4xl font-bold text-gray-800">
-								Dobby
-							</h2>
-						</div>
-						<div class="grid grid-cols-2 items-center gap-2">
-							<p id="edadMascota" class="text-lg text-gray-600">
-								<span class="font-semibold">Edad: </span>2 años
-							</p>
-							<p id="generoMascota" class="text-lg text-gray-600">
-								<span class="font-semibold">Género: </span>Macho
-							</p>
-							<p id="protectoraMascota" class="text-lg text-gray-600">
-								<span class="font-semibold">Protectora: </span>Protectora Madrid
-							</p>
-							<p id="localizacionMascota" class="text-lg text-gray-600">
-								<span class="font-semibold">Ubicación: </span>Madrid
-							</p>
-							<p
-								id="descripcionMascota"
-								class="col-span-2 text-lg text-gray-600"
-							>
-								<span class="font-semibold">Descripción: </span>Es muy cariñoso
-								y le encanta jugar a recoger la pelota.
-							</p>
-						</div>
-						<div class="mt-4 flex items-center justify-center">
-							<button
-								class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400"
-							>
-								Adóptame
-							</button>
-						</div>
-					</div>
-				</div>
+				class="flex flex-grow items-center justify-center bg-customPurple">
 			</section>
 		</main>
 		<footer class="flex w-full justify-evenly bg-customBlack p-4 text-white">
@@ -161,22 +126,43 @@
 					mostrarDetalles(mascota);
 				} else {
 					console.error("Mascota no encontrada");
-					document.getElementById("seccion-principal").innerHTML = "<p>Mascota no encontrada.</p>";
+					document.getElementById("seccion-principal").innerHTML = `<p class="text-2xl">Mascota no encontrada</p>`;
 				}
 				})
 				.catch(error => console.error("Error al obtener datos:", error));
 
 			function mostrarDetalles(mascota) {
-				document.getElementById("nombreMascota").textContent = mascota.nombre;
-				document.getElementById("generoMascota").textContent = mascota.genero;
-				document.getElementById("edadMascota").textContent = `${mascota.edad} año(s)`;
-				document.getElementById("localizacionMascota").textContent = mascota.provincia;
-				document.getElementById("protectoraMascota").textContent = mascota.protectora;
-				document.getElementById("descripcionMascota").textContent = mascota.descripcion;
+				document.getElementById("seccion-principal").innerHTML = `
+				<div class="container flex max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg my-10 mx-10">
+					<div class="flex w-2/5 items-center justify-center p-4">
+						<img src="" id="imagenMascota"alt="" class="h-auto w-[100%] rounded-lg object-cover shadow-lg"/>
+					</div>
+					<div class="my-4 flex w-3/5 flex-col justify-between p-4">
+						<div class="mb-5 w-full">
+							<h2 id="nombreMascota" class="text-4xl font-bold text-gray-800"></h2>
+						</div>
+						<div class="grid grid-cols-2 items-center gap-2">
+							<p id="edadMascota" class="text-lg text-gray-600"><span class="font-semibold">Edad: </span></p>
+							<p id="generoMascota" class="text-lg text-gray-600"><span class="font-semibold">Género: </span></p>
+							<p id="protectoraMascota" class="text-lg text-gray-600"><span class="font-semibold">Protectora: </span></p>
+							<p id="localizacionMascota" class="text-lg text-gray-600"><span class="font-semibold">Ubicación: </span></p>
+							<p id="descripcionMascota" class="col-span-2 text-lg text-gray-600"><span class="font-semibold">Descripción: </span></p>
+						</div>
+						<div class="mt-4 flex items-center justify-center">
+							<button class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400">Adóptame</button>
+						</div>
+					</div>
+				</div>`;
 				document.getElementById("imagenMascota").src = mascota.imagen;
 				document.getElementById("imagenMascota").alt = `Foto de ${mascota.nombre}`;
-				document.getElementById("imagenSmMascota").src = mascota.imagen_sm;
+				document.getElementById("nombreMascota").textContent = mascota.nombre;
+				document.getElementById("edadMascota").textContent = `${mascota.edad} año(s)`;
+				document.getElementById("generoMascota").textContent = mascota.genero;
+				document.getElementById("protectoraMascota").textContent = mascota.protectora;
+				document.getElementById("localizacionMascota").textContent = mascota.provincia;
+				document.getElementById("descripcionMascota").textContent = mascota.descripcion;	
 			}
+
 		</script>
 	</body>
 </html>

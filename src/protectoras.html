@@ -16,44 +16,55 @@
 		/>
 	</head>
 	<body class="flex min-h-screen flex-col">
-		<header class="m-2">
-			<nav class="flex items-center justify-between">
-				<a href="../index.html" class="flex items-center gap-3">
-					<img
-						src="../assets/img/logo.png"
-						alt="logo de adoptame"
-						class="h-10"
-					/>
-					<p class="font-montserrat font-bold">Adoptame</p>
-				</a>
-				<ul class="flex gap-6 font-roboto">
-					<li>
-						<a class="underline-offset-1 hover:underline" href=""
-							>Sobre nosotros</a
-						>
-					</li>
-					<li>
-						<a
-							class="underline-offset-1 hover:underline"
-							href="protectoras.html"
-							>Protectoras</a
-						>
-					</li>
-					<li>
-						<a
-							class="underline-offset-1 hover:underline"
-							href="../src/mascotas.html"
-							>Mascotas</a
-						>
-					</li>
-				</ul>
-				<a
-					href="../index.html"
-					class="rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white"
-					>Iniciar sesión</a
-				>
-			</nav>
-		</header>
+		<header class="m-2 relative z-10">
+      <nav class="flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10"/>
+          <p class="font-montserrat font-bold">Adoptame</p>
+        </a>
+        <!-- Version escritorio -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
+          <ul class="flex gap-6 font-roboto">
+            <li><a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a></li>
+            <li><a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a></li>
+            <li><a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a></li>
+          </ul>
+        </div>
+        <a href="login.html"
+           class="hidden sm:block rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+          Iniciar sesión
+        </a>
+    
+        <!-- Version movil -->
+        <button id="menu-btn" class="block sm:hidden">
+          <img src="../assets/img/menu_movil.svg" alt="Abrir menú" class="w-8 h-8"/>
+        </button>
+      </nav>
+    
+      <!-- menu movil desplegado -->
+      <ul id="menu"
+          class="hidden flex-col items-center gap-4 absolute top-16 left-0 w-full bg-white p-4 shadow-lg sm:hidden">
+        <li><a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a></li>
+        <li><a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a></li>
+        <li><a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a></li>
+        <li class="w-full text-center">
+          <a href="login.html"
+             class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+            Iniciar sesión
+          </a>
+        </li>
+      </ul>
+    </header>
+    
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      // Mostrar el menu al hacer click en el desplegable
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
 		<main class="flex-grow bg-customPurple">
 			<section
 				class="flex flex-col items-center justify-center bg-[url('../assets/img/portada.jpg')]"
@@ -218,14 +229,14 @@
 					lista.forEach((protectora) => {
 						const tarjetaProtectora = document.createElement('div')
 						tarjetaProtectora.className =
-							'container bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-6xl flex my-5'
+							'container bg-white shadow-lg rounded-lg overflow-hidden w-[80%] max-w-6xl flex my-5'
 						tarjetaProtectora.innerHTML = `
                       <div class="w-2/6 flex items-center justify-center p-4">
                           <img src="${protectora.foto}" alt="Foto de la protectora" class="h-auto w-[100%] shadow-lg rounded-lg object-cover">
                       </div>    
                       <div class="w-3/6 flex flex-col justify-around my-5 p-4">
                           <div class="w-full">
-                              <h2 class="text-4xl font-bold text-gray-800">${protectora.nombre}</h2>
+                              <h2 class="text-4xl font-bold text-gray-800 mb-5">${protectora.nombre}</h2>
                           </div>
                           <div class="items-center">
                               <p class="text-gray-600 text-lg"><span class="font-semibold">Ciudad:</span> ${protectora.ciudad}</p>
