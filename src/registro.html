@@ -70,14 +70,35 @@
 
 <main>
 	<section
-		class="relative flex h-[600px] flex-col items-center justify-center bg-[url('/assets/img/fondo_login.jpg')] bg-cover bg-center"
+		class="relative flex h-[600px] flex-col items-center justify-center bg-[url('/assets/img/fondo_registro.jpg')] bg-cover bg-center"
 	>
 		<div class="absolute inset-0 bg-white/40"></div>
 
 		<div class="relative flex flex-col items-center justify-center">
 
 			<form
-				class="mx-auto flex h-64 w-96 flex-col items-center justify-around rounded-3xl bg-black bg-opacity-75 p-10 py-3 font-roboto text-white">
+				class="mx-auto flex h-auto w-96 gap-2 flex-col items-center justify-around rounded-3xl bg-black bg-opacity-75 p-10 py-5 font-roboto text-white"
+			>
+				<label for="nombre" class="block text-sm font-semibold text-white">Nombre</label>
+				<input
+					type="text"
+					id="nombre"
+					name="nombre"
+					class="w-full rounded bg-white p-2 text-gray-800"
+					placeholder="Introduce tu nombre"
+					required
+				/>
+
+				<label for="apellidos" class="block text-sm font-semibold text-white">Apellidos</label>
+				<input
+					type="text"
+					id="apellidos"
+					name="apellidos"
+					class="w-full rounded bg-white p-2 text-gray-800"
+					placeholder="Introduce tus apellidos"
+					required
+				/>
+
 				<label for="email" class="block text-sm font-semibold text-white">Correo electrónico</label>
 				<input
 					type="email"
@@ -98,16 +119,22 @@
 					required
 				/>
 
-				<div class="mt-5 flex gap-4">
-					<button class="w-32 rounded-full bg-customBlue p-2 text-white transition duration-300 hover:bg-customPurple hover:text-black" type="submit">
-						Iniciar sesión
-					</button>
-
-					<a href="registro.html" class="w-32 rounded-full border-2 border-customBlue text-white p-2 bg-transparent flex items-center justify-center transition duration-300 hover:bg-customPurple hover:text-black">
-						Registrarse
-					</a>
+				<div class="mt-4 flex gap-4">
+					<label class="flex items-center">
+						<input type="radio" name="tipo_usuario" value="adoptante" class="mr-2 accent-customBlue" required />
+						Soy adoptante
+					</label>
+					<label class="flex items-center">
+						<input type="radio" name="tipo_usuario" value="protectora" class="mr-2 accent-customBlue" required />
+						Soy protectora
+					</label>
 				</div>
+
+				<button class="mt-5 w-32 rounded-full bg-customBlue p-2 text-white transition duration-300 hover:bg-customPurple hover:text-black" type="submit">
+					Registrarse
+				</button>
 			</form>
+
 		</div>
 	</section>
 
