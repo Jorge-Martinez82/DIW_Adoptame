@@ -1,10 +1,6 @@
 {
 	"name": "adoptame",
 	"version": "1.0.0",
-<<<<<<< HEAD
-	"main": "index.js",
-=======
->>>>>>> 30a687d9d60e07055fad8bba69ac80a3934c9e67
 	"scripts": {
 		"dev": "npx tailwindcss -i ./assets/css/input.css -o ./dist/css/styles.css --watch",
 		"build": "npx tailwindcss -m ./assets/css/input.css -o ./dist/css/styles.css",

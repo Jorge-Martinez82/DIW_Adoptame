@@ -100,7 +100,7 @@
 			<section class="flex flex-col items-center justify-center">
 				<div
 					id="protectorasContainer"
-					class="my-10 flex min-h-[80vh] w-full max-w-6xl flex-col items-center"
+					class="my-10 flex w-full max-w-6xl flex-col items-center"
 				></div>
 			</section>
 		</main>
@@ -215,7 +215,7 @@
 					protectorasContainer.innerHTML = ''
 
 					if (lista.length === 0) {
-						protectorasContainer.innerHTML = `<p class="text-center font-semibold text-2xl max-w-96">No hay protectoras en la provincia seleccionada</p>`
+						protectorasContainer.innerHTML = `<p class="text-center font-semibold text-2xl flex-grow mx-5">No tenemos protectoras registradas en la provincia seleccionada</p>`
 						return
 					}
 
