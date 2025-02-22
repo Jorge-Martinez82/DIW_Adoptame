@@ -161,11 +161,11 @@
 				document.getElementById("imagenMascota").src = `../assets/img/mascotas/${mascota.imagen}`;
 				document.getElementById("imagenMascota").alt = `Foto de ${mascota.nombre}`;
 				document.getElementById("nombreMascota").textContent = mascota.nombre;
-				document.getElementById("edadMascota").textContent = `<span class="font-semibold text-xl">Edad: </span>${mascota.edad} año(s)`;
-				document.getElementById("generoMascota").textContent = `<span class="font-semibold text-xl">Género: </span>${mascota.genero}`;
-				document.getElementById("protectoraMascota").textContent = `<span class="font-semibold text-xl">Protectora: </span></p>${mascota.protectora}`;
-				document.getElementById("localizacionMascota").textContent = `<span class="font-semibold text-xl">Ubicación: </span></p>${mascota.provincia}`;
-				document.getElementById("descripcionMascota").textContent = `<span class="font-semibold text-xl">Descripción: </span></p>${mascota.descripcion}`;	
+				document.getElementById("edadMascota").innerHTML = `<span class="font-semibold text-xl">Edad: </span>${mascota.edad} año(s)`;
+				document.getElementById("generoMascota").innerHTML = `<span class="font-semibold text-xl">Género: </span>${mascota.genero}`;
+				document.getElementById("protectoraMascota").innerHTML = `<span class="font-semibold text-xl">Protectora: </span></p>${mascota.protectora}`;
+				document.getElementById("localizacionMascota").innerHTML = `<span class="font-semibold text-xl">Ubicación: </span></p>${mascota.provincia}`;
+				document.getElementById("descripcionMascota").innerHTML = `<span class="font-semibold text-xl">Descripción: </span></p>${mascota.descripcion}`;	
 			}
 		</script>
 	</body>
