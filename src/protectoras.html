@@ -1,127 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Protectoras</title>
-    <link href="../dist/css/styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/vnd.microsoft.icon" href="../assets/img/logo.png" />
-  </head>
-  <body class="min-h-screen flex flex-col">
-    <header class="m-2">
-      <nav class="flex items-center justify-between">
-        <a href="../index.html" class="flex items-center gap-3">
-          <img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
-          <p class="font-montserrat font-bold">Adoptame</p>
-        </a>
-        <ul class="flex gap-6 font-roboto">
-          <li><a class="hover:underline underline-offset-1" href="">Sobre nosotros</a></li>
-          <li><a class="hover:underline underline-offset-1" href="protectoras.html">Protectoras</a></li>
-          <li><a class="hover:underline underline-offset-1" href="../src/mascotas.html">Mascotas</a></li>
-        </ul>
-        <a href="../index.html" class="font-roboto font-bold border-2 border-customBlue text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customBlue hover:text-white">Iniciar sesión</a>
-      </nav>
-    </header>
-    <main class="flex-grow bg-customPurple">
-      <section class="bg-[url('../assets/img/portada.jpg')] flex flex-col justify-center items-center">
-        <div class="container w-full h-96 flex justify-center items-center">
-            <div class="bg-customBlack text-white h-[50%] w-[50%] p-6 gap-4 rounded-3xl flex flex-col items-center">
-                <div class="container w-[100%] h-12 justify-items-start p-6">
-                    <p class="text-lg font-semibold mb-2">Localización</p>
-                </div>
-                <div class="flex flex-row w-full justify-around">                
-                    <select id="provincia" class="w-[75%] h-12 p-2 outline-none text-gray-700 rounded-lg shadow-md">
-                        <option value="">Elige provincia</option>
-                    </select>
-                    <button id="buscar" class="bg-customBlue text-white px-6 rounded-lg hover:bg-blue-400 transition h-12 flex items-center justify-center">Buscar</button>
-                </div>
-            </div>
-        </div>
-      </section>
-      <section class="flex flex-col justify-center items-center">
-        <div id="protectorasContainer" class="w-full max-w-6xl min-h-[80vh] flex flex-col items-center my-10"></div>
-      </section>
-    </main>
-    <footer class="bg-customBlack flex justify-evenly p-4 text-white w-full">
-      <div class="flex flex-col gap-3 font-roboto">
-        <a href="../index.html" class="flex items-center gap-5">
-          <img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
-          <p class="font-montserrat font-bold text-2xl">Adóptame, plataforma de adopción</p>
-        </a>
-        <div class="flex justify-around items-center">
-          <p>Siguenos en nuestras redes sociales: </p>
-          <img class="w-8 h-8" src="../assets/img/facebook.png" alt="">
-          <img class="w-8 h-8" src="../assets/img/instagram.png" alt="">
-          <img class="w-8 h-8" src="../assets/img/twitter.png" alt="">
-          <img class="w-8 h-8" src="../assets/img/linkedin.png" alt="">
-          <img class="w-8 h-8" src="../assets/img/youtube.png" alt="">
-        </div>
-        <span>2024 ©Adóptame - Todos los derechos reservados</span>
-      </div>
-      <div class="flex justify-between gap-3 font-roboto">
-        <div class="flex flex-col gap-3">
-          <p class="font-bold">Horario de atención</p>
-          <p>De Lunes a Sábado de 9 a 18 horas</p>
-        </div>
-        <div class="flex flex-col gap-3">
-          <p class="font-bold">Contacto</p>
-          <p>948000000</p>
-          <p>info@adoptame.es</p>
-        </div>
-      </div>
-    </footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-          const selectorProvincia = document.getElementById("provincia");
-          const botonBuscar = document.getElementById("buscar");
-          const protectorasContainer = document.getElementById("protectorasContainer");
-      
-          const provincias = [
-              "Álava", "Albacete", "Alicante", "Almería", "Asturias", "Ávila", 
-              "Badajoz", "Barcelona", "Burgos", "Cáceres", "Cádiz", "Cantabria", 
-              "Castellón", "Ciudad Real", "Córdoba", "La Coruña", "Cuenca", "Gerona", 
-              "Granada", "Guadalajara", "Guipúzcoa", "Huelva", "Huesca", "Islas Baleares", 
-              "Jaén", "León", "Lérida", "Lugo", "Madrid", "Málaga", "Murcia", 
-              "Navarra", "Orense", "Palencia", "Las Palmas", "Pontevedra", "La Rioja", 
-              "Salamanca", "Segovia", "Sevilla", "Soria", "Tarragona", "Santa Cruz de Tenerife", 
-              "Teruel", "Toledo", "Valencia", "Valladolid", "Vizcaya", "Zamora", "Zaragoza"
-          ];
-      
-          provincias.forEach(prov => {
-              const option = document.createElement("option");
-              option.value = prov;
-              option.textContent = prov;
-              selectorProvincia.appendChild(option);
-          });
-      
-          let protectoras = [];
-      
-          fetch("../backend/backend.json")
-              .then(respuesta => respuesta.json())
-              .then(datos => {
-                  protectoras = datos.protectoras;
-                  mostrarProtectoras(protectoras);
-              })
-              .catch(error => console.error("Error cargando los datos:", error));
-      
-          function mostrarProtectoras(lista) {
-              protectorasContainer.innerHTML = "";
-              
-              if (lista.length === 0) {
-                  protectorasContainer.innerHTML = `<p class="text-center text-gray-700 font-semibold text-xl">No hay protectoras en la provincia seleccionada.</p>`;
-                  return;
-              }
-      
-              const mensajeResultados = document.createElement("p");
-              mensajeResultados.className = "text-center text-gray-700 font-semibold text-xl mb-4";
-              mensajeResultados.textContent = `${lista.length} resultado(s)`;
-              protectorasContainer.appendChild(mensajeResultados);
-      
-              lista.forEach(protectora => {
-                  const tarjetaProtectora = document.createElement("div");
-                  tarjetaProtectora.className = "container bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-6xl flex my-5";
-                  tarjetaProtectora.innerHTML = `
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Protectoras</title>
+		<link href="../dist/css/styles.css" rel="stylesheet" />
+		<link
+			rel="icon"
+			type="image/vnd.microsoft.icon"
+			href="../assets/img/logo.png"
+		/>
+	</head>
+	<body class="flex min-h-screen flex-col">
+		<header class="m-2">
+			<nav class="flex items-center justify-between">
+				<a href="../index.html" class="flex items-center gap-3">
+					<img
+						src="../assets/img/logo.png"
+						alt="logo de adoptame"
+						class="h-10"
+					/>
+					<p class="font-montserrat font-bold">Adoptame</p>
+				</a>
+				<ul class="flex gap-6 font-roboto">
+					<li>
+						<a class="underline-offset-1 hover:underline" href=""
+							>Sobre nosotros</a
+						>
+					</li>
+					<li>
+						<a
+							class="underline-offset-1 hover:underline"
+							href="protectoras.html"
+							>Protectoras</a
+						>
+					</li>
+					<li>
+						<a
+							class="underline-offset-1 hover:underline"
+							href="../src/mascotas.html"
+							>Mascotas</a
+						>
+					</li>
+				</ul>
+				<a
+					href="../index.html"
+					class="rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white"
+					>Iniciar sesión</a
+				>
+			</nav>
+		</header>
+		<main class="flex-grow bg-customPurple">
+			<section
+				class="flex flex-col items-center justify-center bg-[url('../assets/img/portada.jpg')]"
+			>
+				<div class="container flex h-96 w-full items-center justify-center">
+					<div
+						class="flex h-[50%] w-[50%] flex-col items-center gap-4 rounded-3xl bg-customBlack p-6 text-white"
+					>
+						<div class="container h-12 w-[100%] justify-items-start p-6">
+							<p class="mb-2 text-lg font-semibold">Localización</p>
+						</div>
+						<div class="flex w-full flex-row justify-around">
+							<select
+								id="provincia"
+								class="h-12 w-[75%] rounded-lg p-2 text-gray-700 shadow-md outline-none"
+							>
+								<option value="">Elige provincia</option>
+							</select>
+							<button
+								id="buscar"
+								class="flex h-12 items-center justify-center rounded-lg bg-customBlue px-6 text-white transition hover:bg-blue-400"
+							>
+								Buscar
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="flex flex-col items-center justify-center">
+				<div
+					id="protectorasContainer"
+					class="my-10 flex min-h-[80vh] w-full max-w-6xl flex-col items-center"
+				></div>
+			</section>
+		</main>
+		<footer class="flex w-full justify-evenly bg-customBlack p-4 text-white">
+			<div class="flex flex-col gap-3 font-roboto">
+				<a href="../index.html" class="flex items-center gap-5">
+					<img
+						src="../assets/img/logo.png"
+						alt="logo de adoptame"
+						class="h-10"
+					/>
+					<p class="font-montserrat text-2xl font-bold">
+						Adóptame, plataforma de adopción
+					</p>
+				</a>
+				<div class="flex items-center justify-around">
+					<p>Siguenos en nuestras redes sociales:</p>
+					<img class="h-8 w-8" src="../assets/img/facebook.png" alt="logo de Facebook" />
+					<img class="h-8 w-8" src="../assets/img/instagram.png" alt="logo de Instagram" />
+					<img class="h-8 w-8" src="../assets/img/twitter.png" alt="logo de Twitter" />
+					<img class="h-8 w-8" src="../assets/img/linkedin.png" alt="logo de Linkedin" />
+					<img class="h-8 w-8" src="../assets/img/youtube.png" alt="logo de Youtube" />
+				</div>
+				<span>2024 ©Adóptame - Todos los derechos reservados</span>
+			</div>
+			<div class="flex justify-between gap-3 font-roboto">
+				<div class="flex flex-col gap-3">
+					<p class="font-bold">Horario de atención</p>
+					<p>De Lunes a Sábado de 9 a 18 horas</p>
+				</div>
+				<div class="flex flex-col gap-3">
+					<p class="font-bold">Contacto</p>
+					<p>948000000</p>
+					<p>info@adoptame.es</p>
+				</div>
+			</div>
+		</footer>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const selectorProvincia = document.getElementById('provincia')
+				const botonBuscar = document.getElementById('buscar')
+				const protectorasContainer = document.getElementById(
+					'protectorasContainer'
+				)
+
+				const provincias = [
+					'Álava',
+					'Albacete',
+					'Alicante',
+					'Almería',
+					'Asturias',
+					'Ávila',
+					'Badajoz',
+					'Barcelona',
+					'Burgos',
+					'Cáceres',
+					'Cádiz',
+					'Cantabria',
+					'Castellón',
+					'Ciudad Real',
+					'Córdoba',
+					'La Coruña',
+					'Cuenca',
+					'Gerona',
+					'Granada',
+					'Guadalajara',
+					'Guipúzcoa',
+					'Huelva',
+					'Huesca',
+					'Islas Baleares',
+					'Jaén',
+					'León',
+					'Lérida',
+					'Lugo',
+					'Madrid',
+					'Málaga',
+					'Murcia',
+					'Navarra',
+					'Orense',
+					'Palencia',
+					'Las Palmas',
+					'Pontevedra',
+					'La Rioja',
+					'Salamanca',
+					'Segovia',
+					'Sevilla',
+					'Soria',
+					'Tarragona',
+					'Santa Cruz de Tenerife',
+					'Teruel',
+					'Toledo',
+					'Valencia',
+					'Valladolid',
+					'Vizcaya',
+					'Zamora',
+					'Zaragoza',
+				]
+
+				provincias.forEach((prov) => {
+					const option = document.createElement('option')
+					option.value = prov
+					option.textContent = prov
+					selectorProvincia.appendChild(option)
+				})
+
+				let protectoras = []
+
+				fetch('../backend/backend.json')
+					.then((respuesta) => respuesta.json())
+					.then((datos) => {
+						protectoras = datos.protectoras
+						mostrarProtectoras(protectoras)
+					})
+					.catch((error) => console.error('Error cargando los datos:', error))
+
+				function mostrarProtectoras(lista) {
+					protectorasContainer.innerHTML = ''
+
+					if (lista.length === 0) {
+						protectorasContainer.innerHTML = `<p class="text-center text-gray-700 font-semibold text-xl">No hay protectoras en la provincia seleccionada.</p>`
+						return
+					}
+
+					const mensajeResultados = document.createElement('p')
+					mensajeResultados.className =
+						'text-center text-gray-700 font-semibold text-xl mb-4'
+					mensajeResultados.textContent = `${lista.length} resultado(s)`
+					protectorasContainer.appendChild(mensajeResultados)
+
+					lista.forEach((protectora) => {
+						const tarjetaProtectora = document.createElement('div')
+						tarjetaProtectora.className =
+							'container bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-6xl flex my-5'
+						tarjetaProtectora.innerHTML = `
                       <div class="w-2/6 flex items-center justify-center p-4">
                           <img src="${protectora.foto}" alt="Foto de la protectora" class="h-auto w-[100%] shadow-lg rounded-lg object-cover">
                       </div>    
@@ -138,22 +236,24 @@
                           </div>
                       </div>
                       <div class="w-1/6 flex justify-center items-center mx-5">
-                          <a href="mascotas.html" class="bg-customBlue text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition">Ver mascotas</a>
-                      </div>`;
-                  protectorasContainer.appendChild(tarjetaProtectora);
-              });
-          }
-      
-          botonBuscar.addEventListener("click", () => {
-              const provinciaSeleccionada = selectorProvincia.value;
-              
-              const protectorasFiltradas = provinciaSeleccionada ?
-                  protectoras.filter(protectora => protectora.provincia === provinciaSeleccionada) :
-                  protectoras;
-      
-              mostrarProtectoras(protectorasFiltradas);
-          });
-      });
-    </script>      
-  </body>
+                          <a href="mascotas.html?IdProtectora=${protectora.id}" class="bg-customBlue text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition">Ver mascotas</a>
+                      </div>`
+						protectorasContainer.appendChild(tarjetaProtectora)
+					})
+				}
+
+				botonBuscar.addEventListener('click', () => {
+					const provinciaSeleccionada = selectorProvincia.value
+
+					const protectorasFiltradas = provinciaSeleccionada
+						? protectoras.filter(
+								(protectora) => protectora.provincia === provinciaSeleccionada
+							)
+						: protectoras
+
+					mostrarProtectoras(protectorasFiltradas)
+				})
+			})
+		</script>
+	</body>
 </html>
