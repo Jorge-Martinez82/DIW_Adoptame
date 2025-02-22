@@ -254,11 +254,10 @@
 				botonBuscar.addEventListener('click', () => {
 					const provinciaSeleccionada = selectorProvincia.value
 
-					const protectorasFiltradas = provinciaSeleccionada
-						? protectoras.filter((protectora) => protectora.provincia === provinciaSeleccionada)
-						: protectoras
-
-					mostrarProtectoras(protectorasFiltradas)
+					fetch(`${URL_BACKEND}/protectoras?provincia=${provinciaSeleccionada}`)
+						.then((respuesta) => respuesta.json())
+						.then(mostrarProtectoras)
+						.catch((error) => console.error('Error cargando los datos:', error))
 				})
 			})
 		</script>
