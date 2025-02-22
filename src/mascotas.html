@@ -4,48 +4,31 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Mascotas</title>
-		<link
-			href="https://fonts.googleapis.com/icon?family=Material+Icons"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 		<link href="../dist/css/styles.css" rel="stylesheet" />
 	</head>
 	<body>
 		<header class="relative z-10 m-2">
 			<nav class="flex items-center justify-between">
 				<a href="../index.html" class="flex items-center gap-3">
-					<img
-						src="../assets/img/logo.png"
-						alt="logo de adoptame"
-						class="h-10"
-					/>
+					<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
 					<p class="font-montserrat font-bold">Adoptame</p>
 				</a>
 
-				<div
-					class="absolute left-1/2 hidden -translate-x-1/2 transform sm:block"
-				>
+				<div class="absolute left-1/2 hidden -translate-x-1/2 transform sm:block">
 					<ul class="flex gap-6 font-roboto">
 						<li>
-							<a
-								class="underline-offset-1 hover:underline"
-								href="../index.html#about"
-								>Sobre nosotros</a
-							>
+							<a class="underline-offset-1 hover:underline" href="../index.html#about">
+								Sobre nosotros
+							</a>
 						</li>
 						<li>
-							<a
-								class="underline-offset-1 hover:underline"
-								href="./protectoras.html"
-								>Protectoras</a
-							>
+							<a class="underline-offset-1 hover:underline" href="./protectoras.html">
+								Protectoras
+							</a>
 						</li>
 						<li>
-							<a
-								class="underline-offset-1 hover:underline"
-								href="./mascotas.html"
-								>Mascotas</a
-							>
+							<a class="underline-offset-1 hover:underline" href="./mascotas.html">Mascotas</a>
 						</li>
 					</ul>
 				</div>
@@ -58,11 +41,7 @@
 				</a>
 
 				<button id="menu-btn" class="block sm:hidden">
-					<img
-						src="../assets/img/menu_movil.svg"
-						alt="Abrir menú"
-						class="h-8 w-8"
-					/>
+					<img src="../assets/img/menu_movil.svg" alt="Abrir menú" class="h-8 w-8" />
 				</button>
 			</nav>
 
@@ -71,23 +50,15 @@
 				class="absolute left-0 top-16 hidden w-full flex-col items-center gap-4 bg-white p-4 shadow-lg sm:hidden"
 			>
 				<li>
-					<a
-						class="underline-offset-1 hover:underline"
-						href="../index.html#about"
-						>Sobre nosotros</a
-					>
+					<a class="underline-offset-1 hover:underline" href="../index.html#about">
+						Sobre nosotros
+					</a>
 				</li>
 				<li>
-					<a
-						class="underline-offset-1 hover:underline"
-						href="./protectoras.html"
-						>Protectoras</a
-					>
+					<a class="underline-offset-1 hover:underline" href="./protectoras.html">Protectoras</a>
 				</li>
 				<li>
-					<a class="underline-offset-1 hover:underline" href="./mascotas.html"
-						>Mascotas</a
-					>
+					<a class="underline-offset-1 hover:underline" href="./mascotas.html">Mascotas</a>
 				</li>
 				<li class="w-full text-center">
 					<a
@@ -108,20 +79,13 @@
 				></div>
 
 				<!-- Contenido sobre el fondo -->
-				<div
-					class="relative flex w-[90%] max-w-2xl items-end gap-4 rounded-3xl bg-customBlack p-6"
-				>
+				<div class="relative flex w-[90%] max-w-2xl items-end gap-4 rounded-3xl bg-customBlack p-6">
 					<div class="flex w-full flex-col gap-4 md:flex-row">
 						<div class="w-full">
-							<label
-								for="tipo"
-								class="mb-2 block text-sm font-semibold text-white"
-								>Tipo de mascota</label
-							>
-							<select
-								id="tipo"
-								class="w-full rounded bg-white p-2 text-gray-800"
-							>
+							<label for="tipo" class="mb-2 block text-sm font-semibold text-white">
+								Tipo de mascota
+							</label>
+							<select id="tipo" class="w-full rounded bg-white p-2 text-gray-800">
 								<option value="todos">Perros, gatos, aves...</option>
 								<option value="conejos">🐰 Conejos</option>
 								<option value="gatos">🐱 Gatos</option>
@@ -131,15 +95,10 @@
 						</div>
 
 						<div class="w-full">
-							<label
-								for="provincia"
-								class="mb-2 block text-sm font-semibold text-white"
-								>Localización</label
-							>
-							<select
-								id="provincia"
-								class="w-full rounded bg-white p-2 text-gray-800"
-							>
+							<label for="provincia" class="mb-2 block text-sm font-semibold text-white">
+								Localización
+							</label>
+							<select id="provincia" class="w-full rounded bg-white p-2 text-gray-800">
 								<option value="todos">Todas</option>
 								<option value="navarra">Navarra</option>
 								<option value="álava">Álava</option>
@@ -166,10 +125,7 @@
 				></div>
 
 				<div class="relative">
-					<h2
-						class="mb-6 text-2xl font-bold text-gray-800"
-						id="cantidad_resultados"
-					>
+					<h2 class="mb-6 text-2xl font-bold text-gray-800" id="cantidad_resultados">
 						Sin resultados
 					</h2>
 					<div
@@ -184,18 +140,10 @@
 			<div class="mb-4 flex flex-col justify-evenly gap-4 sm:flex-row">
 				<div class="font-roboto">
 					<a href="../index.html" class="mb-4 flex items-center">
-						<img
-							src="../assets/img/logo.png"
-							alt="logo de adoptame"
-							class="h-10"
-						/>
-						<p class="ml-4 font-montserrat text-2xl font-bold">
-							Adóptame, plataforma de adopción
-						</p>
+						<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
+						<p class="ml-4 font-montserrat text-2xl font-bold">Adóptame, plataforma de adopción</p>
 					</a>
-					<div
-						class="flex w-full flex-col justify-between sm:flex-row sm:items-center"
-					>
+					<div class="flex w-full flex-col justify-between sm:flex-row sm:items-center">
 						<p class="font-bold">Siguenos en nuestras redes sociales:</p>
 						<div class="flex gap-2">
 							<img class="h-8 w-8" src="../assets/img/facebook.png" alt="" />
@@ -224,18 +172,14 @@
 		<script src="../assets/js/index.js"></script>
 		<script>
 			const mascotasDiv = document.querySelector('#resultados_mascotas')
-			const cantidadResultadosH1 = document.querySelector(
-				'#cantidad_resultados'
-			)
+			const cantidadResultadosH1 = document.querySelector('#cantidad_resultados')
 			const buscarDiv = document.querySelector('#buscar')
 
 			const tipoSelector = document.querySelector('#tipo')
 			const provinciaSelector = document.querySelector('#provincia')
 
 			const buscar = () => {
-				const idProtectora = new URLSearchParams(window.location.search).get(
-					'idProtectora'
-				)
+				const idProtectora = new URLSearchParams(window.location.search).get('idProtectora')
 
 				const params = new URLSearchParams()
 
