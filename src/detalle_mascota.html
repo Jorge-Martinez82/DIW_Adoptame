@@ -69,43 +69,70 @@
 			<section
 				id="seccion-principal"
 				class="flex flex-grow items-center justify-center bg-customPurple">
+				<div class="container flex flex-col sm:flex-row items-center justify-center max-w-4xl rounded-lg bg-white shadow-lg my-10 mx-10">
+					<div class="flex h-auto w-[80%] sm:w-2/5 items-center justify-center p-4">
+						<img src="../assets/img/dobby.jpg" id="imagenMascota"alt="" class="h-auto w-[100%] rounded-lg object-cover shadow-lg"/>
+					</div>
+					<div class="flex w-[100%] sm:w-3/5 flex-col items-center justify-center p-4">
+						<div class="mb-5">
+							<h2 id="nombreMascota" class="text-5xl font-bold text-gray-800">Dobby</h2>
+						</div>
+						<div class="sm:grid sm:grid-cols-2 p-5">
+							<p id="edadMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Edad: </span>2 años</p>
+							<p id="generoMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Género: </span>Macho</p>
+							<p id="protectoraMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Protectora: </span>Protectora Pamplona</p>
+							<p id="localizacionMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Ubicación: </span>Pamplona</p>
+							<p id="descripcionMascota" class="sm:col-span-2 text-lg my-2"><span class="font-semibold text-xl">Descripción: </span>Muy jugueton</p>
+						</div>
+						<div class="mb-2 flex items-center justify-center">
+							<button class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400">Adóptame</button>
+						</div>
+					</div>
+				</div>
 			</section>
 		</main>
-		<footer class="flex w-full justify-evenly bg-customBlack p-4 text-white">
-			<div class="flex flex-col gap-3 font-roboto">
-				<a href="../index.html" class="flex items-center gap-5">
-					<img
-						src="../assets/img/logo.png"
-						alt="logo de adoptame"
-						class="h-10"
-					/>
-					<p class="font-montserrat text-2xl font-bold">
-						Adóptame, plataforma de adopción
-					</p>
-				</a>
-				<div class="flex items-center justify-around">
-					<p>Siguenos en nuestras redes sociales:</p>
-					<img class="h-8 w-8" src="../assets/img/facebook.png" alt="logo de Facebook" />
-					<img class="h-8 w-8" src="../assets/img/instagram.png" alt="logo de Instagram" />
-					<img class="h-8 w-8" src="../assets/img/twitter.png" alt="logo de Twitter" />
-					<img class="h-8 w-8" src="../assets/img/linkedin.png" alt="logo de Linkedin" />
-					<img class="h-8 w-8" src="../assets/img/youtube.png" alt="logo de Youtube" />
+		<footer class="bg-customBlack p-4 pl-4 text-white">
+			<div class="mb-4 flex flex-col justify-evenly gap-4 sm:flex-row">
+				<div class="font-roboto">
+					<a href="../index.html" class="mb-4 flex items-center">
+						<img
+							src="../assets/img/logo.png"
+							alt="logo de adoptame"
+							class="h-10"
+						/>
+						<p class="ml-4 font-montserrat text-2xl font-bold">
+							Adóptame, plataforma de adopción
+						</p>
+					</a>
+					<div
+						class="flex w-full flex-col justify-between sm:flex-row sm:items-center"
+					>
+						<p class="font-bold">Siguenos en nuestras redes sociales:</p>
+						<div class="flex gap-2">
+							<img class="h-8 w-8" src="../assets/img/facebook.png" alt="logo de Facebook" />
+							<img class="h-8 w-8" src="../assets/img/instagram.png" alt="logo de Instagram" />
+							<img class="h-8 w-8" src="../assets/img/twitter.png" alt="logo de Twitter" />
+							<img class="h-8 w-8" src="../assets/img/linkedin.png" alt="logo de Linkedin" />
+							<img class="h-8 w-8" src="../assets/img/youtube.png" alt="logo de Youtube" />
+						</div>
+					</div>
 				</div>
-				<span>2024 ©Adóptame - Todos los derechos reservados</span>
-			</div>
-			<div class="flex justify-between gap-3 font-roboto">
-				<div class="flex flex-col gap-3">
+				<div>
 					<p class="font-bold">Horario de atención</p>
 					<p>De Lunes a Sábado de 9 a 18 horas</p>
 				</div>
-				<div class="flex flex-col gap-3">
+				<div>
 					<p class="font-bold">Contacto</p>
 					<p>948000000</p>
 					<p>info@adoptame.es</p>
 				</div>
 			</div>
+			<div class="sm:text-center">
+				<span>2024 ©Adóptame - Todos los derechos reservados</span>
+			</div>
 		</footer>
 		<script>
+			/*
 			const urlParams = new URLSearchParams(window.location.search);
 			const idMascota = urlParams.get("id");
 			console.log(idMascota);
@@ -133,22 +160,22 @@
 
 			function mostrarDetalles(mascota) {
 				document.getElementById("seccion-principal").innerHTML = `
-				<div class="container flex max-w-4xl overflow-hidden rounded-lg bg-white shadow-lg my-10 mx-10">
-					<div class="flex w-2/5 items-center justify-center p-4">
-						<img src="" id="imagenMascota"alt="" class="h-auto w-[100%] rounded-lg object-cover shadow-lg"/>
+				<div class="container flex flex-col sm:flex-row items-center justify-center max-w-4xl rounded-lg bg-white shadow-lg my-10 mx-10">
+					<div class="flex h-auto w-[80%] sm:w-2/5 items-center justify-center p-4">
+						<img src="../assets/img/dobby.jpg" id="imagenMascota"alt="" class="h-auto w-[100%] rounded-lg object-cover shadow-lg"/>
 					</div>
-					<div class="my-4 flex w-3/5 flex-col justify-between p-4">
-						<div class="mb-5 w-full">
-							<h2 id="nombreMascota" class="text-4xl font-bold text-gray-800"></h2>
+					<div class="flex w-[100%] sm:w-3/5 flex-col items-center justify-center p-4">
+						<div class="mb-5">
+							<h2 id="nombreMascota" class="text-5xl font-bold text-gray-800">Dobby</h2>
 						</div>
-						<div class="grid grid-cols-2 items-center gap-2">
-							<p id="edadMascota" class="text-lg text-gray-600"><span class="font-semibold">Edad: </span></p>
-							<p id="generoMascota" class="text-lg text-gray-600"><span class="font-semibold">Género: </span></p>
-							<p id="protectoraMascota" class="text-lg text-gray-600"><span class="font-semibold">Protectora: </span></p>
-							<p id="localizacionMascota" class="text-lg text-gray-600"><span class="font-semibold">Ubicación: </span></p>
-							<p id="descripcionMascota" class="col-span-2 text-lg text-gray-600"><span class="font-semibold">Descripción: </span></p>
+						<div class="sm:grid sm:grid-cols-2 p-5">
+							<p id="edadMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Edad: </span>2 años</p>
+							<p id="generoMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Género: </span>Macho</p>
+							<p id="protectoraMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Protectora: </span>Protectora Pamplona</p>
+							<p id="localizacionMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Ubicación: </span>Pamplona</p>
+							<p id="descripcionMascota" class="sm:col-span-2 text-lg my-2"><span class="font-semibold text-xl">Descripción: </span>Muy jugueton</p>
 						</div>
-						<div class="mt-4 flex items-center justify-center">
+						<div class="mb-2 flex items-center justify-center">
 							<button class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400">Adóptame</button>
 						</div>
 					</div>
@@ -162,7 +189,7 @@
 				document.getElementById("localizacionMascota").textContent = mascota.provincia;
 				document.getElementById("descripcionMascota").textContent = mascota.descripcion;	
 			}
-
+			*/
 		</script>
 	</body>
 </html>
