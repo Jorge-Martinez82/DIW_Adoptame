@@ -16,82 +16,96 @@
 		/>
 	</head>
 	<body>
-		<header class="m-2">
-			<nav class="flex items-center justify-between">
-				<a href="index.html" class="flex items-center gap-3">
-					<img src="assets/img/logo.png" alt="logo de adoptame" class="h-10" />
-					<p class="font-montserrat font-bold">Adoptame</p>
-				</a>
-				<ul class="flex flex-col gap-2 font-roboto sm:flex-row sm:gap-2">
-					<li>
-						<a class="underline-offset-1 hover:underline" href="#about">
-							Sobre nosotros
-						</a>
-					</li>
-					<li>
-						<a
-							class="underline-offset-1 hover:underline"
-							href="./src/protectoras.html"
-						>
-							Protectoras
-						</a>
-					</li>
-					<li>
-						<a
-							class="underline-offset-1 hover:underline"
-							href="./src/mascotas.html"
-						>
-							Mascotas
-						</a>
-					</li>
+	<header class="m-2 relative">
+		<nav class="flex items-center justify-between">
+			<a href="index.html" class="flex items-center gap-3">
+				<img src="assets/img/logo.png" alt="logo de adoptame" class="h-10" />
+				<p class="font-montserrat font-bold">Adoptame</p>
+			</a>
+
+			<div class="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
+				<ul class="flex gap-6 font-roboto">
+					<li><a class="underline-offset-1 hover:underline" href="#about">Sobre nosotros</a></li>
+					<li><a class="underline-offset-1 hover:underline" href="./src/protectoras.html">Protectoras</a></li>
+					<li><a class="underline-offset-1 hover:underline" href="./src/mascotas.html">Mascotas</a></li>
 				</ul>
-				<a
-					href="./index.html"
-					class="rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white"
-				>
+			</div>
+
+			<!-- boton iniciar sesion escritorio -->
+			<a href="./index.html"
+				 class="hidden md:block rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+				Iniciar sesión
+			</a>
+
+			<!-- menu movil -->
+			<button id="menu-btn" class="block md:hidden">
+				<img src="assets/img/menu_movil.svg" alt="Abrir menú" class="w-8 h-8" />
+			</button>
+		</nav>
+
+		<!-- menu movil desplegado -->
+		<ul id="menu" class="hidden flex-col items-center gap-4 absolute top-16 left-0 w-full bg-white p-4 shadow-lg md:hidden">
+			<li><a class="underline-offset-1 hover:underline" href="#about">Sobre nosotros</a></li>
+			<li><a class="underline-offset-1 hover:underline" href="./src/protectoras.html">Protectoras</a></li>
+			<li><a class="underline-offset-1 hover:underline" href="./src/mascotas.html">Mascotas</a></li>
+			<li class="w-full text-center">
+				<a href="./index.html"
+					 class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
 					Iniciar sesión
 				</a>
-			</nav>
-		</header>
+			</li>
+		</ul>
+	</header>
 
-		<section
-			class="flex h-[600px] flex-col items-center justify-center bg-customPurple/70 bg-[url('/assets/img/portada.jpg')] bg-cover bg-center"
-		>
-			<div class="flex flex-col items-center justify-center">
-				<h1 class="mb-4 font-montserrat text-4xl font-bold">
-					Adopta y transforma vidas
-				</h1>
-				<form
-					class="mx-auto flex h-64 w-96 flex-col items-center justify-around rounded-3xl bg-black bg-opacity-75 p-10 py-3 font-roboto text-white"
+	<script>
+		const menuBtn = document.getElementById("menu-btn");
+		const menu = document.getElementById("menu");
+
+		menuBtn.addEventListener("click", () => {
+			menu.classList.toggle("hidden");
+		});
+	</script>
+
+
+	<section
+		class="relative flex h-[600px] flex-col items-center justify-center bg-[url('/assets/img/portada.jpg')] bg-cover bg-center"
+	>
+		<div class="absolute inset-0 bg-white/40"></div>
+
+		<div class="relative flex flex-col items-center justify-center">
+			<h1 class="mb-4 font-montserrat text-4xl font-bold text-black">
+				Adopta y transforma vidas
+			</h1>
+			<form
+				class="mx-auto flex h-64 w-96 flex-col items-center justify-around rounded-3xl bg-black bg-opacity-75 p-10 py-3 font-roboto text-white"
+			>
+				<label for="tipo" class="block text-sm font-semibold text-white">Tipo de mascota</label>
+				<select id="tipo" class="w-full rounded bg-white p-2 text-gray-800">
+					<option value="todos">Perros, gatos, aves...</option>
+					<option value="conejos">🐰 Conejos</option>
+					<option value="gatos">🐱 Gatos</option>
+					<option value="perros">🐶 Perros</option>
+					<option value="tortugas">🐢 Tortugas</option>
+				</select>
+				<label for="provincia" class="block text-sm font-semibold text-white">Localización</label>
+				<select id="provincia" class="w-full rounded bg-white p-2 text-gray-800">
+					<option value="todos">Todas</option>
+					<option value="navarra">Navarra</option>
+					<option value="álava">Álava</option>
+					<option value="guipúzcoa">Guipúzcoa</option>
+					<option value="vizcaya">Vizcaya</option>
+				</select>
+
+				<button
+					class="mt-5 w-32 rounded-full bg-customBlue p-2 text-white"
+					type="submit"
 				>
-					<label for="tipo-mascota">Tipo de mascota</label>
-					<select
-						class="w-full rounded-xl p-2 text-black"
-						id="tipo-mascota"
-						name="tipo-mascota"
-					>
-						<option value="" disabled selected>Perros, gatos, aves...</option>
-						<option value="perro">Perros</option>
-						<option value="gato">Gatos</option>
-					</select>
-					<label for="localizacion">Localización</label>
-					<input
-						type="text"
-						class="w-full rounded-xl p-2 text-black"
-						id="localizacion"
-						name="localizacion"
-						placeholder="Provincia"
-					/>
+					Buscar
+				</button>
+			</form>
+		</div>
+	</section>
 
-					<button
-						class="mt-5 w-32 rounded-full bg-customBlue p-2 text-white"
-						type="submit"
-					>
-						Buscar
-					</button>
-				</form>
-			</div>
-		</section>
 
 		<section class="h-auto px-6 py-24">
 			<div
@@ -109,7 +123,7 @@
 		</section>
 
 		<section
-			class="flex h-auto flex-col justify-center bg-customPurple bg-[url('/assets/img/huellas.png')] bg-cover bg-center px-6 py-24 md:px-16"
+			class="flex h-auto flex-col justify-center bg-customPurple bg-[url('/assets/img/huellas2.png')] bg-cover bg-center px-6 py-24 md:px-16"
 		>
 			<header class="flex items-center justify-center pb-6 text-center">
 				<h2 class="font-roboto text-2xl font-bold">Como funciona Adóptame?</h2>
@@ -214,7 +228,7 @@
 
 		<section
 			id="about"
-			class="flex h-auto flex-col items-center justify-center bg-customPurple bg-[url('/assets/img/huellas.png')] bg-cover bg-center px-6 py-24 md:flex-row"
+			class="flex h-auto flex-col items-center justify-center bg-customPurple bg-[url('/assets/img/huellas2.png')] bg-cover bg-center px-6 py-24 md:flex-row"
 		>
 			<article class="flex w-full flex-col items-center p-6 md:w-1/2">
 				<h2 class="text-center font-roboto text-2xl font-bold">
