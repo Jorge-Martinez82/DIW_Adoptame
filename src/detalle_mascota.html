@@ -16,59 +16,102 @@
 		/>
 	</head>
 	<body class="flex min-h-screen flex-col">
-		<header class="m-2 relative z-10">
+		<header class="relative z-10 m-2">
 			<nav class="flex items-center justify-between">
-			  <a href="../index.html" class="flex items-center gap-3">
-				<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10"/>
-				<p class="font-montserrat font-bold">Adoptame</p>
-			  </a>
-			  <!-- Version escritorio -->
-			  <div class="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
-				<ul class="flex gap-6 font-roboto">
-				  <li><a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a></li>
-				  <li><a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a></li>
-				  <li><a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a></li>
-				</ul>
-			  </div>
-			  <a href="login.html"
-				 class="hidden sm:block rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
-				Iniciar sesión
-			  </a>
-		  
-			  <!-- Version movil -->
-			  <button id="menu-btn" class="block sm:hidden">
-				<img src="../assets/img/menu_movil.svg" alt="Abrir menú" class="w-8 h-8"/>
-			  </button>
-			</nav>
-		  
-			<!-- menu movil desplegado -->
-			<ul id="menu"
-				class="hidden flex-col items-center gap-4 absolute top-16 left-0 w-full bg-white p-4 shadow-lg sm:hidden">
-			  <li><a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a></li>
-			  <li><a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a></li>
-			  <li><a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a></li>
-			  <li class="w-full text-center">
-				<a href="login.html"
-				   class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
-				  Iniciar sesión
+				<a href="../index.html" class="flex items-center gap-3">
+					<img
+						src="../assets/img/logo.png"
+						alt="logo de adoptame"
+						class="h-10"
+					/>
+					<p class="font-montserrat font-bold">Adoptame</p>
 				</a>
-			  </li>
+				<!-- Version escritorio -->
+				<div
+					class="absolute left-1/2 hidden -translate-x-1/2 transform sm:block"
+				>
+					<ul class="flex gap-6 font-roboto">
+						<li>
+							<a class="underline-offset-1 hover:underline" href="../index.html"
+								>Sobre nosotros</a
+							>
+						</li>
+						<li>
+							<a
+								class="underline-offset-1 hover:underline"
+								href="protectoras.html"
+								>Protectoras</a
+							>
+						</li>
+						<li>
+							<a class="underline-offset-1 hover:underline" href="mascotas.html"
+								>Mascotas</a
+							>
+						</li>
+					</ul>
+				</div>
+				<a
+					href="login.html"
+					class="hidden rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white sm:block"
+				>
+					Iniciar sesión
+				</a>
+
+				<!-- Version movil -->
+				<button id="menu-btn" class="block sm:hidden">
+					<img
+						src="../assets/img/menu_movil.svg"
+						alt="Abrir menú"
+						class="h-8 w-8"
+					/>
+				</button>
+			</nav>
+
+			<!-- menu movil desplegado -->
+			<ul
+				id="menu"
+				class="absolute left-0 top-16 hidden w-full flex-col items-center gap-4 bg-white p-4 shadow-lg sm:hidden"
+			>
+				<li>
+					<a class="underline-offset-1 hover:underline" href="../index.html"
+						>Sobre nosotros</a
+					>
+				</li>
+				<li>
+					<a class="underline-offset-1 hover:underline" href="protectoras.html"
+						>Protectoras</a
+					>
+				</li>
+				<li>
+					<a class="underline-offset-1 hover:underline" href="mascotas.html"
+						>Mascotas</a
+					>
+				</li>
+				<li class="w-full text-center">
+					<a
+						href="login.html"
+						class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white"
+					>
+						Iniciar sesión
+					</a>
+				</li>
 			</ul>
-		  </header>
-		  
-		  <script>
-			const menuBtn = document.getElementById("menu-btn");
-			const menu = document.getElementById("menu");
+		</header>
+
+		<script>
+			const menuBtn = document.getElementById('menu-btn')
+			const menu = document.getElementById('menu')
 			// Mostrar el menu al hacer click en el desplegable
-			menuBtn.addEventListener("click", () => {
-			  menu.classList.toggle("hidden");
-			});
-		  </script>
+			menuBtn.addEventListener('click', () => {
+				menu.classList.toggle('hidden')
+			})
+		</script>
 
 		<main class="flex flex-grow items-center justify-center bg-customPurple">
-			<section id="seccion-principal" class="flex flex-grow items-center justify-center bg-customPurple">
-				
-			</section>
+			<section
+				id="seccion-principal"
+				class="flex flex-grow items-center justify-center bg-customPurple"
+			></section>
 		</main>
 		<footer class="bg-customBlack p-4 pl-4 text-white">
 			<div class="mb-4 flex flex-col justify-evenly gap-4 sm:flex-row">
@@ -88,11 +131,31 @@
 					>
 						<p class="font-bold">Siguenos en nuestras redes sociales:</p>
 						<div class="flex gap-2">
-							<img class="h-8 w-8" src="../assets/img/facebook.png" alt="logo de Facebook" />
-							<img class="h-8 w-8" src="../assets/img/instagram.png" alt="logo de Instagram" />
-							<img class="h-8 w-8" src="../assets/img/twiter.png" alt="logo de Twitter" />
-							<img class="h-8 w-8" src="../assets/img/linkedin.png" alt="logo de Linkedin" />
-							<img class="h-8 w-8" src="../assets/img/youtube.png" alt="logo de Youtube" />
+							<img
+								class="h-8 w-8"
+								src="../assets/img/facebook.png"
+								alt="logo de Facebook"
+							/>
+							<img
+								class="h-8 w-8"
+								src="../assets/img/instagram.png"
+								alt="logo de Instagram"
+							/>
+							<img
+								class="h-8 w-8"
+								src="../assets/img/twiter.png"
+								alt="logo de Twitter"
+							/>
+							<img
+								class="h-8 w-8"
+								src="../assets/img/linkedin.png"
+								alt="logo de Linkedin"
+							/>
+							<img
+								class="h-8 w-8"
+								src="../assets/img/youtube.png"
+								alt="logo de Youtube"
+							/>
 						</div>
 					</div>
 				</div>
@@ -111,33 +174,34 @@
 			</div>
 		</footer>
 		<script>
-			const urlParams = new URLSearchParams(window.location.search);
-			const idMascota = urlParams.get("id");
-			console.log(idMascota);
+			const urlParams = new URLSearchParams(window.location.search)
+			const idMascota = urlParams.get('id')
+			console.log(idMascota)
 
-			let mascota;
+			let mascota
 
-			fetch("../backend/backend.json")
-				.then(respuesta => {
-				if (!respuesta.ok) {
-					throw new Error(`Error HTTP: ${respuesta.status}`);
-				}
-				return respuesta.json();
+			fetch('../backend/backend.json')
+				.then((respuesta) => {
+					if (!respuesta.ok) {
+						throw new Error(`Error HTTP: ${respuesta.status}`)
+					}
+					return respuesta.json()
 				})
-				.then(datos => {
-				mascota = datos.mascotas.find(masc => masc.id == idMascota);
+				.then((datos) => {
+					mascota = datos.mascotas.find((masc) => masc.id == idMascota)
 
-				if (mascota) {
-					mostrarDetalles(mascota);
-				} else {
-					console.error("Mascota no encontrada");
-					document.getElementById("seccion-principal").innerHTML = `<p class="text-2xl">Mascota no encontrada</p>`;
-				}
+					if (mascota) {
+						mostrarDetalles(mascota)
+					} else {
+						console.error('Mascota no encontrada')
+						document.getElementById('seccion-principal').innerHTML =
+							`<p class="text-2xl">Mascota no encontrada</p>`
+					}
 				})
-				.catch(error => console.error("Error al obtener datos:", error));
+				.catch((error) => console.error('Error al obtener datos:', error))
 
 			function mostrarDetalles(mascota) {
-				document.getElementById("seccion-principal").innerHTML = `
+				document.getElementById('seccion-principal').innerHTML = `
 				<div class="container flex flex-col sm:flex-row items-center justify-center max-w-4xl rounded-lg bg-white shadow-lg my-10 mx-10">
 					<div class="flex h-auto w-[80%] sm:w-2/5 items-center justify-center p-4">
 						<img src="" id="imagenMascota" alt="" class="h-auto w-[100%] rounded-lg object-cover shadow-lg"/>
@@ -157,15 +221,22 @@
 							<button class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400">Adóptame</button>
 						</div>
 					</div>
-				</div>`;
-				document.getElementById("imagenMascota").src = `../assets/img/mascotas/${mascota.imagen}`;
-				document.getElementById("imagenMascota").alt = `Foto de ${mascota.nombre}`;
-				document.getElementById("nombreMascota").textContent = mascota.nombre;
-				document.getElementById("edadMascota").innerHTML = `<span class="font-semibold text-xl">Edad: </span>${mascota.edad} año(s)`;
-				document.getElementById("generoMascota").innerHTML = `<span class="font-semibold text-xl">Género: </span><span class="capitalize">${mascota.genero}</span>`;
-				document.getElementById("protectoraMascota").innerHTML = `<span class="font-semibold text-xl">Protectora: </span><span class="normal-case">${mascota.protectora}</span>`;
-				document.getElementById("localizacionMascota").innerHTML = `<span class="font-semibold text-xl">Ubicación: </span><span class="capitalize">${mascota.provincia}</span>`;
-				document.getElementById("descripcionMascota").innerHTML = `<span class="font-semibold text-xl">Descripción: </span><span class="normal-case">${mascota.descripcion}</span>`;	
+				</div>`
+				document.getElementById('imagenMascota').src =
+					`../assets/img/mascotas/${mascota.imagen}`
+				document.getElementById('imagenMascota').alt =
+					`Foto de ${mascota.nombre}`
+				document.getElementById('nombreMascota').textContent = mascota.nombre
+				document.getElementById('edadMascota').innerHTML =
+					`<span class="font-semibold text-xl">Edad: </span>${mascota.edad} año(s)`
+				document.getElementById('generoMascota').innerHTML =
+					`<span class="font-semibold text-xl">Género: </span><span class="capitalize">${mascota.genero}</span>`
+				document.getElementById('protectoraMascota').innerHTML =
+					`<span class="font-semibold text-xl">Protectora: </span><span class="normal-case">${mascota.protectora}</span>`
+				document.getElementById('localizacionMascota').innerHTML =
+					`<span class="font-semibold text-xl">Ubicación: </span><span class="capitalize">${mascota.provincia}</span>`
+				document.getElementById('descripcionMascota').innerHTML =
+					`<span class="font-semibold text-xl">Descripción: </span><span class="normal-case">${mascota.descripcion}</span>`
 			}
 		</script>
 	</body>
