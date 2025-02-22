@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8"/>
+	<meta
+		name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+	/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+	<title>Login</title>
+	<link href="../dist/css/styles.css" rel="stylesheet"/>
+	<link
+		rel="icon"
+		type="image/vnd.microsoft.icon"
+		href="../assets/img/logo.png"
+	/>
+</head>
+
+<body>
+<header class="m-2 relative z-10">
+	<nav class="flex items-center justify-between">
+		<a href="../index.html" class="flex items-center gap-3">
+			<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10"/>
+			<p class="font-montserrat font-bold">Adoptame</p>
+		</a>
+
+		<div class="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
+			<ul class="flex gap-6 font-roboto">
+				<li><a class="underline-offset-1 hover:underline" href="../index.html#about">Sobre nosotros</a></li>
+				<li><a class="underline-offset-1 hover:underline" href="../src/protectoras.html">Protectoras</a></li>
+				<li><a class="underline-offset-1 hover:underline" href="../src/mascotas.html">Mascotas</a></li>
+			</ul>
+		</div>
+
+		<!-- boton iniciar sesion escritorio -->
+		<a href="./login.html"
+			 class="hidden sm:block rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+			Iniciar sesión
+		</a>
+
+		<!-- boton menu movil -->
+		<button id="menu-btn" class="block sm:hidden">
+			<img src="../assets/img/menu_movil.svg" alt="Abrir menú" class="w-8 h-8"/>
+		</button>
+	</nav>
+
+	<!-- menu movil desplegado -->
+	<ul id="menu"
+			class="hidden flex-col items-center gap-4 absolute top-16 left-0 w-full bg-white p-4 shadow-lg sm:hidden">
+		<li><a class="underline-offset-1 hover:underline" href="../index.html#about">Sobre nosotros</a></li>
+		<li><a class="underline-offset-1 hover:underline" href="../src/protectoras.html">Protectoras</a></li>
+		<li><a class="underline-offset-1 hover:underline" href="../src/mascotas.html">Mascotas</a></li>
+		<li class="w-full text-center">
+			<a href="./login.html"
+				 class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+				Iniciar sesión
+			</a>
+		</li>
+	</ul>
+</header>
+
+<script>
+	const menuBtn = document.getElementById("menu-btn");
+	const menu = document.getElementById("menu");
+
+	menuBtn.addEventListener("click", () => {
+		menu.classList.toggle("hidden");
+	});
+</script>
+
+<main>
+	<section
+		class="relative flex h-[600px] flex-col items-center justify-center bg-[url('/assets/img/fondo_registro.jpg')] bg-cover bg-center"
+	>
+		<div class="absolute inset-0 bg-white/40"></div>
+
+		<div class="relative flex flex-col items-center justify-center">
+
+			<form
+				class="mx-auto flex h-auto w-96 gap-2 flex-col items-center justify-around rounded-3xl bg-black bg-opacity-75 p-10 py-5 font-roboto text-white"
+			>
+				<label for="nombre" class="block text-sm font-semibold text-white">Nombre</label>
+				<input
+					type="text"
+					id="nombre"
+					name="nombre"
+					class="w-full rounded bg-white p-2 text-gray-800"
+					placeholder="Introduce tu nombre"
+					required
+				/>
+
+				<label for="apellidos" class="block text-sm font-semibold text-white">Apellidos</label>
+				<input
+					type="text"
+					id="apellidos"
+					name="apellidos"
+					class="w-full rounded bg-white p-2 text-gray-800"
+					placeholder="Introduce tus apellidos"
+					required
+				/>
+
+				<label for="email" class="block text-sm font-semibold text-white">Correo electrónico</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					class="w-full rounded bg-white p-2 text-gray-800"
+					placeholder="Introduce tu correo"
+					required
+				/>
+
+				<label for="password" class="block text-sm font-semibold text-white">Contraseña</label>
+				<input
+					type="password"
+					id="password"
+					name="password"
+					class="w-full rounded bg-white p-2 text-gray-800"
+					placeholder="Introduce tu contraseña"
+					required
+				/>
+
+				<div class="mt-4 flex gap-4">
+					<label class="flex items-center">
+						<input type="radio" name="tipo_usuario" value="adoptante" class="mr-2 accent-customBlue" required />
+						Soy adoptante
+					</label>
+					<label class="flex items-center">
+						<input type="radio" name="tipo_usuario" value="protectora" class="mr-2 accent-customBlue" required />
+						Soy protectora
+					</label>
+				</div>
+
+				<button class="mt-5 w-32 rounded-full bg-customBlue p-2 text-white transition duration-300 hover:bg-customPurple hover:text-black" type="submit">
+					Registrarse
+				</button>
+			</form>
+
+		</div>
+	</section>
+
+</main>
+
+<footer class="bg-customBlack p-4 pl-4 text-white">
+	<div class="mb-4 flex flex-col justify-evenly gap-4 sm:flex-row">
+		<div class="font-roboto">
+			<a href="../index.html" class="mb-4 flex items-center">
+				<img
+					src="../assets/img/logo.png"
+					alt="logo de adoptame"
+					class="h-10"
+				/>
+				<p class="ml-4 font-montserrat text-2xl font-bold">
+					Adóptame, plataforma de adopción
+				</p>
+			</a>
+			<div
+				class="flex w-full flex-col justify-between sm:flex-row sm:items-center"
+			>
+				<p class="font-bold">Siguenos en nuestras redes sociales:</p>
+				<div class="flex gap-2">
+					<img class="h-8 w-8" src="../assets/img/facebook.png" alt=""/>
+					<img class="h-8 w-8" src="../assets/img/instagram.png" alt=""/>
+					<img class="h-8 w-8" src="../assets/img/twiter.png" alt=""/>
+					<img class="h-8 w-8" src="../assets/img/linkedin.png" alt=""/>
+					<img class="h-8 w-8" src="../assets/img/youtube.png" alt=""/>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p class="font-bold">Horario de atención</p>
+			<p>De Lunes a Sábado de 9 a 18 horas</p>
+		</div>
+		<div>
+			<p class="font-bold">Contacto</p>
+			<p>948000000</p>
+			<p>info@adoptame.es</p>
+		</div>
+	</div>
+	<div class="sm:text-center">
+		<span>2024 ©Adóptame - Todos los derechos reservados</span>
+	</div>
+</footer>
+</body>
+</html>

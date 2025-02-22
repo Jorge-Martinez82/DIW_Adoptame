@@ -16,226 +16,252 @@
 		/>
 	</head>
 	<body class="flex min-h-screen flex-col">
-		<header class="m-2">
-			<nav class="flex items-center justify-between">
-				<a href="../index.html" class="flex items-center gap-3">
-					<img
-						src="../assets/img/logo.png"
-						alt="logo de adoptame"
-						class="h-10"
-					/>
-					<p class="font-montserrat font-bold">Adoptame</p>
-				</a>
-				<ul class="flex gap-6 font-roboto">
-					<li>
-						<a class="underline-offset-1 hover:underline" href=""
-							>Sobre nosotros</a
-						>
-					</li>
-					<li>
-						<a
-							class="underline-offset-1 hover:underline"
-							href="./protectoras.html"
-							>Protectoras</a
-						>
-					</li>
-					<li>
-						<a
-							class="underline-offset-1 hover:underline"
-							href="../src/mascotas.html"
-							>Mascotas</a
-						>
-					</li>
-				</ul>
-				<a
-					href="../index.html"
-					class="rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white"
-					>Iniciar sesión</a
-				>
-			</nav>
-		</header>
-		<section class="flex flex-col items-center justify-center bg-customPurple">
-			<div
-				class="container flex h-96 w-full items-center justify-center bg-[url('../assets/img/fondoProtectora.jpg')] bg-cover bg-center"
-			>
-				<div
-					class="flex h-[50%] w-[50%] flex-col items-center gap-4 rounded-3xl bg-customBlack p-6 text-white"
-				>
-					<div class="container h-12 w-[100%] justify-items-start p-6">
-						<p class="mb-2 text-lg font-semibold">Localización</p>
-					</div>
-					<div class="flex w-full flex-row justify-around">
-						<div
-							class="flex h-12 w-[75%] items-center rounded-lg bg-white px-4 shadow-md"
-						>
-							<input
-								type="text"
-								placeholder="Introduce la provincia..."
-								class="h-full w-full p-2 text-gray-700 outline-none"
-							/>
-							<img src="../assets/img/localizacion.jpg" class="ml-2 h-6" />
-						</div>
-						<div>
-							<button
-								class="flex h-12 items-center justify-center rounded-lg bg-customBlue px-6 text-white transition hover:bg-blue-400"
-							>
+		<header class="m-2 relative z-10">
+      <nav class="flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10"/>
+          <p class="font-montserrat font-bold">Adoptame</p>
+        </a>
+        <!-- Version escritorio -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
+          <ul class="flex gap-6 font-roboto">
+            <li><a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a></li>
+            <li><a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a></li>
+            <li><a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a></li>
+          </ul>
+        </div>
+        <a href="login.html"
+           class="hidden sm:block rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+          Iniciar sesión
+        </a>
+    
+        <!-- Version movil -->
+        <button id="menu-btn" class="block sm:hidden">
+          <img src="../assets/img/menu_movil.svg" alt="Abrir menú" class="w-8 h-8"/>
+        </button>
+      </nav>
+    
+      <!-- menu movil desplegado -->
+      <ul id="menu"
+          class="hidden flex-col items-center gap-4 absolute top-16 left-0 w-full bg-white p-4 shadow-lg sm:hidden">
+        <li><a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a></li>
+        <li><a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a></li>
+        <li><a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a></li>
+        <li class="w-full text-center">
+          <a href="login.html"
+             class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+            Iniciar sesión
+          </a>
+        </li>
+      </ul>
+    </header>
+    
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      // Mostrar el menu al hacer click en el desplegable
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+
+		<main class="flex-grow bg-customPurple">
+			<section class="flex flex-col items-center justify-center bg-[url('../assets/img/portada.jpg')]">
+
+				<div class="container flex h-96 w-full items-center justify-center">
+
+					<div class="h-[50%] w-[75%] flex flex-col items-center justify-center rounded-3xl bg-customBlack p-6 sm:w-[60%]">
+
+						<p class="text-lg font-semibold text-white mb-2">Localización</p>
+						
+						<div class="flex w-full flex-col max-sm:items-center sm:flex-row sm:justify-around">
+							<select id="provincia" class="h-12 w-[80%] rounded-lg my-2 sm:mx-2 p-2 text-gray-700 shadow-md">
+								<option value="">Elige provincia</option>
+							</select>
+							<button id="buscar" class="h-12 rounded-lg bg-customBlue my-2 px-6 text-white hover:bg-blue-400">
 								Buscar
 							</button>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div
-				class="container my-5 flex w-full max-w-6xl overflow-hidden rounded-lg bg-white shadow-lg"
-			>
-				<div class="flex w-2/6 items-center justify-center p-4">
-					<img
-						src="../assets/img/2.png"
-						alt="Foto de la protectora"
-						class="h-auto w-[100%] rounded-lg object-cover shadow-lg"
-					/>
-				</div>
-				<div class="my-5 flex w-3/6 flex-col justify-around p-4">
-					<div class="w-full">
-						<h2 class="text-4xl font-bold text-gray-800">Patitas Felices</h2>
-					</div>
-					<div class="items-center">
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Ciudad:</span> Madrid
+			</section>
+			<section class="flex flex-col items-center justify-center">
+				<div
+					id="protectorasContainer"
+					class="my-10 flex min-h-[80vh] w-full max-w-6xl flex-col items-center"
+				></div>
+			</section>
+		</main>
+		<footer class="bg-customBlack p-4 pl-4 text-white">
+			<div class="mb-4 flex flex-col justify-evenly gap-4 sm:flex-row">
+				<div class="font-roboto">
+					<a href="../index.html" class="mb-4 flex items-center">
+						<img
+							src="../assets/img/logo.png"
+							alt="logo de adoptame"
+							class="h-10"
+						/>
+						<p class="ml-4 font-montserrat text-2xl font-bold">
+							Adóptame, plataforma de adopción
 						</p>
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Fundación:</span> 2002
-						</p>
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Empleados:</span> 8
-						</p>
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Desempeño:</span> Poner en
-							conocimiento situaciones de vulneravilidad de mascotas y animar a
-							su adopción.
-						</p>
-					</div>
-				</div>
-				<div class="mx-5 flex w-1/6 items-center justify-center">
-					<a
-						href="mascotas.html"
-						class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400"
-						>Ver mascotas</a
+					</a>
+					<div
+						class="flex w-full flex-col justify-between sm:flex-row sm:items-center"
 					>
-				</div>
-			</div>
-			<div
-				class="container my-5 flex w-full max-w-6xl overflow-hidden rounded-lg bg-white shadow-lg"
-			>
-				<div class="flex w-2/6 items-center justify-center p-4">
-					<img
-						src="../assets/img/2.png"
-						alt="Foto de la protectora"
-						class="h-auto w-[100%] rounded-lg object-cover shadow-lg"
-					/>
-				</div>
-				<div class="my-5 flex w-3/6 flex-col justify-around p-4">
-					<div class="w-full">
-						<h2 class="text-4xl font-bold text-gray-800">Mininos</h2>
-					</div>
-					<div class="items-center">
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Ciudad:</span> Barcelona
-						</p>
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Fundación:</span> 2018
-						</p>
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Empleados:</span> 15
-						</p>
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Desempeño:</span>
-							Recogida y cuidado de gatos callejeros con el fin de poder
-							encontrarles un hogar de adopción.
-						</p>
+						<p class="font-bold">Siguenos en nuestras redes sociales:</p>
+						<div class="flex gap-2">
+							<img class="h-8 w-8" src="../assets/img/facebook.png" alt="logo de Facebook" />
+							<img class="h-8 w-8" src="../assets/img/instagram.png" alt="logo de Instagram" />
+							<img class="h-8 w-8" src="../assets/img/twiter.png" alt="logo de Twitter" />
+							<img class="h-8 w-8" src="../assets/img/linkedin.png" alt="logo de Linkedin" />
+							<img class="h-8 w-8" src="../assets/img/youtube.png" alt="logo de Youtube" />
+						</div>
 					</div>
 				</div>
-				<div class="mx-5 flex w-1/6 items-center justify-center">
-					<a
-						href="mascotas.html"
-						class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400"
-						>Ver mascotas</a
-					>
-				</div>
-			</div>
-			<div
-				class="container my-5 flex w-full max-w-6xl overflow-hidden rounded-lg bg-white shadow-lg"
-			>
-				<div class="flex w-2/6 items-center justify-center p-4">
-					<img
-						src="../assets/img/2.png"
-						alt="Foto de la protectora"
-						class="h-auto w-[100%] rounded-lg object-cover shadow-lg"
-					/>
-				</div>
-				<div class="my-5 flex w-3/6 flex-col justify-around p-4">
-					<div class="w-full">
-						<h2 class="text-4xl font-bold text-gray-800">Guau guau</h2>
-					</div>
-					<div class="items-center">
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Ciudad:</span> Pamplona
-						</p>
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Fundación:</span> 2008
-						</p>
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Empleados:</span> 5
-						</p>
-						<p class="text-lg text-gray-600">
-							<span class="font-semibold">Desempeño:</span>
-							Protectora de perros. Les damos el mejor cuidado posible y te
-							ayudamos en las gestión de los tramites de adopción.
-						</p>
-					</div>
-				</div>
-				<div class="mx-5 flex w-1/6 items-center justify-center">
-					<a
-						href="mascotas.html"
-						class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400"
-						>Ver mascotas</a
-					>
-				</div>
-			</div>
-		</section>
-		<footer class="flex w-full justify-evenly bg-customBlack p-4 text-white">
-			<div class="flex flex-col gap-3 font-roboto">
-				<a href="../index.html" class="flex items-center gap-5">
-					<img
-						src="../assets/img/logo.png"
-						alt="logo de adoptame"
-						class="h-10"
-					/>
-					<p class="font-montserrat text-2xl font-bold">
-						Adóptame, plataforma de adopción
-					</p>
-				</a>
-				<div class="flex items-center justify-around">
-					<p>Siguenos en nuestras redes sociales:</p>
-					<img class="h-8 w-8" src="../assets/img/facebook.png" alt="" />
-					<img class="h-8 w-8" src="../assets/img/instagram.png" alt="" />
-					<img class="h-8 w-8" src="../assets/img/twitter.png" alt="" />
-					<img class="h-8 w-8" src="../assets/img/linkedin.png" alt="" />
-					<img class="h-8 w-8" src="../assets/img/youtube.png" alt="" />
-				</div>
-				<span>2024 ©Adóptame - Todos los derechos reservados</span>
-			</div>
-			<div class="flex justify-between gap-3 font-roboto">
-				<div class="flex flex-col gap-3">
+				<div>
 					<p class="font-bold">Horario de atención</p>
 					<p>De Lunes a Sábado de 9 a 18 horas</p>
 				</div>
-				<div class="flex flex-col gap-3">
+				<div>
 					<p class="font-bold">Contacto</p>
 					<p>948000000</p>
 					<p>info@adoptame.es</p>
 				</div>
 			</div>
+			<div class="sm:text-center">
+				<span>2024 ©Adóptame - Todos los derechos reservados</span>
+			</div>
 		</footer>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const selectorProvincia = document.getElementById('provincia')
+				const botonBuscar = document.getElementById('buscar')
+				const protectorasContainer = document.getElementById(
+					'protectorasContainer'
+				)
+
+				const provincias = [
+					'Álava',
+					'Albacete',
+					'Alicante',
+					'Almería',
+					'Asturias',
+					'Ávila',
+					'Badajoz',
+					'Barcelona',
+					'Burgos',
+					'Cáceres',
+					'Cádiz',
+					'Cantabria',
+					'Castellón',
+					'Ciudad Real',
+					'Córdoba',
+					'La Coruña',
+					'Cuenca',
+					'Gerona',
+					'Granada',
+					'Guadalajara',
+					'Guipúzcoa',
+					'Huelva',
+					'Huesca',
+					'Islas Baleares',
+					'Jaén',
+					'León',
+					'Lérida',
+					'Lugo',
+					'Madrid',
+					'Málaga',
+					'Murcia',
+					'Navarra',
+					'Orense',
+					'Palencia',
+					'Las Palmas',
+					'Pontevedra',
+					'La Rioja',
+					'Salamanca',
+					'Segovia',
+					'Sevilla',
+					'Soria',
+					'Tarragona',
+					'Santa Cruz de Tenerife',
+					'Teruel',
+					'Toledo',
+					'Valencia',
+					'Valladolid',
+					'Vizcaya',
+					'Zamora',
+					'Zaragoza',
+				]
+
+				provincias.forEach((prov) => {
+					const option = document.createElement('option')
+					option.value = prov
+					option.textContent = prov
+					selectorProvincia.appendChild(option)
+				})
+
+				let protectoras = []
+
+				fetch('../backend/backend.json')
+					.then((respuesta) => respuesta.json())
+					.then((datos) => {
+						protectoras = datos.protectoras
+						mostrarProtectoras(protectoras)
+					})
+					.catch((error) => console.error('Error cargando los datos:', error))
+
+				function mostrarProtectoras(lista) {
+					protectorasContainer.innerHTML = ''
+
+					if (lista.length === 0) {
+						protectorasContainer.innerHTML = `<p class="text-center font-semibold text-2xl max-w-96">No hay protectoras en la provincia seleccionada</p>`
+						return
+					}
+
+					const mensajeResultados = document.createElement('p')
+					mensajeResultados.className ='text-center font-semibold text-xl max-w-96 mb-4'
+					mensajeResultados.textContent = `${lista.length} resultado(s)`
+					protectorasContainer.appendChild(mensajeResultados)
+
+					lista.forEach((protectora) => {
+						const tarjetaProtectora = document.createElement('div');
+						tarjetaProtectora.className =
+							'container bg-white shadow-lg rounded-lg w-[80%] max-w-6xl flex flex-col items-center justify-center p-5 md:flex-row my-5'
+						tarjetaProtectora.innerHTML = `
+                      <div class="w-full md:w-2/6 flex items-center justify-center p-4">
+                          <img src="${protectora.foto}" alt="Foto de la protectora ${protectora.nombre}" class="h-auto w-[100%] shadow-lg rounded-lg object-cover">
+                      </div>    
+                      <div class="w-full md:w-3/6 flex flex-col justify-around my-5 p-4">
+                          <div class="w-full">
+                              <h2 class="text-4xl font-bold mb-5">${protectora.nombre}</h2>
+                          </div>
+                          <div class="items-center">
+                              <p class="text-lg"><span class="font-semibold">Ciudad:</span> ${protectora.ciudad}</p>
+                              <p class="text-lg"><span class="font-semibold">Provincia:</span> ${protectora.provincia}</p>
+                              <p class="text-lg"><span class="font-semibold">Fundación:</span> ${protectora.fundacion}</p>
+                              <p class="text-lg"><span class="font-semibold">Empleados:</span> ${protectora.empleados}</p>
+                              <p class="text-lg"><span class="font-semibold">Desempeño:</span> ${protectora.desempeño}</p>
+                          </div>
+                      </div>
+                      <div class="w-full md:w-1/6 flex justify-center items-center mx-5">
+                          <a href="mascotas.html?idProtectora=${protectora.id}" class="bg-customBlue text-white px-4 py-2 rounded-lg hover:bg-blue-400 flex items-center justify-center">Ver mascotas</a>
+                      </div>`
+						protectorasContainer.appendChild(tarjetaProtectora)
+					})
+				}
+
+				botonBuscar.addEventListener('click', () => {
+					const provinciaSeleccionada = selectorProvincia.value
+
+					const protectorasFiltradas = provinciaSeleccionada
+						? protectoras.filter(
+								(protectora) => protectora.provincia === provinciaSeleccionada
+							)
+						: protectoras
+
+					mostrarProtectoras(protectorasFiltradas)
+				})
+			})
+		</script>
 	</body>
 </html>
