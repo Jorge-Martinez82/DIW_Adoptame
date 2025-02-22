@@ -147,11 +147,11 @@
 							<h2 id="nombreMascota" class="text-5xl font-bold text-gray-800"></h2>
 						</div>
 						<div class="sm:grid sm:grid-cols-2 p-5">
-							<p id="edadMascota" class="text-lg mb-2 capitalize"></p>
-							<p id="generoMascota" class="text-lg mb-2 capitalize"></p>
-							<p id="protectoraMascota" class="text-lg mb-2 capitalize">
-							<p id="localizacionMascota" class="text-lg mb-2 capitalize">
-							<p id="descripcionMascota" class="sm:col-span-2 text-lg my-2 capitalize">
+							<p id="edadMascota" class="text-lg mb-2"></p>
+							<p id="generoMascota" class="text-lg mb-2"></p>
+							<p id="protectoraMascota" class="text-lg mb-2"></p>
+							<p id="localizacionMascota" class="text-lg mb-2"></p>
+							<p id="descripcionMascota" class="sm:col-span-2 text-lg my-2"></p>
 						</div>
 						<div class="mb-2 flex items-center justify-center">
 							<button class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400">Adóptame</button>
@@ -162,10 +162,10 @@
 				document.getElementById("imagenMascota").alt = `Foto de ${mascota.nombre}`;
 				document.getElementById("nombreMascota").textContent = mascota.nombre;
 				document.getElementById("edadMascota").innerHTML = `<span class="font-semibold text-xl">Edad: </span>${mascota.edad} año(s)`;
-				document.getElementById("generoMascota").innerHTML = `<span class="font-semibold text-xl">Género: </span>${mascota.genero}`;
-				document.getElementById("protectoraMascota").innerHTML = `<span class="font-semibold text-xl">Protectora: </span></p>${mascota.protectora}`;
-				document.getElementById("localizacionMascota").innerHTML = `<span class="font-semibold text-xl">Ubicación: </span></p>${mascota.provincia}`;
-				document.getElementById("descripcionMascota").innerHTML = `<span class="font-semibold text-xl">Descripción: </span></p>${mascota.descripcion}`;	
+				document.getElementById("generoMascota").innerHTML = `<span class="font-semibold text-xl">Género: </span><span class="normal-case">${mascota.genero}</span>`;
+				document.getElementById("protectoraMascota").innerHTML = `<span class="font-semibold text-xl">Protectora: </span><span class="normal-case">${mascota.protectora}</span>`;
+				document.getElementById("localizacionMascota").innerHTML = `<span class="font-semibold text-xl">Ubicación: </span><span class="capitalize">${mascota.provincia}</span>`;
+				document.getElementById("descripcionMascota").innerHTML = `<span class="font-semibold text-xl">Descripción: </span><span class="normal-case">${mascota.descripcion}</span>`;	
 			}
 		</script>
 	</body>
