@@ -23,28 +23,30 @@
         <a href="../index.html" class="font-roboto font-bold border-2 border-customBlue text-black px-6 py-2 rounded-full transition duration-300 hover:bg-customBlue hover:text-white">Iniciar sesión</a>
       </nav>
     </header>
-    <section class="flex-grow flex justify-center items-center bg-customPurple">
-      <div class="container bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl flex">    
-          <div class="w-2/5 flex items-center justify-center p-4">
-            <img src="../assets/img/dobby.jpg" alt="Foto del animal" class="h-auto w-[100%] shadow-lg rounded-lg object-cover">
-          </div>    
-          <div class="w-3/5 flex flex-col justify-between my-4 p-4">
-            <div class="w-full mb-5">
-              <h2 class="text-4xl font-bold text-gray-800">Dobby</h2>
-            </div>
-            <div class="grid grid-cols-2 gap-2 items-center">
-              <p class="text-gray-600 text-lg"><span class="font-semibold">Edad:</span> 1 año</p>
-              <p class="text-gray-600 text-lg"><span class="font-semibold">Género:</span> Macho</p>
-              <p class="text-gray-600 text-lg"><span class="font-semibold">Protectora:</span> Patitas Felices</p>
-              <p class="text-gray-600 text-lg"><span class="font-semibold">Ubicación:</span> Madrid</p>
-              <p class="col-span-2 text-gray-600 text-lg"><span class="font-semibold">Descripción:</span> Dobby es un perro cariñoso y juguetón en busca de un hogar.</p>
-            </div>
-            <div class="flex justify-center items-center mt-4">
-              <button class="bg-customBlue text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition">Adóptame</button>
-            </div>
+    <main class="flex-grow flex justify-center items-center bg-customPurple">
+      <section id="seccion-principal" class="flex-grow flex justify-center items-center bg-customPurple">
+        <div class="container bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl flex">    
+            <div class="w-2/5 flex items-center justify-center p-4">
+              <img src="../assets/img/dobby.jpg" id="imagenMascota" alt="Foto del animal" class="h-auto w-[100%] shadow-lg rounded-lg object-cover">
+            </div>    
+            <div class="w-3/5 flex flex-col justify-between my-4 p-4">
+              <div class="w-full mb-5">
+                <h2 id="nombreMascota" class="text-4xl font-bold text-gray-800">Dobby</h2>
+              </div>
+              <div class="grid grid-cols-2 gap-2 items-center">
+                <p id="edadMascota" class="text-gray-600 text-lg"><span class="font-semibold">Edad: </span>2 años</p>
+                <p id="generoMascota" class="text-gray-600 text-lg"><span class="font-semibold">Género: </span>Macho</p>
+                <p id="protectoraMascota" class="text-gray-600 text-lg"><span class="font-semibold">Protectora: </span>Protectora Madrid</p>
+                <p id="localizacionMascota" class="text-gray-600 text-lg"><span class="font-semibold">Ubicación: </span>Madrid</p>
+                <p id="descripcionMascota" class="col-span-2 text-gray-600 text-lg"><span class="font-semibold">Descripción: </span>Es muy cariñoso y le encanta jugar a recoger la pelota.</p>
+              </div>
+              <div class="flex justify-center items-center mt-4">
+                <button class="bg-customBlue text-white px-4 py-2 rounded-lg hover:bg-blue-400 transition">Adóptame</button>
+              </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <footer class="bg-customBlack flex justify-evenly p-4 text-white w-full">
       <div class="flex flex-col gap-3 font-roboto">
         <a href="../index.html" class="flex items-center gap-5">
@@ -73,5 +75,45 @@
         </div>
       </div>
     </footer>
+    <script>
+      /*
+      const urlParams = new URLSearchParams(window.location.search);
+      const idMascota = urlParams.get("id");
+      console.log(idMascota);
+
+      let mascota;
+
+      fetch("../backend/backend.json")
+        .then(respuesta => {
+          if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+          }
+          return respuesta.json();
+        })
+        .then(datos => {
+          mascota = datos.mascotas.find(masc => masc.id == idMascota);
+
+          if (mascota) {
+            mostrarDetalles(mascota);
+          } else {
+            console.error("Mascota no encontrada");
+            document.getElementById("seccion-principal").innerHTML = "<p>Mascota no encontrada.</p>";
+          }
+        })
+        .catch(error => console.error("Error al obtener datos:", error));
+
+      function mostrarDetalles(mascota) {
+        document.getElementById("nombreMascota").textContent = mascota.nombre;
+        document.getElementById("generoMascota").textContent = mascota.genero;
+        document.getElementById("edadMascota").textContent = `${mascota.edad} año(s)`;
+        document.getElementById("localizacionMascota").textContent = mascota.provincia;
+        document.getElementById("protectoraMascota").textContent = mascota.protectora;
+        document.getElementById("descripcionMascota").textContent = mascota.descripcion;
+        document.getElementById("imagenMascota").src = mascota.imagen;
+        document.getElementById("imagenMascota").alt = `Foto de ${mascota.nombre}`;
+        document.getElementById("imagenSmMascota").src = mascota.imagen_sm;
+      }
+      */
+    </script>
   </body>
 </html>
