@@ -59,15 +59,6 @@
 	</ul>
 </header>
 
-<script>
-	const menuBtn = document.getElementById("menu-btn");
-	const menu = document.getElementById("menu");
-
-	menuBtn.addEventListener("click", () => {
-		menu.classList.toggle("hidden");
-	});
-</script>
-
 <main>
 	<section
 		class="relative flex h-[600px] flex-col items-center justify-center bg-[url('/assets/img/portada.jpg')] bg-cover bg-center"
@@ -75,7 +66,7 @@
 		<div class="absolute inset-0 bg-white/40"></div>
 
 		<div class="relative flex flex-col items-center justify-center">
-			<h1 class="mb-4 font-montserrat text-4xl font-bold text-black">
+			<h1 class="text-center mb-4 font-montserrat text-4xl font-bold text-black">
 				Adopta y transforma vidas
 			</h1>
 			<form action="src/mascotas.html" method="GET"
@@ -123,7 +114,7 @@
 	</section>
 
 	<section
-		class="flex h-auto flex-col justify-center bg-customPurple bg-[url('/assets/img/huellas2.png')] bg-cover bg-center px-6 py-24 md:px-16"
+		class="flex h-auto flex-col justify-center bg-customPurple bg-[url('/assets/img/huellas.png')] bg-cover bg-center px-6 py-24 md:px-16"
 	>
 		<header class="flex items-center justify-center pb-6 text-center">
 			<h2 class="font-roboto text-2xl font-bold">Como funciona Adóptame?</h2>
@@ -228,7 +219,7 @@
 
 	<section
 		id="about"
-		class="flex h-auto flex-col items-center justify-center bg-customPurple bg-[url('/assets/img/huellas2.png')] bg-cover bg-center px-6 py-24 md:flex-row"
+		class="flex h-auto flex-col items-center justify-center bg-customPurple bg-[url('/assets/img/huellas.png')] bg-cover bg-center px-6 py-24 md:flex-row"
 	>
 		<article class="flex w-full flex-col items-center p-6 md:w-1/2">
 			<h2 class="text-center font-roboto text-2xl font-bold">
@@ -276,7 +267,7 @@
 					placeholder="Escribe tu mensaje"
 				/>
 				<button
-					class="mt-5 w-32 rounded-full bg-customBlue p-2 text-white"
+					class="mt-5 w-32 rounded-xl bg-customBlue p-2 text-white"
 					type="submit"
 				>
 					Enviar
@@ -326,5 +317,8 @@
 		<span>2024 ©Adóptame - Todos los derechos reservados</span>
 	</div>
 </footer>
+
+<script src="./assets/js/index.js"></script>
+
 </body>
 </html>

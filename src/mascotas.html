@@ -9,58 +9,57 @@
 			rel="stylesheet"
 		/>
 		<link href="../dist/css/styles.css" rel="stylesheet" />
-		<script src="../assets/js/index.js"></script>
 	</head>
 	<body>
-		<header class="m-2">
+		<header class="m-2 relative z-10">
 			<nav class="flex items-center justify-between">
 				<a href="../index.html" class="flex items-center gap-3">
-					<img
-						src="../assets/img/logo.png"
-						alt="logo de adoptame"
-						class="h-10"
-					/>
+					<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10"/>
 					<p class="font-montserrat font-bold">Adoptame</p>
 				</a>
-				<ul class="flex flex-col gap-2 font-roboto sm:flex-row sm:gap-2">
-					<li>
-						<a class="underline-offset-1 hover:underline" href="">
-							Sobre nosotros
-						</a>
-					</li>
-					<li>
-						<a
-							class="underline-offset-1 hover:underline"
-							href="./protectoras.html"
-						>
-							Protectoras
-						</a>
-					</li>
-					<li>
-						<a class="underline-offset-1 hover:underline" href="./mascotas.html"
-							>Mascotas</a
-						>
-					</li>
-				</ul>
-				<a
-					href="./index.html"
-					class="rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white"
-				>
+
+				<div class="absolute left-1/2 transform -translate-x-1/2 hidden sm:block">
+					<ul class="flex gap-6 font-roboto">
+						<li><a class="underline-offset-1 hover:underline" href="../index.html#about">Sobre nosotros</a></li>
+						<li><a class="underline-offset-1 hover:underline" href="./protectoras.html">Protectoras</a></li>
+						<li><a class="underline-offset-1 hover:underline" href="./mascotas.html">Mascotas</a></li>
+					</ul>
+				</div>
+
+				<a href="./login.html"
+					 class="hidden sm:block rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
 					Iniciar sesión
 				</a>
+
+				<button id="menu-btn" class="block sm:hidden">
+					<img src="../assets/img/menu_movil.svg" alt="Abrir menú" class="w-8 h-8"/>
+				</button>
 			</nav>
+
+			<ul id="menu"
+					class="hidden flex-col items-center gap-4 absolute top-16 left-0 w-full bg-white p-4 shadow-lg sm:hidden">
+				<li><a class="underline-offset-1 hover:underline" href="../index.html#about">Sobre nosotros</a></li>
+				<li><a class="underline-offset-1 hover:underline" href="./protectoras.html">Protectoras</a></li>
+				<li><a class="underline-offset-1 hover:underline" href="./mascotas.html">Mascotas</a></li>
+				<li class="w-full text-center">
+					<a href="./login.html"
+						 class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white">
+						Iniciar sesión
+					</a>
+				</li>
+			</ul>
 		</header>
 
 		<main>
-			<section class="relative flex h-80 w-full items-center justify-center bg-gray-300">
+			<section class="relative flex h-80 w-full items-center justify-center">
 				<!-- Imagen de fondo con opacidad -->
 				<div class="absolute inset-0 bg-[url('../../assets/img/gato-mascotas.webp')] bg-cover bg-center opacity-30"></div>
 
 				<!-- Contenido sobre el fondo -->
-				<div class="relative flex w-[90%] max-w-2xl items-end gap-4 rounded-lg bg-black/80 p-6 backdrop-blur-md">
+				<div class="relative flex w-[90%] max-w-2xl items-end gap-4 rounded-3xl bg-customBlack p-6">
 					<div class="flex w-full flex-col gap-4 md:flex-row">
 						<div class="w-full">
-							<label for="tipo" class="block text-sm font-semibold text-white">Tipo de mascota</label>
+							<label for="tipo" class="block text-sm font-semibold text-white mb-2">Tipo de mascota</label>
 							<select id="tipo" class="w-full rounded bg-white p-2 text-gray-800">
 								<option value="todos">Perros, gatos, aves...</option>
 								<option value="conejos">🐰 Conejos</option>
@@ -71,7 +70,7 @@
 						</div>
 
 						<div class="w-full">
-							<label for="provincia" class="block text-sm font-semibold text-white">Localización</label>
+							<label for="provincia" class="block text-sm font-semibold text-white mb-2">Localización</label>
 							<select id="provincia" class="w-full rounded bg-white p-2 text-gray-800">
 								<option value="todos">Todas</option>
 								<option value="navarra">Navarra</option>
@@ -82,7 +81,7 @@
 						</div>
 
 						<div class="self-end">
-							<button class="rounded bg-customBlue px-6 py-2 font-semibold text-white hover:customBlueHover-700" id="buscar">
+							<button class="rounded-full bg-customBlue px-6 py-2 font-semibold text-white hover:bg-customBlueHover" id="buscar">
 								Buscar
 							</button>
 						</div>
@@ -91,7 +90,7 @@
 			</section>
 
 			<section class="relative rounded-lg p-10 bg-customPurple">
-				<div class="absolute inset-0 bg-[url('../../assets/img/huellas2.png')] bg-cover bg-center opacity-10 rounded-lg"></div>
+				<div class="absolute inset-0 bg-[url('../../assets/img/huellas.png')] bg-cover bg-center opacity-80 rounded-lg"></div>
 
 				<div class="relative">
 					<h2 class="mb-6 text-2xl font-bold text-gray-800" id="cantidad_resultados">
@@ -143,6 +142,7 @@
 			</div>
 		</footer>
 
+		<script src="../assets/js/index.js"></script>
 		<script>
 			const mascotasDiv = document.querySelector('#resultados_mascotas')
 			const cantidadResultadosH1 = document.querySelector(
@@ -202,7 +202,7 @@
 												src="../assets/img/mascotas/${x.imagen}"
 												alt="Imagen de ${x.nombre}"
 												title="Imagen de ${x.nombre}"
-												class="w-full h-48 object-cover rounded-md"
+												class="w-full h-48 object-cover rounded-lg"
 												loading="lazy"
 											/>
 										</picture>
