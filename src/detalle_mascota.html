@@ -90,7 +90,7 @@
 						<div class="flex gap-2">
 							<img class="h-8 w-8" src="../assets/img/facebook.png" alt="logo de Facebook" />
 							<img class="h-8 w-8" src="../assets/img/instagram.png" alt="logo de Instagram" />
-							<img class="h-8 w-8" src="../assets/img/twitter.png" alt="logo de Twitter" />
+							<img class="h-8 w-8" src="../assets/img/twiter.png" alt="logo de Twitter" />
 							<img class="h-8 w-8" src="../assets/img/linkedin.png" alt="logo de Linkedin" />
 							<img class="h-8 w-8" src="../assets/img/youtube.png" alt="logo de Youtube" />
 						</div>
@@ -140,32 +140,32 @@
 				document.getElementById("seccion-principal").innerHTML = `
 				<div class="container flex flex-col sm:flex-row items-center justify-center max-w-4xl rounded-lg bg-white shadow-lg my-10 mx-10">
 					<div class="flex h-auto w-[80%] sm:w-2/5 items-center justify-center p-4">
-						<img src="../assets/img/dobby.jpg" id="imagenMascota"alt="" class="h-auto w-[100%] rounded-lg object-cover shadow-lg"/>
+						<img src="" id="imagenMascota" alt="" class="h-auto w-[100%] rounded-lg object-cover shadow-lg"/>
 					</div>
 					<div class="flex w-[100%] sm:w-3/5 flex-col items-center justify-center p-4">
 						<div class="mb-5">
-							<h2 id="nombreMascota" class="text-5xl font-bold text-gray-800">Dobby</h2>
+							<h2 id="nombreMascota" class="text-5xl font-bold text-gray-800"></h2>
 						</div>
 						<div class="sm:grid sm:grid-cols-2 p-5">
-							<p id="edadMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Edad: </span>2 años</p>
-							<p id="generoMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Género: </span>Macho</p>
-							<p id="protectoraMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Protectora: </span>Protectora Pamplona</p>
-							<p id="localizacionMascota" class="text-lg mb-2"><span class="font-semibold text-xl">Ubicación: </span>Pamplona</p>
-							<p id="descripcionMascota" class="sm:col-span-2 text-lg my-2"><span class="font-semibold text-xl">Descripción: </span>Muy jugueton</p>
+							<p id="edadMascota" class="text-lg mb-2"></p>
+							<p id="generoMascota" class="text-lg mb-2"></p>
+							<p id="protectoraMascota" class="text-lg mb-2"></p>
+							<p id="localizacionMascota" class="text-lg mb-2"></p>
+							<p id="descripcionMascota" class="sm:col-span-2 text-lg my-2"></p>
 						</div>
 						<div class="mb-2 flex items-center justify-center">
 							<button class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400">Adóptame</button>
 						</div>
 					</div>
 				</div>`;
-				document.getElementById("imagenMascota").src = mascota.imagen;
+				document.getElementById("imagenMascota").src = `../assets/img/mascotas/${mascota.imagen}`;
 				document.getElementById("imagenMascota").alt = `Foto de ${mascota.nombre}`;
 				document.getElementById("nombreMascota").textContent = mascota.nombre;
-				document.getElementById("edadMascota").textContent = `${mascota.edad} año(s)`;
-				document.getElementById("generoMascota").textContent = mascota.genero;
-				document.getElementById("protectoraMascota").textContent = mascota.protectora;
-				document.getElementById("localizacionMascota").textContent = mascota.provincia;
-				document.getElementById("descripcionMascota").textContent = mascota.descripcion;	
+				document.getElementById("edadMascota").innerHTML = `<span class="font-semibold text-xl">Edad: </span>${mascota.edad} año(s)`;
+				document.getElementById("generoMascota").innerHTML = `<span class="font-semibold text-xl">Género: </span><span class="capitalize">${mascota.genero}</span>`;
+				document.getElementById("protectoraMascota").innerHTML = `<span class="font-semibold text-xl">Protectora: </span><span class="normal-case">${mascota.protectora}</span>`;
+				document.getElementById("localizacionMascota").innerHTML = `<span class="font-semibold text-xl">Ubicación: </span><span class="capitalize">${mascota.provincia}</span>`;
+				document.getElementById("descripcionMascota").innerHTML = `<span class="font-semibold text-xl">Descripción: </span><span class="normal-case">${mascota.descripcion}</span>`;	
 			}
 		</script>
 	</body>
