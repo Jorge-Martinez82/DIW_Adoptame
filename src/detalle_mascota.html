@@ -147,7 +147,7 @@
 							<p id="descripcionMascota" class="sm:col-span-2 text-lg my-2"></p>
 						</div>
 						<div class="mb-2 flex items-center justify-center">
-							<button class="rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400">Adóptame</button>
+							<button class="boton-adoptar rounded-lg bg-customBlue px-4 py-2 text-white transition hover:bg-blue-400">Adóptame</button>
 						</div>
 					</div>
 				</div>`
@@ -164,6 +164,10 @@
 					`<span class="font-semibold text-xl">Ubicación: </span><span class="capitalize">${mascota.provincia}</span>`
 				document.getElementById('descripcionMascota').innerHTML =
 					`<span class="font-semibold text-xl">Descripción: </span><span class="normal-case">${mascota.descripcion}</span>`
+
+				document.querySelector('.boton-adoptar').addEventListener('click', () => {
+					window.location.href = `formulario_adopcion.html?nombre=${mascota.nombre}`
+				})
 			}
 		</script>
 	</body>
