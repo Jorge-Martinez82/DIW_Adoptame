@@ -17,7 +17,7 @@
 			<nav class="flex items-center justify-between">
 				<a href="index.html" class="flex items-center gap-3">
 					<img src="assets/img/logo.png" alt="logo de adoptame" class="h-10" />
-					<p class="font-montserrat font-bold">Adoptame</p>
+					<p class="font-montserrat font-bold">Adóptame</p>
 				</a>
 
 				<div class="absolute left-1/2 hidden -translate-x-1/2 transform sm:block">
@@ -118,7 +118,7 @@
 							<option value="vizcaya">Vizcaya</option>
 						</select>
 
-						<button class="mt-5 w-32 rounded-full bg-customBlue p-2 text-white" type="submit">
+						<button class="mt-5 w-32 rounded-full bg-customBlue p-2 text-white transition duration-300 hover:bg-customBlueHover" type="submit">
 							Buscar
 						</button>
 					</form>
@@ -130,11 +130,12 @@
 					class="flex flex-col items-center justify-center text-center md:px-32 md:text-left lg:px-64"
 				>
 					<h2 class="font-roboto text-xl font-bold text-cyan-700 md:text-2xl">Nuestro propósito</h2>
-					<h2 class="mt-4 font-roboto text-lg font-bold md:text-2xl">
+					<blockquote class="mt-4 font-roboto text-lg font-bold md:text-2xl italic">
 						"Creemos que cada animal merece un hogar lleno de cariño. Nuestra misión es ser el
 						puente que une corazones y patas, asegurando que cada adopción sea el inicio de una
 						historia feliz."
-					</h2>
+					</blockquote>
+
 				</div>
 			</section>
 
@@ -152,7 +153,7 @@
 							src="assets/img/3.png"
 							alt="Imagen de buscar mascota"
 						/>
-						<h3 class="font-roboto text-2xl">Descubre a tu mascota</h3>
+						<h3 class="font-roboto text-xl font-semibold">Descubre a tu mascota</h3>
 					</article>
 
 					<article class="flex flex-col items-center">
@@ -161,7 +162,7 @@
 							src="assets/img/2.png"
 							alt="Imagen de refugio"
 						/>
-						<h3 class="font-roboto text-2xl">Contacta con el refugio</h3>
+						<h3 class="font-roboto text-xl font-semibold">Contacta con el refugio</h3>
 					</article>
 
 					<article class="flex flex-col items-center">
@@ -170,7 +171,7 @@
 							src="assets/img/1.png"
 							alt="Imagen de persona y mascota"
 						/>
-						<h3 class="font-roboto text-2xl">Comienza vuestra aventura</h3>
+						<h3 class="font-roboto text-xl font-semibold">Comienza vuestra aventura</h3>
 					</article>
 				</div>
 			</section>
@@ -192,10 +193,10 @@
 						</figure>
 						<div>
 							<h2>Ana M.</h2>
-							<p>
+							<blockquote class="italic border-l-4 border-gray-400 pl-4">
 								"Muy contenta con la experiencia con Adóptame, el trámite para adoptar a mi mascota
-								fué muy sencillo y me ayudaron mucho."
-							</p>
+								fue muy sencillo y me ayudaron mucho."
+							</blockquote>
 						</div>
 					</article>
 					<article
@@ -210,7 +211,9 @@
 						</figure>
 						<div>
 							<h2>Javier M.</h2>
-							<p>"Gracias a Adóptame he encontrado al amigo fiel que tanto he buscado."</p>
+							<blockquote class="italic border-l-4 border-gray-400 pl-4">
+								"Gracias a Adóptame he encontrado al amigo fiel que tanto he buscado."
+							</blockquote>
 						</div>
 					</article>
 					<article
@@ -225,10 +228,10 @@
 						</figure>
 						<div>
 							<h2>Sara L.</h2>
-							<p>
+							<blockquote class="italic border-l-4 border-gray-400 pl-4">
 								"Gracias a esta plataforma, encontré a mi compañero ideal. El proceso fue rápido y
 								sencillo, y ahora mi mascota tiene un hogar lleno de amor."
-							</p>
+							</blockquote>
 						</div>
 					</article>
 				</div>
@@ -268,14 +271,13 @@
 							placeholder="Introduce tu nombre"
 						/>
 						<label class="font-bold" for="mensaje">Mensaje</label>
-						<input
-							type="text"
-							class="w-full rounded-xl p-2 text-black"
+						<textarea
+							class="w-full rounded-xl p-2 text-black h-15"
 							id="mensaje"
 							name="mensaje"
 							placeholder="Escribe tu mensaje"
-						/>
-						<button class="mt-5 w-32 rounded-xl bg-customBlue p-2 text-white" type="submit">
+						></textarea>
+						<button class="self-center mt-5 w-32 rounded-full bg-customBlue p-2 text-white transition duration-300 hover:bg-customBlueHover" type="submit">
 							Enviar
 						</button>
 					</form>
