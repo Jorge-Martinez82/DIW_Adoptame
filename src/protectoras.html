@@ -72,11 +72,14 @@
 			</ul>
 		</header>
 
-		<main class="flex-grow bg-customPurple">
-			<section
-				class="flex flex-col items-center justify-center bg-[url('../assets/img/portada.webp')]"
-			>
-				<div class="container flex h-96 w-full items-center justify-center">
+		<main class="flex flex-col flex-grow">
+			<section class="relative flex h-80 w-full items-center justify-center">
+				<!-- Imagen de fondo con opacidad -->
+				<div
+					class="absolute inset-0 bg-[url('../../assets/img/gato-mascotas.webp')] bg-cover bg-center opacity-30"
+				></div>
+
+				<div class="relative container flex h-96 w-full items-center justify-center">
 					<div
 						class="flex h-[50%] w-[75%] flex-col items-center justify-center rounded-3xl bg-customBlack p-6 sm:w-[60%]"
 					>
@@ -99,7 +102,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="flex flex-col items-center justify-center">
+			<section class="flex flex-grow flex-col items-center justify-center bg-customPurple bg-[url('../../assets/img/huellas.png')]">
 				<div
 					id="protectorasContainer"
 					class="my-10 flex w-full max-w-6xl flex-col items-center"

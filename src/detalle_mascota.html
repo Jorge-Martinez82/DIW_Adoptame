@@ -33,7 +33,6 @@
 					</ul>
 				</div>
 				<a
-					id="link-iniciar-sesion-pc"
 					href="login.html"
 					class="hidden rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white sm:block"
 				>
@@ -62,7 +61,6 @@
 				</li>
 				<li class="w-full text-center">
 					<a
-						id="link-iniciar-sesion-movil"
 						href="login.html"
 						class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white"
 					>
@@ -71,10 +69,20 @@
 				</li>
 			</ul>
 		</header>
-		<main class="flex flex-grow items-center justify-center bg-customPurple">
+
+		<script>
+			const menuBtn = document.getElementById('menu-btn')
+			const menu = document.getElementById('menu')
+			// Mostrar el menu al hacer click en el desplegable
+			menuBtn.addEventListener('click', () => {
+				menu.classList.toggle('hidden')
+			})
+		</script>
+
+		<main class="flex flex-grow items-center justify-center bg-customPurple bg-[url('../../assets/img/huellas.png')]">
 			<section
 				id="seccion-principal"
-				class="flex flex-grow items-center justify-center bg-customPurple"
+				class="flex flex-grow items-center justify-center"
 			></section>
 		</main>
 		<footer class="bg-customBlack p-4 pl-4 text-white">
@@ -109,7 +117,6 @@
 				<span>2024 ©Adóptame - Todos los derechos reservados</span>
 			</div>
 		</footer>
-		<script src="../assets/js/index.js"></script>
 		<script>
 			const urlParams = new URLSearchParams(window.location.search)
 			const idMascota = urlParams.get('id')
@@ -117,14 +124,21 @@
 
 			let mascota
 
-			fetch(`${URL_BACKEND}/mascotas/${idMascota}`)
-				.then((response) => response.json())
-				.then((mascota) => {
+			fetch('../backend/backend.json')
+				.then((respuesta) => {
+					if (!respuesta.ok) {
+						throw new Error(`Error HTTP: ${respuesta.status}`)
+					}
+					return respuesta.json()
+				})
+				.then((datos) => {
+					mascota = datos.mascotas.find((masc) => masc.id == idMascota)
+
 					if (mascota) {
 						mostrarDetalles(mascota)
 					} else {
 						document.getElementById('seccion-principal').innerHTML =
-							`<p class="text-2xl">Mascota no encontrada</p>`
+							`<div class="w-[50%]"><p class="text-2xl">Mascota no encontrada</p></div>`
 					}
 				})
 				.catch((error) => console.error('Error al obtener datos:', error))

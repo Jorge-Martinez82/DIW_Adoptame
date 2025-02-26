@@ -9,56 +9,30 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Perfil</title>
 		<link href="../dist/css/styles.css" rel="stylesheet" />
-		<link
-			rel="icon"
-			type="image/vnd.microsoft.icon"
-			href="../assets/img/logo.png"
-		/>
+		<link rel="icon" type="image/vnd.microsoft.icon" href="../assets/img/logo.png" />
 	</head>
 	<body class="flex min-h-screen flex-col">
 		<header class="relative z-10 m-2">
 			<nav class="flex items-center justify-between">
 				<a href="../index.html" class="flex items-center gap-3">
-					<img
-						src="../assets/img/logo.png"
-						alt="logo de adoptame"
-						class="h-10"
-					/>
+					<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
 					<p class="font-montserrat font-bold">Adoptame</p>
 				</a>
 				<!-- Version escritorio -->
-				<div
-					class="absolute left-1/2 hidden -translate-x-1/2 transform sm:block"
-				>
+				<div class="absolute left-1/2 hidden -translate-x-1/2 transform sm:block">
 					<ul class="flex gap-6 font-roboto">
 						<li>
-							<a
-								class="underline-offset-1 hover:underline"
-								href="../index.html"
-							>
-								Sobre nosotros
-							</a>
+							<a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a>
 						</li>
 						<li>
-							<a
-								class="underline-offset-1 hover:underline"
-								href="protectoras.html"
-							>
-								Protectoras
-							</a>
+							<a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a>
 						</li>
 						<li>
-							<a
-								class="underline-offset-1 hover:underline"
-								href="mascotas.html"
-							>
-								Mascotas
-							</a>
+							<a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a>
 						</li>
 					</ul>
 				</div>
 				<a
-					id="link-iniciar-sesion-pc"
 					href="login.html"
 					class="hidden rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white sm:block"
 				>
@@ -67,11 +41,7 @@
 
 				<!-- Version movil -->
 				<button id="menu-btn" class="block sm:hidden">
-					<img
-						src="../assets/img/menu_movil.svg"
-						alt="Abrir menú"
-						class="h-8 w-8"
-					/>
+					<img src="../assets/img/menu_movil.svg" alt="Abrir menú" class="h-8 w-8" />
 				</button>
 			</nav>
 
@@ -81,23 +51,16 @@
 				class="absolute left-0 top-16 hidden w-full flex-col items-center gap-4 bg-white p-4 shadow-lg sm:hidden"
 			>
 				<li>
-					<a class="underline-offset-1 hover:underline" href="../index.html">
-						Sobre nosotros
-					</a>
+					<a class="underline-offset-1 hover:underline" href="../index.html">Sobre nosotros</a>
 				</li>
 				<li>
-					<a class="underline-offset-1 hover:underline" href="protectoras.html">
-						Protectoras
-					</a>
+					<a class="underline-offset-1 hover:underline" href="protectoras.html">Protectoras</a>
 				</li>
 				<li>
-					<a class="underline-offset-1 hover:underline" href="mascotas.html">
-						Mascotas
-					</a>
+					<a class="underline-offset-1 hover:underline" href="mascotas.html">Mascotas</a>
 				</li>
 				<li class="w-full text-center">
 					<a
-						id="link-iniciar-sesion-movil"
 						href="login.html"
 						class="block w-full rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white"
 					>
@@ -106,8 +69,8 @@
 				</li>
 			</ul>
 		</header>
-		<main class="flex flex-grow items-center justify-center bg-customPurple">
-			<div
+		<main class="flex flex-grow items-center justify-center bg-customPurple bg-[url('../../assets/img/huellas.png')]">
+            <div
 				id="perfil"
 				class="mx-5 my-5 flex h-auto w-[90%] flex-col items-center justify-center rounded-lg bg-white sm:w-[75%] md:w-[60%] xl:h-96 xl:w-[70%] xl:flex-row"
 			>
@@ -131,126 +94,53 @@
 					</div>
 				</div>
 
-				<div
-					id="datosUsuario"
-					class="mb-4 flex w-[80%] flex-col md:w-[70%] xl:m-10 xl:grid xl:w-[50%] xl:grid-cols-[30%_70%] xl:text-center"
-				>
-					<p>Nombre:</p>
-					<input
-						type="text"
-						class="mb-5 mt-1 rounded-lg border-2 border-black bg-gray-200 px-2 py-1"
-						value=""
-					/>
-					<p>Apellidos:</p>
-					<input
-						type="text"
-						class="mb-5 mt-1 rounded-lg border-2 border-black bg-gray-200 px-2 py-1"
-						value=""
-					/>
-					<p>Ciudad:</p>
-					<input
-						type="text"
-						class="mb-5 mt-1 rounded-lg border-2 border-black bg-gray-200 px-2 py-1"
-						value=""
-					/>
-					<p>Provincia:</p>
-					<input
-						type="text"
-						class="mb-5 mt-1 rounded-lg border-2 border-black bg-gray-200 px-2 py-1"
-						value=""
-					/>
-					<p>Correo electrónico:</p>
-					<input
-						type="text"
-						class="mb-5 mt-1 rounded-lg border-2 border-black bg-gray-200 px-2 py-1"
-						value=""
-					/>
-				</div>
+                <div id="datosUsuario" class="w-[80%] md:w-[70%] xl:w-[50%] flex flex-col xl:grid xl:grid-cols-[30%_70%] xl:text-center mb-4 xl:m-10">
+                    <p>Nombre:</p>
+                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
+                    <p>Apellidos:</p>
+                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
+                    <p>Ciudad:</p>
+                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
+                    <p>Provincia:</p>
+                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
+                    <p>Correo electrónico:</p>
+                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
+                </div>
 
-				<div
-					id="actividadUsuario"
-					class="mb-4 hidden w-[80%] md:w-[70%] xl:my-10 xl:hidden xl:w-[50%] xl:text-center"
-				>
-					<p class="text-lg font-semibold">Historial de actividad</p>
-					<p class="mt-4 text-gray-600">
-						Aquí se mostrará la actividad del usuario...
-					</p>
-				</div>
+                <div id="actividadUsuario" class="hidden xl:hidden w-[80%] md:w-[70%] xl:w-[50%] xl:text-center mb-4 xl:my-10">
+                    <p class="text-lg font-semibold">Historial de actividad</p>
+                    <p class="mt-4 text-gray-600">Aquí se mostrará la actividad del usuario...</p>
+                </div>
 
-				<div
-					id="configuracionUsuario"
-					class="mb-4 hidden w-[80%] md:w-[70%] xl:my-10 xl:hidden xl:w-[50%] xl:text-center"
-				>
-					<p class="text-lg font-semibold">Opciones de configuración</p>
-					<p class="mt-4 text-gray-600">
-						Aquí se mostrarán las opciones de configuración...
-					</p>
-				</div>
-
-				<div
-					id="opcionesSesion"
-					class="mb-2 flex h-20 w-[100%] flex-row items-center justify-center xl:w-[25%] xl:flex-col"
-				>
-					<div>
-						<button
-							class="mx-3 rounded-lg bg-customBlue px-3 py-2 text-white xl:my-3"
-						>
-							Actualizar
-						</button>
-					</div>
-					<div>
-						<button onclick="{localStorage.clear(); window.location.href = 'login.html'}"
-							class="mx-3 rounded-lg bg-red-500 px-3 py-2 text-white xl:my-3"
-						>
-							Cerrar sesión
-						</button>
-					</div>
-				</div>
-			</div>
-		</main>
+                <div id="configuracionUsuario" class="hidden xl:hidden w-[80%] md:w-[70%] xl:w-[50%] xl:text-center mb-4 xl:my-10">
+                    <p class="text-lg font-semibold">Opciones de configuración</p>
+                    <p class="mt-4 text-gray-600">Aquí se mostrarán las opciones de configuración...</p>
+                </div>
+                <div id="opcionesSesion" class="w-[100%] h-20 flex flex-row items-center justify-center mb-2 xl:w-[25%] xl:flex-col">
+                    <div>
+                        <button class="px-3 py-2 bg-customBlue rounded-lg text-white mx-3 xl:my-3">Actualizar</button>
+                    </div>
+                    <div>
+                        <button class="px-3 py-2 bg-red-500 rounded-lg text-white mx-3 xl:my-3" onclick="{localStorage.clear(); window.location.href = 'login.html'}">Cerrar sesión</button>
+                    </div>
+                </div>
+            </div>
+        </main>
 		<footer class="bg-customBlack p-4 pl-4 text-white">
 			<div class="mb-4 flex flex-col justify-evenly gap-4 sm:flex-row">
 				<div class="font-roboto">
 					<a href="../index.html" class="mb-4 flex items-center">
-						<img
-							src="../assets/img/logo.png"
-							alt="logo de adoptame"
-							class="h-10"
-						/>
-						<p class="ml-4 font-montserrat text-2xl font-bold">
-							Adóptame, plataforma de adopción
-						</p>
+						<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
+						<p class="ml-4 font-montserrat text-2xl font-bold">Adóptame, plataforma de adopción</p>
 					</a>
-					<div
-						class="flex w-full flex-col justify-between sm:flex-row sm:items-center"
-					>
+					<div class="flex w-full flex-col justify-between sm:flex-row sm:items-center">
 						<p class="font-bold">Siguenos en nuestras redes sociales:</p>
 						<div class="flex gap-2">
-							<img
-								class="h-8 w-8"
-								src="../assets/img/facebook.png"
-								alt="logo de Facebook"
-							/>
-							<img
-								class="h-8 w-8"
-								src="../assets/img/instagram.png"
-								alt="logo de Instagram"
-							/>
-							<img
-								class="h-8 w-8"
-								src="../assets/img/twiter.png"
-								alt="logo de Twitter"
-							/>
-							<img
-								class="h-8 w-8"
-								src="../assets/img/linkedin.png"
-								alt="logo de Linkedin"
-							/>
-							<img
-								class="h-8 w-8"
-								src="../assets/img/youtube.png"
-								alt="logo de Youtube"
-							/>
+							<img class="h-8 w-8" src="../assets/img/facebook.png" alt="logo de Facebook" />
+							<img class="h-8 w-8" src="../assets/img/instagram.png" alt="logo de Instagram" />
+							<img class="h-8 w-8" src="../assets/img/twiter.png" alt="logo de Twitter" />
+							<img class="h-8 w-8" src="../assets/img/linkedin.png" alt="logo de Linkedin" />
+							<img class="h-8 w-8" src="../assets/img/youtube.png" alt="logo de Youtube" />
 						</div>
 					</div>
 				</div>
@@ -268,71 +158,50 @@
 				<span>2024 ©Adóptame - Todos los derechos reservados</span>
 			</div>
 		</footer>
-		<script src="../assets/js/index.js"></script>
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				const datosUsuario = document.getElementById('datosUsuario')
-				const actividadUsuario = document.getElementById('actividadUsuario')
-				const configuracionUsuario = document.getElementById(
-					'configuracionUsuario'
-				)
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                
+                const datosUsuario = document.getElementById("datosUsuario");
+                const actividadUsuario = document.getElementById("actividadUsuario");
+                const configuracionUsuario = document.getElementById("configuracionUsuario");
 
-				const datosPersonales = document.getElementById('datosPersonales')
-				const actividad = document.getElementById('actividad')
-				const configuracion = document.getElementById('configuracion')
+                const datosPersonales = document.getElementById("datosPersonales");
+                const actividad = document.getElementById("actividad");
+                const configuracion = document.getElementById("configuracion");
 
-				function mostrarSeccion(seccionMostrar) {
-					datosUsuario.classList.add('hidden', 'xl:hidden')
-					actividadUsuario.classList.add('hidden', 'xl:hidden')
-					configuracionUsuario.classList.add('hidden', 'xl:hidden')
+                function mostrarSeccion(seccionMostrar) {
 
-					seccionMostrar.classList.remove('hidden', 'xl:hidden')
+                    datosUsuario.classList.add("hidden", "xl:hidden");
+                    actividadUsuario.classList.add("hidden", "xl:hidden");
+                    configuracionUsuario.classList.add("hidden", "xl:hidden");
 
-					datosPersonales.classList.remove(
-						'font-bold',
-						'underline',
-						'text-customBlue'
-					)
-					actividad.classList.remove(
-						'font-bold',
-						'underline',
-						'text-customBlue'
-					)
-					configuracion.classList.remove(
-						'font-bold',
-						'underline',
-						'text-customBlue'
-					)
+                    seccionMostrar.classList.remove("hidden", "xl:hidden");
 
-					if (seccionMostrar === datosUsuario) {
-						datosPersonales.classList.add(
-							'font-bold',
-							'underline',
-							'text-customBlue'
-						)
-					} else if (seccionMostrar === actividadUsuario) {
-						actividad.classList.add('font-bold', 'underline', 'text-customBlue')
-					} else if (seccionMostrar === configuracionUsuario) {
-						configuracion.classList.add(
-							'font-bold',
-							'underline',
-							'text-customBlue'
-						)
-					}
-				}
+                    datosPersonales.classList.remove("font-bold", "underline", "text-customBlue");
+                    actividad.classList.remove("font-bold", "underline", "text-customBlue");
+                    configuracion.classList.remove("font-bold", "underline", "text-customBlue");
 
-				datosPersonales.addEventListener('click', function () {
-					mostrarSeccion(datosUsuario)
-				})
+                    if (seccionMostrar === datosUsuario) {
+                        datosPersonales.classList.add("font-bold", "underline", "text-customBlue");
+                    } else if (seccionMostrar === actividadUsuario) {
+                        actividad.classList.add("font-bold", "underline", "text-customBlue");
+                    } else if (seccionMostrar === configuracionUsuario) {
+                        configuracion.classList.add("font-bold", "underline", "text-customBlue");
+                    }
+                }
 
-				actividad.addEventListener('click', function () {
-					mostrarSeccion(actividadUsuario)
-				})
-
-				configuracion.addEventListener('click', function () {
-					mostrarSeccion(configuracionUsuario)
-				})
-			})
-		</script>
+                datosPersonales.addEventListener("click", function () {
+                    mostrarSeccion(datosUsuario);
+                });
+        
+                actividad.addEventListener("click", function () {
+                    mostrarSeccion(actividadUsuario);
+                });
+        
+                configuracion.addEventListener("click", function () {
+                    mostrarSeccion(configuracionUsuario);
+                });
+            });
+        </script>          
 	</body>
 </html>
