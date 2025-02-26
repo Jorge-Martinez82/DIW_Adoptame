@@ -15,7 +15,7 @@
 					<p class="font-montserrat font-bold">Adoptame</p>
 				</a>
 
-				<div class="absolute left-1/2 hidden -translate-x-1/2 transform sm:block">
+				<div class="absolute left-1/2 hidden -translate-x-1/2 transform md:block">
 					<ul class="flex gap-6 font-roboto">
 						<li>
 							<a class="underline-offset-1 hover:underline" href="../index.html#about">
@@ -36,19 +36,19 @@
 				<a
 					id="link-iniciar-sesion-pc"
 					href="./login.html"
-					class="hidden rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white sm:block"
+					class="hidden rounded-full border-2 border-customBlue px-6 py-2 font-roboto font-bold text-black transition duration-300 hover:bg-customBlue hover:text-white md:block"
 				>
 					Iniciar sesión
 				</a>
 
-				<button id="menu-btn" class="block sm:hidden">
+				<button id="menu-btn" class="block md:hidden">
 					<img src="../assets/img/menu_movil.svg" alt="Abrir menú" class="h-8 w-8" />
 				</button>
 			</nav>
 
 			<ul
 				id="menu"
-				class="absolute left-0 top-16 hidden w-full flex-col items-center gap-4 bg-white p-4 shadow-lg sm:hidden"
+				class="absolute left-0 top-16 hidden w-full flex-col items-center gap-4 bg-white p-4 shadow-lg md:hidden"
 			>
 				<li>
 					<a class="underline-offset-1 hover:underline" href="../index.html#about">
@@ -81,13 +81,13 @@
 				></div>
 
 				<!-- Contenido sobre el fondo -->
-				<div class="relative flex w-[90%] max-w-2xl items-end gap-4 rounded-3xl bg-customBlack p-6">
+				<div class="relative flex w-[100%] max-w-2xl rounded-3xl bg-customBlack p-6">
 					<div class="flex w-full flex-col gap-4 md:flex-row">
 						<div class="w-full">
 							<label for="tipo" class="mb-2 block text-sm font-semibold text-white">
 								Tipo de mascota
 							</label>
-							<select id="tipo" class="w-full rounded bg-white p-2 text-gray-800">
+							<select id="tipo" class="w-full rounded p-2">
 								<option value="todos">Perros, gatos, aves...</option>
 								<option value="conejos">🐰 Conejos</option>
 								<option value="gatos">🐱 Gatos</option>
@@ -100,7 +100,7 @@
 							<label for="provincia" class="mb-2 block text-sm font-semibold text-white">
 								Localización
 							</label>
-							<select id="provincia" class="w-full rounded bg-white p-2 text-gray-800">
+							<select id="provincia" class="w-full rounded p-2">
 								<option value="todos">Todas</option>
 								<option value="navarra">Navarra</option>
 								<option value="álava">Álava</option>
@@ -139,13 +139,13 @@
 		</main>
 
 		<footer class="bg-customBlack p-4 pl-4 text-white">
-			<div class="mb-4 flex flex-col justify-evenly gap-4 sm:flex-row">
+			<div class="mb-4 flex flex-col justify-evenly gap-4 md:flex-row">
 				<div class="font-roboto">
 					<a href="../index.html" class="mb-4 flex items-center">
 						<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
 						<p class="ml-4 font-montserrat text-2xl font-bold">Adóptame, plataforma de adopción</p>
 					</a>
-					<div class="flex w-full flex-col justify-between sm:flex-row sm:items-center">
+					<div class="flex w-full flex-col justify-between md:flex-row md:items-center">
 						<p class="font-bold">Siguenos en nuestras redes sociales:</p>
 						<div class="flex gap-2">
 							<img class="h-8 w-8" src="../assets/img/facebook.png" alt="" />
@@ -166,7 +166,7 @@
 					<p>info@adoptame.es</p>
 				</div>
 			</div>
-			<div class="sm:text-center">
+			<div class="md:text-center">
 				<span>2024 ©Adóptame - Todos los derechos reservados</span>
 			</div>
 		</footer>
@@ -211,10 +211,10 @@
 				mascotasDiv.innerHTML = mascotas
 					.map(
 						(x) => `
-							<a href="./detalle_mascota.html?id=${x.id}" class="block h-full" alt="Ver detalle de ${x.nombre}" title="Ver detalle de ${x.nombre}">
-								<div class="bg-white shadow-lg rounded-lg p-3 hover:shadow-xl transition">
-									<div class="relative">
-										<picture>
+							<div class="bg-white shadow-lg rounded-lg p-3 hover:shadow-xl">
+								<div class="relative">
+									<a href="./detalle_mascota.html?id=${x.id}" alt="Ver detalle de ${x.nombre}" title="Ver detalle de ${x.nombre}">
+										<picture class="block relative">
 											${
 												x.imagenSmall
 													? `	<source
@@ -235,27 +235,38 @@
 												loading="lazy"
 											/>
 										</picture>
-										<div class="absolute top-2 right-2 flex flex-col gap-2">
-											<button class="px-1 pt-1 rounded-full bg-red-500 hover:bg-red-700 text-white" onclick="favoritos(event)" title="Añadir a favoritos" alt="Añadir a favoritos">
-											<span class="material-icons">favorite</span>
-										</button>
+									</a>
 
-										<button class="px-1 pt-1 rounded-full bg-customBlue hover:bg-customBlueHover text-white" onclick="compartir(event)" title="Compartir" alt="Compartir">
-											<span class="material-icons">share</span>
-										</button>
-										</div>
-									</div>
-									<div class="p-4">
-										<h3 class="text-lg font-semibold text-gray-900">${x.nombre}</h3>
-										<p class="capitalize">${x.categoria}</p>
-										<ul class="mt-2 text-sm text-gray-500">
-											<li class="inline"><strong>Edad:</strong> ${x.edad} años</li>
-											<li class="inline"><strong>Prioridad:</strong> ${x.prioridad}</li>
-										</ul>
-										<p class="mt-2 text-gray-900 font-medium">${x.protectora}</p>
-									</div>
+									${x.freepik ? `<a class="absolute bottom-1 right-2 text-white bg-customBlack p-1" title="Autor de la imagen" href="${x.freepik}">${x.autor}</a>` : ''}
+
+									<div class="absolute top-2 right-2 flex flex-col gap-2">
+										<button class="px-1 pt-1 rounded-full bg-red-500 hover:bg-red-700 text-white" onclick="favoritos(event)" title="Añadir a favoritos" alt="Añadir a favoritos">
+										<span class="material-icons">favorite</span>
+									</button>
+
+									<button class="px-1 pt-1 rounded-full bg-customBlue hover:bg-customBlueHover text-white" onclick="compartir(event)" title="Compartir" alt="Compartir">
+										<span class="material-icons">share</span>
+									</button>
 								</div>
-							</a>
+							</div>
+
+							<div class="p-4">
+								<h3 class="text-lg font-semibold text-gray-900">
+									<a title="Ver detalle de ${x.nombre}" href="./detalle_mascota.html?id=${x.id}">${x.nombre}</a>
+								</h3>
+								<p class="capitalize">
+									<a title="Ver mascotas de categoría ${x.categoria}" href="./mascotas.html?categoria=${x.categoria}">${x.categoria}</a>
+								</p>
+								<ul class="mt-2 text-sm text-gray-500">
+									<li class="inline"><strong>Edad:</strong> ${x.edad} años</li>
+									<li class="inline"><strong>Género:</strong> ${x.genero}</li>
+								</ul>
+								<p class="mt-2 text-gray-900 font-medium">
+									<a title="Ver mascotas de la protectora ${x.protectora}" href="./mascotas.html?idProtectora=${x.idProtectora}">${x.protectora}</a>
+								</p>
+							</div>
+
+						</div>
 						`
 					)
 					.join('')
