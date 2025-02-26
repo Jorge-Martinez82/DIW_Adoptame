@@ -69,20 +69,30 @@
 				</li>
 			</ul>
 		</header>
-		<main class="flex flex-grow items-center justify-center bg-customPurple">
-            <div id="perfil" class="h-auto xl:h-96 w-[90%] sm:w-[75%] md:w-[60%] xl:w-[70%] flex flex-col xl:flex-row items-center justify-center bg-white rounded-lg mx-5 my-5">
-
-                <div id="cabeceraTabla" class="w-[100%] h-36 flex flex-row xl:flex-col items-center justify-around xl:w-[25%] xl:h-full xl:justify-around xl:py-5">
-                    <div class="text-center">
-                        <h3 id="datosPersonales" class="sm:text-xl md:text-2xl font-bold underline text-customBlue">Datos<br>personales</h3>
-                    </div>
-                    <div class="sm:text-xl md:text-2xl">
-                        <h3 id="actividad">Actividad</h3>
-                    </div>
-                    <div class="sm:text-xl md:text-2xl">
-                        <h3 id="configuracion">Configuración</h3>
-                    </div>
-                </div>
+		<main class="flex flex-grow items-center justify-center bg-customPurple bg-[url('../../assets/img/huellas.png')]">
+            <div
+				id="perfil"
+				class="mx-5 my-5 flex h-auto w-[90%] flex-col items-center justify-center rounded-lg bg-white sm:w-[75%] md:w-[60%] xl:h-96 xl:w-[70%] xl:flex-row"
+			>
+				<div
+					id="cabeceraTabla"
+					class="flex h-36 w-[100%] flex-row items-center justify-around xl:h-full xl:w-[25%] xl:flex-col xl:justify-around xl:py-5"
+				>
+					<div class="text-center">
+						<button
+							id="datosPersonales"
+							class="font-bold text-customBlue underline sm:text-xl md:text-2xl"
+						>
+							Datos personales
+						</button>
+					</div>
+					<div class="sm:text-xl md:text-2xl">
+						<button id="actividad">Actividad</button>
+					</div>
+					<div class="sm:text-xl md:text-2xl">
+						<button id="configuracion">Configuración</button>
+					</div>
+				</div>
 
                 <div id="datosUsuario" class="w-[80%] md:w-[70%] xl:w-[50%] flex flex-col xl:grid xl:grid-cols-[30%_70%] xl:text-center mb-4 xl:m-10">
                     <p>Nombre:</p>
