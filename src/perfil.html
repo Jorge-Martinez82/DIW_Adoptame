@@ -72,7 +72,7 @@
 		<main class="flex flex-grow items-center justify-center bg-customPurple bg-[url('../../assets/img/huellas.png')]">
             <div
 				id="perfil"
-				class="mx-5 my-5 flex h-auto w-[90%] flex-col items-center justify-center rounded-lg bg-white sm:w-[75%] md:w-[60%] xl:h-96 xl:w-[70%] xl:flex-row"
+				class="mx-5 my-5 flex h-auto w-[90%] flex-col items-center justify-center rounded-3xl bg-white sm:w-[75%] md:w-[60%] xl:h-96 xl:w-[70%] xl:flex-row"
 			>
 				<div
 					id="cabeceraTabla"
@@ -94,17 +94,17 @@
 					</div>
 				</div>
 
-                <div id="datosUsuario" class="w-[80%] md:w-[70%] xl:w-[50%] flex flex-col xl:grid xl:grid-cols-[30%_70%] xl:text-center mb-4 xl:m-10">
-                    <p>Nombre:</p>
-                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
-                    <p>Apellidos:</p>
-                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
-                    <p>Ciudad:</p>
-                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
-                    <p>Provincia:</p>
-                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
-                    <p>Correo electrónico:</p>
-                    <input type="text" class="mb-5 mt-1 bg-gray-200 rounded-lg border-2 border-black px-2 py-1" value="">
+                <div id="datosUsuario" class="w-[80%] md:w-[70%] xl:w-[50%] flex flex-col xl:grid xl:grid-cols-[40%_60%] xl:text-center mb-4 xl:m-10">
+                    <label for="nombre" class="text-xl p-1">Nombre:</label>
+                    <input type="text" name="nombre" class="mb-5 mt-1 bg-gray-200 rounded-full border-2 border-black px-2 py-1" value="">
+                    <label for="apellidos" class="text-xl p-1">Apellidos:</label>
+                    <input type="text" name="apellidos" class="mb-5 mt-1 bg-gray-200 rounded-full border-2 border-black px-2 py-1" value="">
+                    <label for="ciudad" class="text-xl p-1">Ciudad:</label>
+                    <input type="text" name="ciudad" class="mb-5 mt-1 bg-gray-200 rounded-full border-2 border-black px-2 py-1" value="">
+                    <label for="provincia" class="text-xl p-1">Provincia:</label>
+                    <input type="text" name="provincia" class="mb-5 mt-1 bg-gray-200 rounded-full border-2 border-black px-2 py-1" value="">
+                    <label for="correo" class="text-xl p-1">Correo electrónico:</label>
+                    <input type="text" name="correo" class="mb-5 mt-1 bg-gray-200 rounded-full border-2 border-black px-2 py-1" value="">
                 </div>
 
                 <div id="actividadUsuario" class="hidden xl:hidden w-[80%] md:w-[70%] xl:w-[50%] xl:text-center mb-4 xl:my-10">
@@ -116,13 +116,12 @@
                     <p class="text-lg font-semibold">Opciones de configuración</p>
                     <p class="mt-4 text-gray-600">Aquí se mostrarán las opciones de configuración...</p>
                 </div>
-
                 <div id="opcionesSesion" class="w-[100%] h-20 flex flex-row items-center justify-center mb-2 xl:w-[25%] xl:flex-col">
                     <div>
-                        <button class="px-3 py-2 bg-customBlue rounded-lg text-white mx-3 xl:my-3">Actualizar</button>
+                        <button class="px-6 py-2 bg-customBlue hover:bg-customBlueHover rounded-full text-white mx-3 xl:my-3">Actualizar</button>
                     </div>
                     <div>
-                        <button class="px-3 py-2 bg-red-500 rounded-lg text-white mx-3 xl:my-3">Cerrar sesión</button>
+                        <button class="px-6 py-2 border-2 border-customBlue hover:bg-customBlueHover hover:text-white rounded-full font-bold mx-3 xl:my-3" onclick="{localStorage.clear(); window.location.href = 'login.html'}">Cerrar sesión</button>
                     </div>
                 </div>
             </div>

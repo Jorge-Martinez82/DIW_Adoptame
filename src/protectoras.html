@@ -81,9 +81,9 @@
 
 				<div class="relative container flex h-96 w-full items-center justify-center">
 					<div
-						class="flex h-[50%] w-[75%] flex-col items-center justify-center rounded-3xl bg-customBlack p-6 sm:w-[60%]"
+						class="flex h-[50%] w-[75%] flex-col items-center justify-center rounded-3xl bg-black bg-opacity-70 p-6 sm:w-[60%]"
 					>
-						<p class="mb-2 text-lg font-semibold text-white">Localización</p>
+						<h2 class="mb-2 text-lg font-semibold text-white">Localización</h2>
 
 						<div class="flex w-full flex-col max-sm:items-center sm:flex-row sm:justify-around">
 							<select
@@ -94,7 +94,7 @@
 							</select>
 							<button
 								id="buscar"
-								class="my-2 h-12 rounded-full bg-customBlue px-6 text-white hover:bg-blue-400"
+								class="my-2 h-12 rounded-full bg-customBlue px-6 text-white hover:bg-customBlueHover"
 							>
 								Buscar
 							</button>
@@ -220,7 +220,7 @@
 					protectorasContainer.innerHTML = ''
 
 					if (lista.length === 0) {
-						protectorasContainer.innerHTML = `<p class="text-center font-semibold text-2xl flex-grow mx-5">No tenemos protectoras registradas en la provincia seleccionada</p>`
+						protectorasContainer.innerHTML = `<h2 class="text-center font-semibold text-2xl flex-grow mx-5">No tenemos protectoras registradas en la provincia seleccionada</h2>`
 						return
 					}
 
@@ -250,7 +250,7 @@
                           </div>
                       </div>
                       <div class="w-full md:w-1/6 flex justify-center items-center mx-5">
-                          <a href="mascotas.html?idProtectora=${protectora.id}" class="bg-customBlue text-white px-4 py-2 rounded-lg hover:bg-blue-400 flex items-center justify-center">Ver mascotas</a>
+                          <a href="mascotas.html?idProtectora=${protectora.id}" class="h-12 bg-customBlue text-white px-5 py-2 rounded-full hover:bg-customBlueHover flex items-center justify-center">Ver mascotas</a>
                       </div>`
 						protectorasContainer.appendChild(tarjetaProtectora)
 					})

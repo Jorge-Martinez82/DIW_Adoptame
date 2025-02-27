@@ -17,7 +17,7 @@
 			<nav class="flex items-center justify-between">
 				<a href="../index.html" class="flex items-center gap-3">
 					<img src="../assets/img/logo.png" alt="logo de adoptame" class="h-10" />
-					<p class="font-montserrat font-bold">Adoptame</p>
+					<p class="font-montserrat font-bold">Adóptame</p>
 				</a>
 
 				<div class="absolute left-1/2 hidden -translate-x-1/2 transform sm:block">
@@ -89,46 +89,47 @@
 
 				<div class="relative flex flex-col items-center justify-center">
 					<form
-						class="mx-auto flex h-auto w-96 flex-col items-center justify-around gap-2 rounded-3xl bg-black bg-opacity-75 p-10 py-5 font-roboto text-white"
-					>
-						<label for="nombre" class="block text-sm font-semibold text-white">Nombre</label>
+						class="mx-auto flex flex-col items-center justify-around gap-2 rounded-3xl bg-black bg-opacity-75 p-10 py-5 font-roboto text-white"
+						id="formularioRegistro"
+						>
+						<label for="nombre" class="text-sm font-medium text-white">Nombre</label>
 						<input
 							type="text"
 							id="nombre"
 							name="nombre"
-							class="w-full rounded bg-white p-2 text-gray-800"
+							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tu nombre"
 							required
 						/>
 
-						<label for="apellidos" class="block text-sm font-semibold text-white">Apellidos</label>
+						<label for="apellidos" class="text-sm font-medium text-white">Apellidos</label>
 						<input
 							type="text"
 							id="apellidos"
 							name="apellidos"
-							class="w-full rounded bg-white p-2 text-gray-800"
+							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tus apellidos"
 							required
 						/>
 
-						<label for="email" class="block text-sm font-semibold text-white">
+						<label for="email" class="text-sm font-medium text-white">
 							Correo electrónico
 						</label>
 						<input
 							type="email"
 							id="email"
 							name="email"
-							class="w-full rounded bg-white p-2 text-gray-800"
+							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tu correo"
 							required
 						/>
 
-						<label for="password" class="block text-sm font-semibold text-white">Contraseña</label>
+						<label for="password" class="text-sm font-medium text-white">Contraseña</label>
 						<input
 							type="password"
 							id="password"
 							name="password"
-							class="w-full rounded bg-white p-2 text-gray-800"
+							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tu contraseña"
 							required
 						/>
@@ -157,7 +158,7 @@
 						</div>
 
 						<button
-							class="mt-5 w-32 rounded-full bg-customBlue p-2 text-white transition duration-300 hover:bg-customPurple hover:text-black"
+							class="mt-5 w-32 rounded-full bg-customBlue p-2 text-white transition duration-300 hover:bg-customBlueHover"
 							type="submit"
 						>
 							Registrarse
