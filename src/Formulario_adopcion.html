@@ -89,6 +89,7 @@
 
 		<div class="relative flex flex-col items-center justify-center">
 			<form
+				id="formulario"
 				class="mx-2 flex flex-col items-center justify-around rounded-3xl bg-black bg-opacity-75 p-10 py-5 font-roboto text-white"
 			>
 				<h2 id="titulo" class="font-roboto text-lg font-bold md:text-2xl text-white mb-4"></h2>
@@ -254,7 +255,7 @@
 	const params = new URLSearchParams(window.location.search);
 	const idMascota = params.get("id");
 
-	fetch(`http://localhost:3000/mascotas/${idMascota}`)
+	fetch(`${URL_BACKEND}/mascotas/${idMascota}`)
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data)
@@ -262,9 +263,58 @@
 		});
 
 	const validarDNI = () => {
-		const DNI = document.querySelector('#dni')
-
+		const DNI = document.querySelector('#dni').value;
+		const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+		const letra = letras.charAt(parseInt(DNI, 10) % 23);
+		if (letra !== DNI.charAt(8).toUpperCase()) {
+			alert('El DNI introducido no es válido');
+			document.querySelector('#dni').value = '';
+		}
 	}
+
+	document.getElementById('formulario').addEventListener('submit', (event) => {
+		event.preventDefault();
+		const nombre = document.getElementById('nombre').value;
+		const apellidos = document.getElementById('apellidos').value;
+		const dni = document.getElementById('dni').value;
+		const direccion = document.getElementById('direccion').value;
+		const localidad = document.getElementById('localidad').value;
+		const codigo_postal = document.getElementById('codigo_postal').value;
+		const provincia = document.getElementById('provincia').value;
+		const mayor_edad = document.getElementById('mayor_edad').checked;
+
+		if (!mayor_edad) {
+			alert('Debes ser mayor de edad para poder adoptar');
+			return;
+		}
+
+		const solicitud = {
+			nombre,
+			apellidos,
+			dni,
+			direccion,
+			localidad,
+			codigo_postal,
+			provincia,
+			idMascota
+		};
+
+		fetch(`${URL_BACKEND}/solicitudes`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(solicitud)
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				alert('Solicitud enviada correctamente');
+				window.location.href = '../index.html';
+			})
+			.catch((error) => {
+				alert('Ha ocurrido un error al enviar la solicitud');
+			});
+	});
 </script>
 
 </body>
