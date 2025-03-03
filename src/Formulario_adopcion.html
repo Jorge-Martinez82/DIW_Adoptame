@@ -103,6 +103,7 @@
 							name="nombre"
 							class="w-full pl-4 rounded-3xl bg-white p-2 text-gray-800"
 							placeholder="Introduce tu nombre"
+							pattern="[A-Za-z\s]{1,50}"
 							required
 						/>
 						<small class="block mt-1 pl-4">Ejemplo: Pedro</small>
@@ -115,6 +116,7 @@
 							name="apellidos"
 							class="w-full pl-4 rounded-3xl bg-white p-2 text-gray-800"
 							placeholder="Introduce tus apellidos"
+							pattern="[A-Za-z\s]{1,50}"
 							required
 						/>
 						<small class="block mt-1 pl-4">Ejemplo: Alonso González</small>
@@ -130,7 +132,7 @@
 						class="w-full pl-4 rounded-3xl bg-white p-2 text-gray-800"
 						placeholder="Introduce tu DNI"
 						pattern="[0-9]{8}[A-Za-z]{1}"
-						onchange="validarDNI()"
+						onblur="validarDNI()"
 						required
 					/>
 					<small class="block mt-1 pl-4">Ejemplo: 12345678Z</small>
