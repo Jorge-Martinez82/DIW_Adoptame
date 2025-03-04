@@ -260,6 +260,7 @@
 				<article class="flex w-full flex-col items-center p-6 md:w-1/2">
 					<h2 class="text-center font-roboto text-2xl font-bold">Contáctanos</h2>
 					<form
+						id="formulario_contacto"
 						class="mx-auto flex h-64 w-full flex-col justify-around rounded-3xl font-roboto md:w-96"
 					>
 						<label class="font-bold" for="nombre">Nombre</label>
@@ -269,6 +270,8 @@
 							id="nombre"
 							name="nombre"
 							placeholder="Introduce tu nombre"
+							maxlength="50"
+							required
 						/>
 						<label class="font-bold" for="mensaje">Mensaje</label>
 						<textarea
@@ -276,6 +279,8 @@
 							id="mensaje"
 							name="mensaje"
 							placeholder="Escribe tu mensaje"
+							maxlength="500"
+							required
 						></textarea>
 						<button class="self-center mt-5 w-32 rounded-full bg-customBlue p-2 text-white transition duration-300 hover:bg-customBlueHover" type="submit">
 							Enviar
@@ -319,5 +324,12 @@
 		</footer>
 
 		<script src="./assets/js/index.js"></script>
+		<script>
+			document.getElementById("formulario_contacto").addEventListener("submit", function (event) {
+				event.preventDefault();
+				alert("Mensaje enviado");
+				this.reset();
+			});
+		</script>
 	</body>
 </html>
