@@ -87,83 +87,100 @@
 	>
 		<div class="absolute inset-0 bg-white/40"></div>
 
-
 		<div class="relative flex flex-col items-center justify-center">
-			<h2 id="titulo" class="font-roboto text-lg font-bold md:text-2xl text-black"></h2>
 			<form
-				class="mx-2 flex h-auto w-auto flex-col items-center justify-around rounded-3xl bg-black bg-opacity-75 p-10 py-5 font-roboto text-white"
+				id="formulario"
+				class="mx-2 flex flex-col items-center justify-around rounded-3xl bg-black bg-opacity-75 p-10 py-5 font-roboto text-white"
 			>
-				<div class="w-full flex gap-2">
+				<h2 id="titulo" class="font-roboto text-lg font-bold md:text-2xl text-white mb-4"></h2>
+
+				<div class="w-full flex gap-4 my-2">
 					<div class="w-1/2">
-						<label for="nombre" class="text-sm font-medium text-white  self-start">Nombre</label>
+						<label for="nombre" class="font-medium text-white self-start">Nombre</label>
 						<input
 							type="text"
 							id="nombre"
 							name="nombre"
-							class="w-full rounded-3xl bg-white p-2 text-gray-800"
+							class="w-full pl-4 rounded-3xl bg-white p-2 text-gray-800"
 							placeholder="Introduce tu nombre"
+							pattern="[A-Za-z\s]{1,50}"
 							required
 						/>
+						<small class="block mt-1 pl-4">Ejemplo: Pedro</small>
 					</div>
 					<div class="w-1/2">
-						<label for="apellidos" class="text-sm font-medium text-white  self-start">Apellidos</label>
+						<label for="apellidos" class="font-medium text-white self-start">Apellidos</label>
 						<input
 							type="text"
 							id="apellidos"
 							name="apellidos"
-							class="w-full rounded-3xl bg-white p-2 text-gray-800"
+							class="w-full pl-4 rounded-3xl bg-white p-2 text-gray-800"
 							placeholder="Introduce tus apellidos"
+							pattern="[A-Za-z\s]{1,50}"
 							required
 						/>
+						<small class="block mt-1 pl-4">Ejemplo: Alonso González</small>
 					</div>
 				</div>
 
-				<label for="dni" class="text-sm font-medium text-white mt-2  self-start">DNI</label>
-				<input
-					type="text"
-					id="dni"
-					name="dni"
-					class="w-full rounded-3xl bg-white p-2 text-gray-800"
-					placeholder="Introduce tu DNI"
-					required
-				/>
+				<div class="my-2 w-full">
+					<label for="dni" class="font-medium text-white self-start">DNI</label>
+					<input
+						type="text"
+						id="dni"
+						name="dni"
+						class="w-full pl-4 rounded-3xl bg-white p-2 text-gray-800"
+						placeholder="Introduce tu DNI"
+						pattern="[0-9]{8}[A-Za-z]{1}"
+						onblur="validarDNI()"
+						required
+					/>
+					<small class="block mt-1 pl-4">Ejemplo: 12345678Z</small>
+				</div>
 
-				<label for="direccion" class="text-sm font-medium text-white mt-2  self-start">Dirección</label>
-				<input
-					type="text"
-					id="direccion"
-					name="direccion"
-					class="w-full rounded-3xl bg-white p-2 text-gray-800"
-					placeholder="Introduce tu dirección"
-					required
-				/>
+				<div class="my-2 w-full">
+					<label for="direccion" class="font-medium text-white self-start">Dirección</label>
+					<input
+						type="text"
+						id="direccion"
+						name="direccion"
+						class="w-full pl-4 rounded-3xl bg-white p-2 text-gray-800"
+						placeholder="Introduce tu dirección"
+						pattern="[A-Za-z0-9\s]{1,50}"
+						required
+					/>
+					<small class="block mt-1 pl-4">Ejemplo: Calle Falsa 123 10 1D</small>
+				</div>
 
-				<div class="w-full flex gap-2 mt-2">
+				<div class="w-full flex gap-4 my-2">
 					<div class="w-2/3">
-						<label for="localidad" class="text-sm font-medium text-white  self-start">Localidad</label>
+						<label for="localidad" class="font-medium text-white  self-start">Localidad</label>
 						<input
 							type="text"
 							id="localidad"
 							name="localidad"
-							class="w-full rounded-3xl bg-white p-2 text-gray-800"
+							class="w-full pl-4 rounded-3xl bg-white p-2 text-gray-800"
 							placeholder="Introduce tu localidad"
 							required
 						/>
+						<small class="block mt-1 pl-4">Ejemplo: Pamplona</small>
 					</div>
 					<div class="w-1/3">
-						<label for="codigo_postal" class="text-sm font-medium text-white  self-start">Código Postal</label>
+						<label for="codigo_postal" class="font-medium text-white  self-start">Código Postal</label>
 						<input
 							type="text"
 							id="codigo_postal"
 							name="codigo_postal"
-							class="w-full rounded-3xl bg-white p-2 text-gray-800"
+							class="w-full pl-4 rounded-3xl bg-white p-2 text-gray-800"
 							placeholder="CP"
+							pattern="[0-9]{5}"
 							required
 						/>
+						<small class="block mt-1 pl-4">Ejemplo: 31001</small>
 					</div>
 				</div>
 
-				<label for="provincia" class="text-sm font-medium text-white mt-2 self-start">Provincia</label>
+				<label for="provincia" class="font-medium text-white mt-2 self-start">Provincia</label>
 				<select
 					id="provincia"
 					name="provincia"
@@ -179,15 +196,15 @@
 
 				<div class="mt-4 flex items-center">
 					<input
-						type="radio"
+						type="checkbox"
 						id="mayor_edad"
 						name="mayor_edad"
 						class="h-4 w-4 rounded border-gray-300 text-customBlue focus:ring-customBlue"
 						required
 					/>
-					<label for="mayor_edad" class="ml-2 text-sm font-medium text-white"
-					>Soy mayor de edad</label
-					>
+					<label for="mayor_edad" class="ml-2 text-sm font-medium text-white">
+						Soy mayor de edad
+					</label>
 				</div>
 
 				<button
@@ -238,10 +255,68 @@
 <script src="../assets/js/index.js"></script>
 <script>
 	const params = new URLSearchParams(window.location.search);
-	const nombreMascota = params.get("nombre");
-	if (nombreMascota) {
-		document.getElementById("titulo").textContent = `Solicitud de adopción de ${nombreMascota}`;
+	const idMascota = params.get("id");
+
+	fetch(`${URL_BACKEND}/mascotas/${idMascota}`)
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data)
+			document.getElementById("titulo").textContent = `Solicitud de adopción de ${data.nombre}`;
+		});
+
+	const validarDNI = () => {
+		const DNI = document.querySelector('#dni').value;
+		const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+		const letra = letras.charAt(parseInt(DNI, 10) % 23);
+		if (letra !== DNI.charAt(8).toUpperCase()) {
+			alert('El DNI introducido no es válido');
+			document.querySelector('#dni').value = '';
+		}
 	}
+
+	document.getElementById('formulario').addEventListener('submit', (event) => {
+		event.preventDefault();
+		const nombre = document.getElementById('nombre').value;
+		const apellidos = document.getElementById('apellidos').value;
+		const dni = document.getElementById('dni').value;
+		const direccion = document.getElementById('direccion').value;
+		const localidad = document.getElementById('localidad').value;
+		const codigo_postal = document.getElementById('codigo_postal').value;
+		const provincia = document.getElementById('provincia').value;
+		const mayor_edad = document.getElementById('mayor_edad').checked;
+
+		if (!mayor_edad) {
+			alert('Debes ser mayor de edad para poder adoptar');
+			return;
+		}
+
+		const solicitud = {
+			nombre,
+			apellidos,
+			dni,
+			direccion,
+			localidad,
+			codigo_postal,
+			provincia,
+			idMascota
+		};
+
+		fetch(`${URL_BACKEND}/solicitudes`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(solicitud)
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				alert('Solicitud enviada correctamente');
+				window.location.href = '../index.html';
+			})
+			.catch((error) => {
+				alert('Ha ocurrido un error al enviar la solicitud');
+			});
+	});
 </script>
 
 </body>
