@@ -12,7 +12,7 @@
 		<link rel="icon" type="image/vnd.microsoft.icon" href="../assets/img/logo.png" />
 	</head>
 
-	<body>
+	<body class="flex flex-col min-h-screen">
 		<header class="relative z-10 m-2">
 			<nav class="flex items-center justify-between">
 				<a href="../index.html" class="flex items-center gap-3">
@@ -81,13 +81,13 @@
 			</ul>
 		</header>
 
-		<main>
+		<main class="flex flex-grow">
 			<section
-				class="relative flex h-svh flex-col items-center justify-center bg-[url('/assets/img/fondo_registro.webp')] bg-cover bg-center"
+				class="relative flex w-[100%] flex-col items-center justify-center bg-[url('/assets/img/fondo_registro.webp')] bg-cover bg-center"
 			>
 				<div class="absolute inset-0 bg-white/40"></div>
 
-				<div class="relative flex flex-col items-center justify-center">
+				<div class="relative flex flex-col items-center justify-center p-10">
 					<form
 						class="mx-auto flex flex-col items-center justify-around gap-2 rounded-3xl bg-black bg-opacity-75 p-10 py-5 font-roboto text-white"
 						id="formularioRegistro"
@@ -99,9 +99,10 @@
 							name="nombre"
 							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tu nombre"
+							pattern="[A-Za-z\s]{1,50}"
 							required
 						/>
-
+						<small class="block mb-2">Ejemplo: Ana</small>
 						<label for="apellidos" class="text-sm font-medium text-white">Apellidos</label>
 						<input
 							type="text"
@@ -109,9 +110,10 @@
 							name="apellidos"
 							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tus apellidos"
+							pattern="[A-Za-z\s]{1,50}"
 							required
 						/>
-
+						<small class="block mb-2">Ejemplo: Martínez Rodríguez</small>
 						<label for="email" class="text-sm font-medium text-white">
 							Correo electrónico
 						</label>
@@ -120,10 +122,11 @@
 							id="email"
 							name="email"
 							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
-							placeholder="Introduce tu correo"
+							placeholder="Introduce tu correo electrónico"
+							pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|es)"
 							required
 						/>
-
+						<small class="block mb-2">Ejemplo: adoptante@adoptante.com</small>
 						<label for="password" class="text-sm font-medium text-white">Contraseña</label>
 						<input
 							type="password"
@@ -131,9 +134,10 @@
 							name="password"
 							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tu contraseña"
+							pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
 							required
 						/>
-
+						<small class="block mb-4">Ejemplo: adoptante</small>
 						<div class="mt-4 flex gap-4">
 							<label class="flex items-center">
 								<input
