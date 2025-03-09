@@ -99,7 +99,7 @@
 							name="nombre"
 							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tu nombre"
-							pattern="[A-Za-z\s]{1,50}"
+							pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{1,25}"
 							required
 						/>
 						<small class="block mb-2">Ejemplo: Ana</small>
@@ -110,7 +110,7 @@
 							name="apellidos"
 							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tus apellidos"
-							pattern="[A-Za-z\s]{1,50}"
+							pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{1,50}"
 							required
 						/>
 						<small class="block mb-2">Ejemplo: Martínez Rodríguez</small>
@@ -123,7 +123,6 @@
 							name="email"
 							class="w-full rounded-3xl bg-white py-2 px-4 text-gray-800"
 							placeholder="Introduce tu correo electrónico"
-							pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|es)"
 							required
 						/>
 						<small class="block mb-2">Ejemplo: adoptante@adoptante.com</small>
